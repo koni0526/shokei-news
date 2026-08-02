@@ -131,6 +131,30 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .nav a:hover{color:var(--accent);}
 
 /* ── モバイル（重大4） ── */
+/* ── PC（広い画面）＝新聞らしく幅を使う2段組（2026-08-02 小西さん指示：PCとスマホで変える） ── */
+@media (min-width:1024px){
+  .wrap.paper{max-width:1280px;padding:40px 56px 80px;}
+  .paper-cols{columns:2;column-gap:64px;}
+  .paper-cols section{break-inside:avoid;-webkit-column-break-inside:avoid;margin-bottom:16px;}
+  .wrap.paper .masthead h1{font-size:36px;}
+  .wrap.paper .lead{font-size:19px;max-width:48em;}
+  .wrap.paper .hero{padding:32px 0 24px;margin:16px 0 40px;}
+  .wrap.paper .hero h2{font-size:34px;max-width:32em;}
+  .wrap.paper .hero p{font-size:17px;max-width:48em;}
+  .hl-row{grid-template-columns:1fr 96px 176px;padding:14px 8px;}
+  .hl-row.imp3 .hl-title{font-size:19px;}
+  .hl-row.imp2 .hl-title{font-size:17px;}
+  .hl-row.imp1 .hl-title{font-size:16px;}
+  .pagehead h2,.page-fold>summary .nm{font-size:22px;}
+  /* 記事ページ・トピックは可読幅を保ちつつ少し広く・文字も一回り大きく */
+  .wrap:not(.paper):not(.idx){max-width:920px;}
+  .wrap:not(.paper) .a-title{font-size:28px;}
+  .wrap:not(.paper) .summary li{font-size:17px;}
+  .wrap:not(.paper) .comment{font-size:16px;}
+  /* 目次は一覧性重視で広めに */
+  .wrap.idx{max-width:1080px;}
+}
+
 @media (max-width:680px){
   .wrap{padding:16px 16px 48px;}
   .masthead{gap:4px;padding-bottom:16px;}
