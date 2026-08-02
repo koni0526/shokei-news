@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ChatGPTの新しい音声モデル「GPT-Live」でできること｜日刊AIウォッチ</title><style>
-:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f6f7;--card:#ffffff;--accent:#2f6b8a;--accent-dark:#24536c;--accent-bg:#eaf2f6;}
+:root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
 .wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
@@ -186,10 +186,23 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   body{background:#fff;font-size:12pt;}
   .wrap{max-width:none;padding:0;}
   article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
-  .nav,.issuenav,.artnav,.orig-btn{display:none;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
   .page-fold>summary{cursor:auto;}
   .hero{break-inside:avoid;}
 }
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
+
+.masthead{border-bottom-color:var(--accent);}
+.pagehead{border-bottom-color:var(--accent);}
+.pagehead .no,.page-fold>summary .no{background:var(--accent);}
+.hero{border-top-color:var(--accent);}
 </style></head><body><div class="wrap">
 <div class="nav"><a href="../2026-08/20260802.html">← 8/2の紙面</a><a href="../index.html">目次・検索</a></div>
 <header class="masthead sub"><h1>日刊 AIウォッチ</h1><div class="date">2026年8月2日（日）</div></header>
@@ -206,10 +219,24 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <div class="a-foot"><span class="tag">分類：OpenAI・ChatGPT・音声・GPT-Live・新機能</span></div>
 </article>
 </div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
 <nav class="artnav">
   <div class="prev"><a href="20260802-24.html"><span>前の記事</span><b>OpenAI、研究者10万人に最上位モデ…</b></a></div>
   <div class="home"><a href="../2026-08/20260802.html"><b>紙面へ戻る</b></a></div>
   <div class="next"><a href="20260802-26.html"><span>次の記事</span><b>2026年9月から本格稼働、国税庁のAI…</b></a></div>
 </nav>
 <div class="footer">本記事はAIによる自動要約です。導入・契約の判断は必ず一次情報をご確認ください。</div>
-</div></body></html>
+</div>
+<script>
+const CONSULT_TEXT="日刊 AIウォッチの記事について相談です。\n記事ID: ai:20260802-25\nタイトル: ChatGPTの新しい音声モデル「GPT-Live」でできること\n原文: https://www.lifehacker.jp/article/2607-chatgpt-new-improved-voice-mode/\nまず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    this.textContent='コピーできませんでした（手動でIDをお伝えください：ai:20260802-25）';
+  }
+});
+</script></body></html>
