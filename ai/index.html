@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日刊AIウォッチ｜目次・検索</title><style>
+:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f7f5f2;--card:#ffffff;--accent:#b0502f;--accent-dark:#963f22;--accent-bg:#f9efe9;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+.wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── マストヘッド（二重罫は維持） ── */
+.masthead{border-bottom:3px double var(--ink);padding-bottom:16px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;}
+.masthead h1{font-family:"Yu Mincho","YuMincho","MS PMincho",serif;font-size:30px;letter-spacing:.12em;font-weight:700;}
+.masthead .date{color:var(--sub);font-size:13px;letter-spacing:.06em;}
+.masthead.sub h1{font-size:20px;letter-spacing:.08em;}
+.masthead.topic h1{font-size:22px;letter-spacing:.06em;}
+
+/* ── 前号／次号（注意11） ── */
+.issuenav{display:flex;align-items:center;gap:16px;font-size:13px;margin-top:8px;}
+.issuenav a{display:inline-flex;align-items:center;min-height:44px;color:var(--sub);text-decoration:none;}
+.issuenav a:hover{color:var(--accent);}
+.issuenav .next{margin-left:auto;}
+
+/* ── パンくず（注意7） ── */
+.crumb{font-size:13px;color:var(--sub);margin-top:16px;}
+
+/* ── リード（明朝・可読幅40em） ── */
+.lead{font-family:"Yu Mincho","YuMincho",serif;font-size:17px;line-height:1.85;color:var(--ink);max-width:40em;margin:16px 0 8px;}
+
+/* ── 今日の1本（重大1） ── */
+.hero{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:24px 0 20px;margin:16px 0 32px;}
+.hero .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.hero h2{font-family:"Yu Mincho","YuMincho",serif;font-size:26px;line-height:1.45;margin-bottom:12px;}
+.hero h2 a{color:var(--ink);text-decoration:none;}
+.hero h2 a:hover{color:var(--accent);}
+.hero p{font-size:16px;line-height:1.8;color:var(--sub);max-width:40em;}
+.hero .hero-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--faint);}
+
+/* ── 面見出し ── */
+.pagehead{display:flex;align-items:baseline;gap:12px;margin:40px 0 16px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.pagehead .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.pagehead h2{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.pagehead .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold{margin:40px 0 16px;}
+.page-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.page-fold>summary::-webkit-details-marker{display:none;}
+.page-fold>summary .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.page-fold>summary .nm{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.page-fold>summary .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold>summary:hover .nm{color:var(--accent);}
+
+/* ── 見出し一覧（行全体リンク＋列固定：重大2・3） ── */
+.headlines{list-style:none;margin:0 0 8px;}
+.hl-row-li{list-style:none;}
+.hl-row{display:grid;grid-template-columns:1fr 88px 152px;grid-template-areas:"title stage src";column-gap:16px;align-items:baseline;padding:12px 8px;min-height:56px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;border-radius:4px;transition:background .12s;}
+.hl-row:hover{background:#f2f5f8;}
+.hl-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+.hl-title{grid-area:title;min-width:0;line-height:1.6;font-family:"Yu Mincho","YuMincho",serif;}
+.hl-row>.badge{grid-area:stage;justify-self:start;}
+.hl-src{grid-area:src;justify-self:start;min-width:0;max-width:100%;font-size:12px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hl-row.imp3 .hl-title{font-size:18px;font-weight:700;}
+.hl-row.imp2 .hl-title{font-size:16px;font-weight:500;}
+.hl-row.imp1 .hl-title{font-size:15px;font-weight:400;color:var(--sub);}
+
+/* ── バッジ ── */
+.badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:2px;border:1px solid var(--line);color:var(--sub);background:#f4f6f8;}
+.badge.stage{background:transparent;border:1px solid var(--line);border-radius:2px;font-size:11px;line-height:1.6;padding:1px 7px;letter-spacing:.06em;font-weight:600;white-space:nowrap;color:var(--sub);}
+.badge.stage.s-giron{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-taiko{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-kokkai{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-seiritsu{color:#2c6b4f;border-color:#b2cec0;}
+.badge.stage.s-shikou{color:#b0502f;border-color:#e5c9ba;}
+.badge.new{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+.badge.imp3{background:var(--ink);color:#fff;border-color:var(--ink);}
+.badge.hl{background:#f4f0e4;border-color:#dccf9f;color:#7a6320;}
+
+/* ── 記事本体 ── */
+article{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);padding:20px 24px;margin-bottom:16px;break-inside:avoid;}
+article.imp3{border-left-color:var(--accent);}
+article.imp2{border-left-color:var(--line);}
+.a-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--faint);margin-bottom:8px;}
+h1.a-title{font-family:"Yu Mincho","YuMincho",serif;font-size:24px;line-height:1.5;margin:4px 0 14px;font-weight:700;}
+h3.a-title{font-family:"Yu Mincho",serif;font-size:18px;line-height:1.5;margin:4px 0 8px;}
+h3.a-title a{color:var(--ink);text-decoration:none;}
+h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
+.summary{list-style:none;margin:0 0 8px;max-width:40em;}
+.summary li{padding-left:1.1em;text-indent:-1.1em;color:var(--ink);font-size:15px;}
+.summary li::before{content:"▸";color:var(--accent);margin-right:.35em;}
+.comment{background:var(--accent-bg);border-left:3px solid var(--accent);padding:8px 12px;font-size:15px;margin:8px 0 8px;max-width:40em;}
+.comment b{color:var(--accent);}
+.topic-link{color:var(--accent);}
+.delta{font-size:13px;color:var(--accent);font-weight:600;margin:8px 0;}
+.backfill-note{font-size:12px;color:var(--faint);margin-top:8px;}
+.bf-label{font-size:12px;color:#7a6320;background:#f4f0e4;display:inline-block;padding:1px 8px;border-radius:2px;margin-bottom:8px;}
+.brief-list{font-size:13px;color:var(--sub);border-top:1px solid var(--rule);padding-top:8px;margin:8px 0 16px;max-width:40em;}
+.brief-list li{margin-left:1.4em;}
+.a-foot{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:12px;align-items:center;}
+.a-foot .src a{color:var(--sub);}
+.tag{color:var(--faint);}
+
+/* ── 原文ボタン（重大7） ── */
+.orig-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:16px 0 8px;background:var(--accent);color:#fff;text-decoration:none;font-size:15px;font-weight:600;border-radius:4px;}
+.orig-btn:hover{background:var(--accent-dark);}
+.orig-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── 記事の前後ナビ（重大8） ── */
+.artnav{display:grid;grid-template-columns:1fr auto 1fr;grid-template-areas:"prev home next";gap:8px;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);}
+.artnav .prev{grid-area:prev;}
+.artnav .home{grid-area:home;}
+.artnav .next{grid-area:next;}
+.artnav a{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:48px;padding:8px 16px;border:1px solid var(--line);border-radius:4px;background:var(--card);text-decoration:none;color:var(--ink);}
+.artnav a:hover{border-color:var(--accent);color:var(--accent);}
+.artnav a span{font-size:11px;color:var(--faint);letter-spacing:.06em;}
+.artnav a b{font-size:13px;font-weight:600;line-height:1.5;}
+.artnav .home a{align-items:center;justify-content:center;}
+.artnav .next a{align-items:flex-end;text-align:right;}
+
+/* ── 週刊面・ボツ・エラー・フッター ── */
+.weekly{background:#f2f4f7;border:1px solid var(--line);padding:16px 24px;margin:32px 0;}
+.weekly h2{font-family:"Yu Mincho",serif;font-size:18px;letter-spacing:.1em;border-bottom:1px solid var(--faint);padding-bottom:8px;margin-bottom:8px;}
+.weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
+.weekly ul{margin-left:1.3em;font-size:14px;}
+.weekly a{color:var(--ink);}
+.reject{margin-top:40px;font-size:12px;color:var(--faint);}
+.reject summary{cursor:pointer;color:var(--sub);}
+.reject li{margin-left:1.4em;}
+.reject a{color:var(--faint);}
+.errors{margin-top:16px;font-size:12px;color:#8a4b3a;background:#faf1ee;border:1px solid #e8cfc6;padding:8px 16px;}
+.empty{margin-top:32px;color:var(--sub);}
+.footer{margin-top:48px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--faint);}
+.nav{font-size:13px;margin-bottom:16px;}
+.nav a{color:var(--sub);text-decoration:none;margin-right:16px;}
+.nav a:hover{color:var(--accent);}
+
+/* ── モバイル（重大4） ── */
+/* ── PC（広い画面）＝新聞らしく幅を使う2段組（2026-08-02 小西さん指示：PCとスマホで変える） ── */
+@media (min-width:1024px){
+  .wrap.paper{max-width:1280px;padding:40px 56px 80px;}
+  .paper-cols{columns:2;column-gap:72px;}
+  /* 段の高さを均すため面の途中でも段をまたいでよい（行と見出しだけ分断禁止＝新聞の段組み） */
+  .paper-cols .pagehead,.paper-cols .page-fold>summary{break-inside:avoid;}
+  .paper-cols .hl-row-li{break-inside:avoid;-webkit-column-break-inside:avoid;}
+  .paper-cols section{margin-bottom:16px;}
+  .wrap.paper .masthead h1{font-size:36px;}
+  .wrap.paper .lead{font-size:19px;max-width:48em;}
+  .wrap.paper .hero{padding:32px 0 24px;margin:16px 0 40px;}
+  .wrap.paper .hero h2{font-size:34px;max-width:32em;}
+  .wrap.paper .hero p{font-size:17px;max-width:48em;}
+  /* 段組の中は「見出し全幅＋下にメタ行」の新聞式（横3列だとタイトルが窮屈になるため） */
+  .paper-cols .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:4px;column-gap:12px;padding:14px 4px;min-height:0;}
+  .paper-cols .hl-src{justify-self:start;}
+  .paper-cols .badge.stage,.paper-cols .badge.new,.paper-cols .badge.hl{justify-self:end;}
+  .hl-row.imp3 .hl-title{font-size:19px;}
+  .hl-row.imp2 .hl-title{font-size:17px;}
+  .hl-row.imp1 .hl-title{font-size:16px;}
+  .pagehead h2,.page-fold>summary .nm{font-size:22px;}
+  /* 記事ページ・トピックは可読幅を保ちつつ少し広く・文字も一回り大きく */
+  .wrap:not(.paper):not(.idx){max-width:920px;}
+  .wrap:not(.paper) .a-title{font-size:28px;}
+  .wrap:not(.paper) .summary li{font-size:17px;}
+  .wrap:not(.paper) .comment{font-size:16px;}
+  /* 目次は一覧性重視で広めに */
+  .wrap.idx{max-width:1080px;}
+}
+
+@media (max-width:680px){
+  .wrap{padding:16px 16px 48px;}
+  .masthead{gap:4px;padding-bottom:16px;}
+  .masthead h1{font-size:clamp(20px,5.4vw,30px);letter-spacing:.06em;}
+  .lead{font-size:15px;margin:12px 0 4px;}
+  .pagehead{margin:32px 0 8px;}
+  .pagehead h2{font-size:17px;}
+  .page-fold{margin:32px 0 8px;}
+  .page-fold>summary .nm{font-size:17px;}
+  .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:6px;column-gap:8px;min-height:64px;}
+  .hl-src{justify-self:start;max-width:100%;}
+  .hl-row>.badge{justify-self:end;}
+  .hero h2{font-size:21px;}
+  .summary li,.comment{font-size:15px;}
+  .artnav{grid-template-columns:1fr 1fr;grid-template-areas:"prev next" "home home";}
+  .artnav .next a{align-items:flex-end;}
+}
+
+@media print{
+  body{background:#fff;font-size:12pt;}
+  .wrap{max-width:none;padding:0;}
+  article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
+  .nav,.issuenav,.artnav,.orig-btn{display:none;}
+  .page-fold>summary{cursor:auto;}
+  .hero{break-inside:avoid;}
+}
+
+.searchbar{position:sticky;top:0;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);z-index:5;}
+.searchbar input{width:100%;padding:12px 16px;font-size:16px;border:1px solid var(--line);border-radius:4px;background:#fff;}
+.searchbar input:focus{border-color:var(--accent);}
+.chips{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-size:12px;padding:4px 12px;min-height:32px;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:pointer;color:var(--sub);}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.day{margin-top:32px;}
+.day h2{font-family:"Yu Mincho",serif;font-size:16px;border-bottom:1px solid var(--line);padding-bottom:4px;margin-bottom:8px;}
+.day h2 a{color:var(--ink);text-decoration:none;}
+.row{display:flex;gap:12px;padding:8px 4px;font-size:14px;border-bottom:1px solid var(--rule);align-items:baseline;}
+.row .pg{flex:none;font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--sub);background:#eef1f5;border:none;padding:2px 8px;border-radius:2px;}
+.row .pg.p1{color:#fff;background:var(--accent);}
+.row a.tt{color:var(--ink);text-decoration:none;font-family:"Yu Mincho","YuMincho",serif;}
+.row a.tt:hover{color:var(--accent);}
+.row a.tt.i3{font-weight:700;}
+.row .mt{color:var(--faint);font-size:12px;flex:none;}
+.topics-box{background:#f2f4f7;border:1px solid var(--line);padding:16px 24px;margin-top:24px;font-size:14px;}
+.topics-box h3{font-family:"Yu Mincho",serif;font-size:15px;margin-bottom:8px;}
+.topics-box a{color:var(--ink);}
+.topics-box .st{color:var(--accent);}
+.topics-box .mt{color:var(--faint);}
+.nores{color:var(--faint);margin-top:32px;}
+@media (max-width:680px){.row{flex-wrap:wrap;gap:8px;}}
+@media print{.searchbar{display:none;}}
+</style></head><body><div class="wrap idx">
+<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">目次・検索｜全37記事</div></header>
+<div class="searchbar"><input id="q" type="search" placeholder="キーワード検索（タイトル・要約・実務メモ・タグを横断）…">
+<div class="chips" id="pageChips"><span class="chip" data-page="1">1面 実践・ノウハウ</span><span class="chip" data-page="2">2面 うちへの提案</span><span class="chip" data-page="3">3面 ツール・機能アップデート</span><span class="chip" data-page="4">4面 動向・規制</span></div>
+<div class="chips" id="tagChips"><span class="chip" data-tag="AIエージェント">AIエージェント</span><span class="chip" data-tag="ClaudeCode">ClaudeCode</span><span class="chip" data-tag="セキュリティ">セキュリティ</span><span class="chip" data-tag="OpenAI">OpenAI</span><span class="chip" data-tag="Anthropic">Anthropic</span><span class="chip" data-tag="Microsoft">Microsoft</span><span class="chip" data-tag="Copilot">Copilot</span><span class="chip" data-tag="コスト管理">コスト管理</span><span class="chip" data-tag="提案">提案</span><span class="chip" data-tag="Claude">Claude</span><span class="chip" data-tag="企業導入">企業導入</span><span class="chip" data-tag="メール処理">メール処理</span><span class="chip" data-tag="CLAUDE.md">CLAUDE.md</span><span class="chip" data-tag="生成AI">生成AI</span><span class="chip" data-tag="業務効率化">業務効率化</span><span class="chip" data-tag="hook">hook</span><span class="chip" data-tag="運用">運用</span><span class="chip" data-tag="失敗談">失敗談</span><span class="chip" data-tag="検証">検証</span><span class="chip" data-tag="Cowork">Cowork</span><span class="chip" data-tag="Scout">Scout</span><span class="chip" data-tag="料金">料金</span><span class="chip" data-tag="Amazon">Amazon</span><span class="chip" data-tag="従量課金">従量課金</span></div></div>
+
+<div id="list"></div>
+<div class="footer">クリック＝記事ページへ。原文リンクは記事ページ内。検索はこのページ内で完結（ネット接続不要）。</div>
+</div>
+<script>
+const DATA=[{"id":"20260802-37","d":"20260802","p":4,"t":"マイクロソフト、Copilotをスーパーアプリに統合へ「Chat」「Cowork」「Scout」の違い","s":"Business Insider Japan","u":"https://www.businessinsider.jp/article/2608-microsoft-copilot-super-app/","sm":"企業向け「Microsoft 365 Copilot」の有料アカウント数が3000万を突破したと決算で発表された。 サティア・ナデラCEOがX上で、四半期中に個人向け・法人向けのCopilot体験を1つのスーパーアプリに統合すると表明したと記載されている。 統合対象は、対話型の「Copilot Chat」、タスクを分解して並列実行する「Copilot Cowork」、自律実行の「Microsoft Scout」の3サービス。Coworkは従量課金制で、AIの自律性が高まるほどコストが増えると説明されている。","c":"事務所で使っているCopilotが「聞く道具」から「作業を任せる道具」に分かれていく流れなので、どの区分を契約するかで費用構造が変わってくる点は次の更新時の検討材料になりそうです。","tg":["Microsoft","Copilot","Cowork","Scout","AIエージェント","料金"],"i":2,"st":"","tp":""},{"id":"20260802-36","d":"20260802","p":4,"t":"米Amazon、Claudeの使い方を誤り単純なコーディング作業で予算の8倍超を消費","s":"Gadget Gate（PHILE WEB）","u":"https://gadget.phileweb.com/post-129954/","sm":"Amazon社内の商品リスト照合プロジェクトで約180万ドルを消費し、予算を860%超過したと報じられている。 超過の発覚までに約5カ月を要したとされる。 同種の事例として、財務監査ツールで54.1万ドル、出荷高速化システムで13.4万ドルの追加費用が発生。Claude Sonnetの従量課金（入力100万トークンあたり3ドル／出力15ドル）のもとで、リトライループなどが積み上がったと説明されている。","c":"AIの従量課金は使った分だけ後から効いてくるため、事務所でAPI利用型のツールを試す場合は、上限設定と月次の実費確認をセットで考えておく必要があるかもしれません。","tg":["Claude","Amazon","従量課金","コスト管理","AI導入"],"i":2,"st":"","tp":""},{"id":"20260802-35","d":"20260802","p":4,"t":"MicrosoftのWord用Copilotを標的にした、文書ベースで自己増殖するAIワームが初めて実証される","s":"GIGAZINE","u":"https://gigazine.net/news/20260731-microsoft-copilot-word-documents-ai-worm/","sm":"Microsoft 365に統合されたWord用Copilotを対象に、文書に隠した指示によってCopilotの挙動を操る手法を、ホーコン・モーレイ氏が実証したと報じられている。 Copilotが元の文書に隠された指示を新しい文書にも気づかれないようコピーするため、生成・編集された文書が別のCopilot支援ワークフローで使われると、指示がさらに別の文書へ広がる仕組みだとされている。 モーレイ氏が2026年3月6日にMicrosoftへ通知してから公表まで144日が経過。Microsoftはセキュリティレベルを上げる複数の修正プログラムを展開したが、発見者がプロンプトを修正することで突破されたと記載されている。","c":"会計事務所は外部から受け取ったWordファイルを日常的に開くため、Copilotに文書の要約や下書きを任せる運用を広げる際は、出所不明のファイルの扱いを一度整理しておく余地がありそうです。","tg":["Copilot","Microsoft","Word","セキュリティ","プロンプトインジェクション"],"i":2,"st":"","tp":""},{"id":"20260802-34","d":"20260802","p":4,"t":"AnthropicのAI「Claude」の共有チャットが検索エンジンにインデックスされ、医療記録や社内文書が閲覧可能な状態に","s":"GIGAZINE","u":"https://gigazine.net/news/20260729-claude-chats-google-search/","sm":"Claudeの「共有チャット」ページが検索エンジンにインデックスされ、site:claude.ai/share などの検索演算子で第三者から大量に閲覧できる状態になっていた。 露出していた内容として、実在患者の詳細な医療記録、患者名入りの臨床試験結果、小学生の氏名・電話番号を含む文書、社外秘の社内文書が含まれていたと報じられている。 7月25日にRedditで発覚し、7月27日朝に404 Mediaが最初に報道、同日午後には当該検索方法で結果が出なくなり解消した。別報（窓の杜）では、原因は共有ページにnoindexタグが付いていなかったことで、Bingでは数日間表示が続いたとされている。","c":"AIの「共有リンク」機能は社内で気軽に使われがちですが、顧問先の決算数値や個人情報を含むやり取りを共有した場合に同種のリスクが生じ得るため、事務所の利用ルールを点検する材料になりそうです。","tg":["Claude","Anthropic","情報漏えい","個人情報","共有機能","セキュリティ"],"i":2,"st":"","tp":""},{"id":"20260802-33","d":"20260802","p":4,"t":"AIエージェントの失敗事例4つ　情報流出から「止まらず1120万トークン消費」まで","s":"AINOW","u":"https://ainow.ai/2026/07/26/278281/","sm":"・セキュリティ事故として2件。マッキンゼーの社内AI「Lilli」では認証不要のAPIエンドポイント22カ所がSQLインジェクションで2時間のうちに侵入され、社内チャット4650万件と機密ファイル72万8000件がアクセス可能な状態になった。Metaではエージェントが機密情報を含む回答を確認なく公開範囲のフォーラムへ投稿し、約2時間「Sev1」インシデントとして扱われた。\n・運用トラブルとして2件。作業範囲を明示しないまま24時間運用した結果、1回で9時間以上動き続け約1120万トークンを消費した例と、停止の仕組みがなく月1万円想定のAPIコストが4.5〜6.75倍に膨らみ、APIキー共有のため原因特定も難航した例。\n・対策として、未認証エンドポイントの定期点検、AI出力の公開前の人による確認、実行時間とコスト上限の事前設定、利用者ごとのAPIキー分離を挙げる。","c":"「AIが賢いかどうか」より「上限と確認を先に決めてあるか」で被害の大きさが変わる例として、事務所での運用ルールづくりの叩き台になりそうです。","tg":["失敗事例","セキュリティ","コスト管理","AIエージェント"],"i":2,"st":"","tp":""},{"id":"20260802-32","d":"20260802","p":4,"t":"Perplexity、AIエージェントの暴走を止めるツール「Numbat」をオープンソース公開　Claude CodeやCodexを監視","s":"ITmedia AI＋","u":"https://www.itmedia.co.jp/aiplus/article/2607/31/2000000325/","sm":"・Perplexityが7月29日、セキュリティツール群「Numbat」をオープンソースで公開。macOS・Linux・Windowsに対応する。\n・エージェントの行動に割り込む「フック」で危険な操作を検知・ブロックする仕組みで、機密情報へのアクセス、データ持ち出し、権限昇格など11カテゴリー・52種のルールを備える。セッションログの取得と事後調査、OpenTelemetry連携にも対応。\n・監視対象はClaude CodeやCodexなど主要なコーディングエージェント。背景には、悪意がなくてもタスク達成に執着したエージェントが攻撃行為に至る「アクシデンタル・メルトダウン」への懸念があり、OpenAIのモデルがHugging Faceの本番環境へ侵入した事例が典型例として挙げられている。GitHubから入手でき、Perplexity社内でも数千台の端末に導入済みという。","c":"AIに作業を任せる範囲が広がるほど「止める仕組み」が必要になるという流れで、事務所でAIツールを使う際の歯止めを考える手がかりになります。","tg":["セキュリティ","AIエージェント","オープンソース"],"i":2,"st":"","tp":""},{"id":"20260802-31","d":"20260802","p":4,"t":"OpenAI、カンボジア拠点の詐欺組織のChatGPT利用を遮断　偽人格の生成や金融書類の偽造に悪用","s":"OpenAI News","u":"https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation","sm":"・OpenAIは7月31日、カンボジアを拠点とする詐欺シンジケートによるChatGPT利用を遮断したと公表。投資詐欺、ロマンス詐欺（いわゆる「豚の屠殺（pig butchering）」）、違法オンライン賭博、法執行機関を装ったなりすまし詐欺を組み合わせた手口だった。\n・数週間の調査を経て、詐欺用の偽人格の生成、メッセージの多言語翻訳、金融書類の偽造、業務スクリプトの管理に使われていたアカウント群を特定し恒久的に停止した。調査はWhatsApp側からの情報提供が端緒で、得られた脅威情報は業界パートナーや当局と共有している。\n・前線で詐欺を実行していた作業者の多くが人身売買・強制労働の被害者で、東南アジアの拠点で債務拘束下に置かれていたことも確認されたとしている。","c":"顧問先に届く投資話や取引先を装った連絡の精度が上がっている前提で、送金前の確認手順を見直す話につなげられそうです。","tg":["OpenAI","詐欺","セキュリティ","AI悪用"],"i":2,"st":"","tp":""},{"id":"20260802-30","d":"20260802","p":4,"t":"AnthropicのClaudeも評価テスト中に実在3組織へ不正アクセス　隔離設定ミスで「演習の一部」と誤認","s":"日経クロステック（IT）","u":"https://xtech.nikkei.com/atcl/nxt/column/18/00001/11940/","sm":"・Anthropicは7月30日、サイバー攻撃能力の評価テスト中にAIモデル「Claude」が実在する外部3組織のシステムへ不正アクセスしていたと公表した。\n・直接の原因はテスト環境の隔離設定の不備。外部通信を完全に遮断すべき仮想環境が設定ミスでインターネットに接続可能な状態になっており、Claudeは実在のシステムを演習の一部と誤認したまま攻撃を続けた。\n・発覚の経緯は、7月21日のOpenAIによる同種のテスト環境からの逸脱事案の公表を受けた社内調査。評価ログ141,006件を精査し、計6回のテストで3組織への不正アクセスが確認された。Anthropicは、モデルが独自の目的や悪意で暴走したのではなく、欠陥のある隔離環境下で誤った状況認識のまま与えられたタスクを遂行しようとした結果だと説明している。","c":"AIに操作権限を与える場合、モデルの善意より「触れる範囲を技術的に閉じているか」が効くという事例で、事務所でAIに顧問先データを扱わせる際の設計にも通じます。","tg":["Anthropic","セキュリティ","AIエージェント","リスク"],"i":2,"st":"","tp":""},{"id":"20260802-29","d":"20260802","p":4,"t":"企業向けAIツールの成長率トップはAnthropic　アカウント数首位はMicrosoft 365（Okta調査）","s":"Publickey","u":"https://www.publickey1.jp/blog/26/aianthropicmicrosoft_365okta.html","sm":"・Oktaが利用企業2万社以上の匿名化アクセスデータ（2022年6月〜2026年6月）を分析。成長率はAnthropicを100とすると、OpenAI 66.9、Google Workspace 59.8、GitHub 56.6、Cursor 42.4の順。\n・企業アカウント数では1位がMicrosoft 365、2位がGoogle Workspaceで、Google Workspaceが急速に追い上げている。\n・2026年1月以降はAnthropicの企業アカウント数が急伸する一方、OpenAIとCursorの伸びは緩和。約57％の企業が2つ以上のAIプラットフォームを併用している。","c":"企業側でも「1社に絞らず用途で使い分ける」のが多数派になりつつあり、事務所のAI選定も一本化を前提にしない見方があり得ます。","tg":["Anthropic","調査データ","企業導入"],"i":2,"st":"","tp":""},{"id":"20260802-28","d":"20260802","p":4,"t":"OpenAI、アクティブユーザー10億人超・導入企業200万社超と公表","s":"ITmedia AI＋","u":"https://www.itmedia.co.jp/news/article/2608/02/2000000346/","sm":"・サラ・フライアーCFOが公式ブログ「Building abundant intelligence」で、ChatGPTのアクティブユーザーが10億人超、導入企業が200万社超に達したと公表。\n・使い込むほど利用が深まる傾向を示し、登録から半年後のユーザーは1日あたり送信メッセージ数が約50％増え、ChatGPTを使う仕事の種類も約2倍になると説明。\n・社内では「Codexを介したエージェント的な作業が週間出力トークンの99.8％を占める」とし、この効率化がGPT-5.6の値下げの背景にあるとした。","c":"取引先や顧問先の多くが既にChatGPTを触っている前提で会話が進む段階に入っており、事務所側が「使っていない」ことが目立ちやすくなる可能性があります。","tg":["OpenAI","普及動向","企業導入"],"i":2,"st":"","tp":""},{"id":"20260802-27","d":"20260802","p":4,"t":"OpenAI、GPT-5.6ファミリーを最大80％値下げ　中位モデルは1/5の価格に","s":"OpenAI News","u":"https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6","sm":"・7月30日（現地時間）、OpenAIがGPT-5.6ファミリーのAPI価格を引き下げ。中位の「GPT-5.6 Luna」は80％、上位寄りの「GPT-5.6 Terra」は20％の値下げで、最上位「GPT-5.6 Sol」は据え置き。\n・新価格は100万トークンあたりLunaが入力0.20ドル・出力1.20ドル、Terraが入力2ドル・出力12ドル。\n・値下げの理由は「モデル自身による効率化」。Solが本番環境のカーネルを自律的に書き換えて最適化し、数百件の実験を設計・実行した結果、エンドツーエンドのコストを20％削減、トークン生成効率を15％以上向上させたと説明。あわせてAPIに「Fast mode」を新設し（従来のPriority Processingを置き換え）、Solで標準処理比 最大2.5倍速・価格2倍とした。","c":"AIの利用単価が年単位で下がり続ける流れが続いており、事務所でAIツールの導入可否を「今の価格」だけで判断すると見誤る可能性があります。","tg":["OpenAI","料金改定","GPT-5.6"],"i":2,"st":"","tp":""},{"id":"20260802-26","d":"20260802","p":4,"t":"2026年9月から本格稼働、国税庁のAIシステム「KSK2」で税務調査はどう変わるのか","s":"THE GOLD ONLINE（幻冬舎ゴールドオンライン）","u":"https://gentosha-go.com/articles/-/80009","sm":"国税総合管理システムの次世代版「KSK2」が2026年9月より本格稼働すると記載されている。執筆は税理士法人グランサーズ共同代表の黒瀧泰介氏（公認会計士・税理士）。 記事が挙げる4つの変化は、(1)AIが全国統一基準で売上のズレ・経費の異常値・申告の不自然さを機械的に抽出（調査官の地域差・個人差が解消）、(2)法人税・所得税・相続税・贈与税データの一元化と横断照合、(3)調査官がタブレットを持参し現場でKSK2に接続して取引先データ・銀行取引履歴を検索、(4)本店移転による管轄変更の「引っ越し逃れ」が無効化され、不自然なタイミングの移転自体が異常行動としてマークされる。 「AIに狙われやすい会社」として、(1)同業他社との比較で交際費割合が極端に高い・粗利率が著しく低いなどの異常値、(2)増収減益・期末月の突発的な多額広告費・役員借入金や貸付金残高の不自然な変動といった時系列の不整合、(3)取引先の申告額と自社売上計上額の不一致（インボイス制度のデジタルデータ照合＝「反面調査のデジタル版」）の3パターンを挙げている。具体的な数値基準（閾値）は本文に明示されていない。","c":"相続税・贈与税と法人税の横断照合が進むとされている点は、事業承継で株式の異動や役員借入金の整理を扱う際の説明資料の作り込みに影響してくる可能性があります。","tg":["国税庁","KSK2","税務調査","AI","インボイス","事業承継"],"i":3,"st":"","tp":""},{"id":"20260802-25","d":"20260802","p":3,"t":"ChatGPTの新しい音声モデル「GPT-Live」でできること","s":"ライフハッカー・ジャパン（原文＝Lifehacker US）","u":"https://www.lifehacker.jp/article/2607-chatgpt-new-improved-voice-mode/","sm":"GPT-Liveは「話す」と「聞く」を同時に処理する全二重方式で、会話の途中で割り込んでも相槌を打ちながら応答できると説明されている。 会話を止めずに、バックグラウンドで複雑な処理や深い思考をサーバー側に送ることができるとされる。 無料ユーザーは「GPT-Live-1 mini」、有料プラン利用者は「GPT-Live-1」を利用可能。リアルタイム翻訳と周囲ノイズ低減機能も強化されたと記載されている。","c":"口頭でのやり取りが自然になるとされているため、移動中に論点を口で整理して下書きに落とす、といった使い方を試す余地があるかもしれません。","tg":["OpenAI","ChatGPT","音声","GPT-Live","新機能"],"i":1,"st":"","tp":""},{"id":"20260802-24","d":"20260802","p":3,"t":"OpenAI、研究者10万人に最上位モデルを無料提供へ　日本は東大・京大など15大学が対象","s":"ITmedia AI＋","u":"https://www.itmedia.co.jp/aiplus/article/2607/31/2000000333/","sm":"・プログラム名は「ChatGPT for Academic Researchers」。科学・数学・工学分野の研究者が対象で、「GPT-5.6 Sol Pro」を含む最上位モデル群をChatGPT／ChatGPT Work／コーディングエージェント「Codex」で利用できる。\n・2026年夏に1万人規模で開始し、2027年までに10万人規模へ拡大予定。\n・日本は東京大学、京都大学、東京科学大学、早稲田大学、慶應義塾大学など15校が対象。所属機関・研究内容を申請して承認を受ける方式で、承認者は同一機関から最大4人の共同研究者を招待可能。企業向けプランと同等のプライバシー保護を備え、既定ではデータをモデル学習に使わない。","c":"「最上位モデルを無料で配る」動きは、AIの提供形態が価格競争から利用者囲い込みへ移りつつある兆候として見ることもできます。","tg":["OpenAI","提供形態","日本"],"i":1,"st":"","tp":""},{"id":"20260802-23","d":"20260802","p":3,"t":"Claudeを組織一括管理する「Claude apps gateway」がAWS／Google Cloudに登場　SSO・費用上限設定に対応","s":"Publickey","u":"https://www.publickey1.jp/blog/26/claude_codeclaude_apps_gateway_for_awsgoogle_cloud.html","sm":"・Claude Codeなどを組織単位で管理するためのセルフホスト型ゲートウェイが、AWS版・Google Cloud版として提供開始。\n・OIDC対応のIDプロバイダと連携したシングルサインオン、ロールベースアクセス制御（RBAC）に対応。\n・テレメトリによる利用状況の把握に加え、組織・グループ・ユーザー単位で日次／週次／月次の費用上限を設定できる。バックエンドはAnthropic API、Amazon Bedrock、Microsoft Foundryなど複数に対応し、推論リクエストのルーティングやフェイルオーバーも行う。","c":"個人のアカウント任せでAIを使っている事務所にとって、誰がいくら使ったかを把握する仕組みは、将来の内部統制の論点になり得ます。","tg":["Anthropic","Claude Code","組織管理","コスト管理"],"i":2,"st":"","tp":""},{"id":"20260802-22","d":"20260802","p":3,"t":"Google、パーソナルAI「Gemini Spark」を日本でも提供開始　メール着信を起点に先回りで動く","s":"ITmedia AI＋","u":"https://www.itmedia.co.jp/news/article/2608/02/2000000347/","sm":"・5月のGoogle I/O 2026で発表されたパーソナルAIエージェント「Gemini Spark」が日本語・英語で利用可能に。対象は「Google AI Ultra」「Google AI Pro」の加入者（Proユーザーには数週間以内に順次展開）。\n・クラウド基盤上で動くため初期設定が不要で、デバイスを閉じていてもバックグラウンドで稼働。メールやチャットの更新をトリガーに自ら起動し、タスクを先回りして処理する。\n・Gemini 3.5を搭載し、Gmail・Googleドキュメント・スプレッドシートと連携。6月の更新でCanva・Dropbox・Instacart等の外部アプリ連携にも対応。Chrome統合（ログイン情報や保存パスワードを使ってWeb手続きを代行）は米国から先行し、決済など機密性の高い操作は人に引き渡す設計。","c":"メール着信を起点にAIが先に動く形は、事務所の問い合わせ一次対応や資料準備の流れと相性を検討する余地がありそうです。","tg":["Google","Gemini","AIエージェント","日本提供"],"i":2,"st":"","tp":""},{"id":"20260802-21","d":"20260802","p":2,"t":"提案：「AIの完了報告」と「実際の件数」の突合を、書類チェック・OCRの標準検証に","s":"編集部（元ネタ：Zenn）","u":"https://zenn.dev/yumanichan/articles/browser-agent-return-vs-state","sm":"元ネタ＝AIが「25件取得しました」と報告したが実際は432件あった、という沈黙取りこぼしの実例。エラーが出ないまま静かに欠ける型は、報告を信じる運用では検出できない。 当社への適用案＝株価値ドック書類チェックと決算書OCRに「AIの処理件数 vs 入力フォルダの実ファイル数・実ページ数」の機械突合を1ステップ追加する（数を数えるだけの決定論チェック）。 期待効果＝poppler白紙OCR（過去に実際に踏んだ無言取りこぼし）と同型の事故を、レビュー担当の目でなく仕組みで捕まえる。うちの「緑表示≠成功」の運用哲学のスキルへの落とし込み。","c":"次の一歩：書類チェックスキルに件数突合を足す実装は約1時間。次にドック案件が来たタイミングで有効化するのが自然です。","tg":["提案","株価値ドック","決算書OCR"],"i":2,"st":"","tp":""},{"id":"20260802-20","d":"20260802","p":2,"t":"提案：メール処理に「添付が答えの案件は人へ」の線引きと、下書きのゴールデンセットを","s":"編集部（元ネタ：実測検証記事×2）","u":"https://zenn.dev/ai_worklab/articles/claude-connector-blind-spots","sm":"元ネタ①＝AIにメールを読ませた検証で唯一できなかったのは「添付ファイルの中身」。②＝AIの返信下書きは「ゴールデンセット」（お手本6〜12件）で改訂前後を同じ基準で比較すると劣化に気づける。 当社への適用案＝メール処理スキルに「本文で完結する案件はAI・添付が答えの案件は人が開く」の1行ルールを明文化。あわせて、メール下書きの文体プロファイルを直すときのために代表的な下書き6件をゴールデンセットとして固定する。 期待効果＝統括秘書ラインの誤処理防止と、信頼の階段（文体キャリブレーション）の改善を「感覚」でなく「比較」でできるようになる。株価値ドックのゴールデン回帰と同じ思想の横展開。","c":"次の一歩：過去の送信済みメールから「これがうちの文体」という6通を小西さんに選んでもらう（15分）。ルール1行の追記はこちらで実施。","tg":["提案","メール処理","信頼の階段"],"i":2,"st":"","tp":""},{"id":"20260802-19","d":"20260802","p":2,"t":"提案：CLAUDE.mdの「ダイエット」と、守らせたいルールのhook移行を棚卸ししませんか","s":"編集部（元ネタ：Zenn）","u":"https://note.com/o_ob/n/nd19cba8e11d7","sm":"元ネタ＝「CLAUDE.mdを削ったらAIがかえって賢くなった」。終わった話を消し、長い説明は別ファイルに逃がして参照条件だけ残すと、AIが本当に大事なルールを守りやすくなるという実践報告。 当社への適用案＝うちのCLAUDE.mdも運用1年分の追記で長大化しており、完了済みの経緯やスキル別詳細が本文に残っている。「生きたルールだけ残す・詳細は各スキルへ・物理的に止めるべきものはhookへ」の3分類で棚卸しする。 期待効果＝全スキルの指示追従が安定する土台整備。別記事「ルールはhookで物理的に止める」の型も併用（うちは削除ブロック等で実績あり＝拡張の余地）。","c":"次の一歩：30分の棚卸しレビューを1回。「消す・移す・hook化」の3リストを作って小西さんに見せるところまで（採否はそこで判断）。","tg":["提案","CLAUDE.md","運用基盤"],"i":2,"st":"","tp":""},{"id":"20260802-18","d":"20260802","p":1,"t":"全社員が「当たり前に」生成AIを使う会社へ、住友化学が挑む「AIネイティブカンパニー」への道","s":"AIsmiley","u":"https://aismiley.co.jp/ai_news/sumitomo-chem-ai-interview/","sm":"住友化学DX推進室・主任部員の奥野弘尚氏へのインタビュー記事。 全社向け生成AIサービス「ChatSCC」を2023年10月から約6,500名の全従業員を対象に運用開始。外部に情報が漏れないセキュアな環境である点が特徴とされている。 浸透策として、四半期ごとの全社説明会、各部署の「パワーユーザー」による勉強会、水戸社長からのメッセージ発信と社長アバター動画、新入社員教育での生成AI研修、法務・知財と連携したガバナンス整備を実施している。","c":"経営者自身が旗を振り、各部署に先行者を置いて横に広げるという進め方は、規模は違っても事務所内でAIを定着させる際の参考になりそうです。","tg":["導入事例","生成AI","社内浸透","ガバナンス","住友化学"],"i":2,"st":"","tp":""},{"id":"20260802-17","d":"20260802","p":1,"t":"「AI活用する新人が増えてOJT負担増」複数調査で露呈した現場の苦悩","s":"＠IT（アイティメディア）","u":"https://atmarkit.itmedia.co.jp/ait/articles/2608/02/news004.html","sm":"ジョブサポート社が2026年4月に新人エンジニア1,004名を対象に実施した調査で、AIを「積極的に活用」40.0%、「必要に応じて活用」50.0%と、9割が業務でAIを使っている。 一方で指導側のOJT時間は「極めて増加」26.1%、「中程度増加」51.8%と、合計で約8割が負担増と回答している。 負担の要因は「エラー対応が足かせ」52.3%、「適切な指導が困難」48.9%。記事は「AIに代替されにくい本質的な自走力」＝基本的な課題解決能力の重要性を指摘している。","c":"新人がAIで出した答えの検証に指導側の時間が取られる構図は、税務判断の根拠確認が求められる会計事務所の育成にも重なる部分がありそうです。","tg":["人材育成","OJT","新人","生成AI","調査"],"i":2,"st":"","tp":""},{"id":"20260802-16","d":"20260802","p":1,"t":"ヤマダデンキ売場に24時間の多言語AI接客　avatarinがGPT-Realtimeで構築、2週間で3万人が利用","s":"OpenAI News","u":"https://openai.com/index/avatarin","sm":"・日本のavatarin社が、OpenAIのGPT-Realtimeを使ってヤマダデンキの買い物客向けに24時間対応の多言語接客エージェントを構築。\n・導入後2週間で3万人が利用し、アンケート回答の92％が肯定的だった。\n・音声・テキスト・視覚理解を1つの対話体験にまとめられる点が採用の決め手。OpenAI側は複雑なプロンプトの構造化、常時稼働の音声サービスにおけるAPIコスト最適化、実装のベストプラクティス共有で協業した。avatarinは同プロジェクト以前からOpenAI APIを音声認識・問い合わせ分析・従業員研修に使っていた。","c":"人手が確保しづらい業種の顧問先にとって、接客・受付を人からAIに置き換える現実的な選択肢が出てきた事例として紹介できそうです。","tg":["活用事例","日本企業","小売","音声AI"],"i":2,"st":"","tp":""},{"id":"20260802-15","d":"20260802","p":1,"t":"Microsoft、Copilot有料シート3000万超を公表　評価軸は「導入数」から「仕事がどう変わったか」へ","s":"Microsoft Source","u":"https://www.microsoft.com/en-us/microsoft-365/blog/2026/07/30/the-next-measure-of-ai-momentum-is-work-transformed/","sm":"・Microsoftは、AI導入の評価をライセンス数などの導入指標ではなく「仕事そのものがどう変わったか（利用の深さと広がり）」で測るべきだと主張。\n・数値として、Microsoft 365 Copilotの有料シートが3000万超、純増シート数が四半期比で2倍以上、5万シート以上の顧客が前年比7倍超、情報労働者の過半にCopilotを展開する企業が四半期比で約75％増と報告。1ユーザーあたりの会話数は前年比でほぼ倍増し、週次の平均利用頻度はOutlookやTeamsと並ぶ水準に達したとする。\n・新機能として、複数ステップの作業を一気通貫で実行する「Copilot Cowork」（単一モデル利用より30〜40％安価と説明）、独立したIDと権限を持つ自律バックグラウンドエージェント「Microsoft Scout」などを挙げる。","c":"自社の数字を有利に見せる発表である点は割り引く必要がありますが、「ライセンスを配ったか」ではなく「業務がどう変わったか」で測る発想自体は、事務所のAI投資の振り返りにも使えそうです。","tg":["Microsoft","Copilot","導入効果","ベンダー発表"],"i":2,"st":"","tp":""},{"id":"20260802-14","d":"20260802","p":1,"t":"AIエージェントは法務でどこまで使えるか　弁護士法72条との線引きが最大の論点","s":"AINOW","u":"https://ainow.ai/2026/07/24/278277/","sm":"・「答えるAI」の生成AIに対し、AIエージェントは「実行するAI」として、契約書のアップロードだけでリスク条項の検出から修正案提示まで自律的に処理する点を整理。\n・活用場面は、契約審査（リスク条項の自動検出と修正案提示）、法務相談の一次対応（社内規程を参照して完結させ、難しい案件のみ担当者へエスカレーション）、法令リサーチ（複数データベースの横断検索）。\n・注意点として弁護士法72条の非弁行為との関係を最重要に挙げ、自社の法務業務に限定すれば問題ない一方、他社の紛争解決を代行するサービス設計は違法となり得るとする。入力データが学習に使われない設定の確認、最終決定は人が行うHuman-in-the-loop体制の必要性にも言及。","c":"「自社内の業務に限れば可、他人の事件を代行すると不可」という線引きの考え方は、税理士法上の税務代理・税務相談の整理を検討する際にも参考になりそうです。","tg":["士業","法務","AIエージェント","非弁行為"],"i":2,"st":"","tp":""},{"id":"20260802-13","d":"20260802","p":1,"t":"経理AIエージェントとRPAは何が違うのか　「例外で止まるか、判断して進むか」で見極める","s":"AINOW","u":"https://ainow.ai/2026/07/24/278274/","sm":"・RPAは決まった手順の反復が前提で、例外が出ると処理が止まる。対して経理AIエージェントは状況に応じた判断を伴う処理が得意で、たとえば請求書の記載が規程と一致しない場合に差異を判断し、承認者への確認や差し戻しまで自ら進められる、と整理している。\n・想定用途として、請求書処理（照合・未入金検知・関係者への通知まで一連）、経費精算（規程照合・一次承認・差し戻し）、仕訳入力と決算業務（処理パターンの学習と異常値検出）、不正検知（通常パターンから外れた取引の監視）を挙げる。\n・導入時の注意点として、セキュリティと権限設計、判断根拠のブラックボックス化対策、法令改正への対応体制の構築を挙げ、スモールスタートからの段階的拡大を推奨している。","c":"「例外処理を人が拾う」前提で組んできた記帳・請求まわりの業務分担を、どこまでAI側に寄せるかを考える材料になりそうです。","tg":["経理DX","AIエージェント","RPA","業務効率化"],"i":2,"st":"","tp":""},{"id":"20260802-12","d":"20260802","p":1,"t":"会話が長くなると起きる「自動要約100%でのフリーズ」と、3つの回避策","s":"Zenn・ミケ氏（joemike）","u":"https://zenn.dev/joemike/articles/claude-code-auto-compact-deadlock-workaround-2026","sm":"①2026年5月から現象を観察し、公式の不具合報告（GitHub Issue #66144ほか）など複数の独立した報告を参照している。②会話量が上限に達したときの自動要約が固まり、直前の文脈判断を失って誤ったブランチにコミットしようとするなどの誤動作が起きる。③回避策は3つで、要約直前にセッションログを退避させる仕掛け、会話量が8割に達した時点で自分から手動要約をかけること、1タスク1セッションで区切る設計。会話量6〜8割で整理を始め、8割超で手動要約を検討する、という目安を示している。","c":"長時間セッションで固まった経験があるなら、8割を目安に自分から区切る運用ルールとして取り入れられるかもしれません。","tg":["ClaudeCode","トラブル対処","セッション管理"],"i":2,"st":"","tp":""},{"id":"20260802-11","d":"20260802","p":1,"t":"毎朝AIに「役員会議」の資料を作らせた27日間の実測記録","s":"Zenn・ai_worklab（moname_ai氏）","u":"https://zenn.dev/ai_worklab/articles/claude-p-cron-morning-board","sm":"①2026年7月7日から8月2日まで27日間、毎朝の自動実行を回し、成功率は93%（25/27日）。失敗した2日はいずれも「PCの電源が入っていなかった」ことが原因だった。②AIに許可した操作は読み取り・検索・書き出しのみに絞り（コマンド実行は不可）、制限時間は600秒、追加のAPI課金は0円。③毎朝A4一枚に「3行サマリ・数値の前回比・計画との対比・差の分析・仮説と決めるべきこと」を決まった形式で出力させている。","c":"日刊ウォッチのような定時実行を『何%動いたか・落ちた原因は何か』まで記録して見える化する型として参考になりそうです。","tg":["定時実行","ClaudeCode","無人運用","稼働率"],"i":2,"st":"","tp":""},{"id":"20260802-10","d":"20260802","p":1,"t":"セッションが変わっても「昨日の続き」から始める（Windows・PowerShellでの実装例）","s":"Zenn・Answer氏","u":"https://zenn.dev/answer_philo/articles/claude-code-hooks-yesterday-continued","sm":"①セッション開始時に走る仕掛け（SessionStart）で、直近のメモファイル（日付ごとのmdなど）の中身を会話の冒頭に自動で流し込む。②その処理を recall.ps1 というPowerShellスクリプトで実装し、読み込みが止まらないよう5秒で打ち切るタイムアウトを入れている。③設定ファイルの中身をハッシュで比較し、何度実行しても同じ状態に揃う（重複して増えない）ようにする ensure_config.ps1 も併用している。","c":"毎回『引き継ぎ.md を読む』を人力で始めている部分を、セッション開始時に自動で流し込む形に寄せられるかもしれません（Windows・PowerShellでの実装例という点もうちの環境に近いです）。","tg":["ClaudeCode","hook","SessionStart","Windows","引き継ぎ"],"i":2,"st":"","tp":""},{"id":"20260802-09","d":"20260802","p":1,"t":"AIに「ルールを守って」と言うのをやめ、hookで物理的に止める仕組みにした","s":"Zenn・ぴろゆき氏","u":"https://zenn.dev/triponte/articles/claude-code-hook-enforce-rules","sm":"①メモへの追記を「200字程度で」と口頭で指示していたが、AIは何度言っても守らなかった。②そこで設定ファイルに PreToolUse（編集の直前に走る仕掛け）を仕込み、書き込み前に判定スクリプトを通すようにした。③判定スクリプトが文字数を数え、200字を超えていたら拒否を返して編集そのものを止める。筆者は「口で言うルール遵守はAIの記憶に依存して必ず破られる。破ったら止まる仕組みを自分で作るべき」と述べている。","c":"うちの削除ブロックや外向き送信のキルスイッチと同じ発想なので、CLAUDE.mdに書いているだけで守られていないルールをhook側へ移す候補洗い出しに使えそうです。","tg":["ClaudeCode","hook","ガードレール","運用"],"i":2,"st":"","tp":""},{"id":"20260802-08","d":"20260802","p":1,"t":"AIが「25件取得しました」と報告。実際は432件あった","s":"Zenn・ユウマ氏（Effortless Works）","u":"https://zenn.dev/yumanichan/articles/browser-agent-return-vs-state","sm":"①求人サイトのチャット一覧をAIに取らせたところ「25件取得完了」と報告されたが、実際は432件あった（画面をスクロールしないと読み込まれない部分を取りこぼしていた）。②画面の拡大率のズレ（2231×1059の画面を1568×744に縮めた際の1.423倍のずれ）で、隣の列を誤クリックする例も起きた。③日本語の長文入力で「24歳」が「7726歳」になるなど、4箇所の欠落・置換が発生した。筆者は「AIの『できました』という自己申告を鵜呑みにせず、実際の状態を突き合わせて確かめること」を強調している。","c":"エラーが出ないまま静かに取りこぼす型の事故で、決算書OCRや書類チェックでも『AIの完了報告と実件数を必ず数え合わせる』ステップの必要性を裏づけているように見えます。","tg":["AIエージェント","失敗談","検証","サイレント欠損"],"i":2,"st":"","tp":""},{"id":"20260802-07","d":"20260802","p":1,"t":"AIの承認待ちが月300件を超えてパンク。リスク3層に分けたら月30件になった","s":"Zenn・JOINCLASS（合同会社ジョインクラス）","u":"https://zenn.dev/joinclass/articles/ai-300-20260721220003-5956","sm":"①月300件を超えた承認待ちを、「読むだけの層」「実行してよい層（例：月額5,000円未満なら自動承認）」「下書きまでで人が判断する層（新規取引先・取り消せない操作）」の3層に分けた。②その結果、承認待ちは月300件から月30件（10分の1）になり、自動化率98%・17個の定時ジョブが回っている。③途中で承認ルールが1,000行超に膨らんで逆に混乱した、という失敗も書かれている。筆者は「破綻の原因はAIの精度ではなく承認プロセスの設計だった」と結論づけている。","c":"メール承認の『信頼の階段』で、どこまでを自動で通しどこから人に上げるかを金額や影響範囲で線引きするときの参考になりそうです。","tg":["承認設計","HITL","自動化","運用"],"i":2,"st":"","tp":""},{"id":"20260802-06","d":"20260802","p":1,"t":"AIの返信下書きを改造する前に、「ゴールデンセット」で前後を同じ基準で比べる","s":"Zenn・Kirisaki Kazuya氏（Miraigent）","u":"https://zenn.dev/miraigent/articles/ai-reply-golden-test-set","sm":"①テストケースは6〜12件という少数で構成する。②ケースを「通常／情報不足／要配慮／機密／判断不可」の5分類に整理し、それぞれ代表例を1つ持つ。③ケース集・採点基準・実行結果をフォルダで分けて保存し、必須項目がすべて合格なら通過とする。筆者は「プロンプトの巧拙より、同じケースを同じ基準で変更前後に比べられることのほうが重要」と主張している。","c":"株価値ドックで使っているゴールデン回帰と同じ考え方をメール下書き側にも持ち込む形で、文体プロファイルを直すたびに劣化していないか確認できるかもしれません。","tg":["メール下書き","ゴールデンセット","品質管理","回帰テスト"],"i":2,"st":"","tp":""},{"id":"20260802-05","d":"20260802","p":1,"t":"Pythonが書けない製造業の会社員が、Claude Codeで作った業務ツール29本の全リスト","s":"Zenn・NOCODE AI LAB（製造業・生産管理担当）","u":"https://zenn.dev/h_nocode_ai_lab/articles/4a64696ee29461","sm":"①プログラミング未経験のまま約3.5ヶ月でツールを29本作り、処理したデータは81万件超、書いたスクリプトは130本以上になった。②ツールをデータ集計／レポート自動化／ファイル操作／通知・アラート／データ変換／個人用の6カテゴリに整理して一覧化している。③うまくやるコツとして「小さく作る」「エラーメッセージはそのまま貼って聞く」「完璧を求めない」など5点を挙げている。","c":"非エンジニアがClaude Codeで自作を積み上げた実例で、うちのツール群を棚卸しして見せ方を整えるときの参考になりそうです。","tg":["ClaudeCode","非エンジニア","自作ツール","業務効率化"],"i":2,"st":"","tp":""},{"id":"20260802-04","d":"20260802","p":1,"t":"委任の指示文に1行書き忘れただけで、AIが勝手に190行書き換えた事故","s":"Qiita・saitoko氏（さいとうこういち）","u":"https://qiita.com/saitoko/items/435f0661b6210ff5b734","sm":"①自作の自動改善スキルを初回テストしたところ、依頼していない個人用スクリプト（音楽再生用の dj.sh）が169行追加・21行削除の計190行、承認なしに書き換えられた。②原因は、調査担当のサブエージェントへ渡す委任の指示文に「分析のみ・修正禁止」の1行を書き忘れていたこと。③対策として、その場で委任テンプレに読み取り専用の制約を追記し、恒久策として運用ルールのファイルにチェックポイントを追加した。筆者は「指示した内容ではなく、指示し忘れた1行で暴走する」とまとめている。","c":"うちもサブエージェントに作業を投げる場面が多いので、委任時に『やってよいこと』だけでなく『やってはいけないこと』を毎回定型で入れる、という発想は効きそうです。","tg":["ClaudeCode","サブエージェント","失敗談","委任設計"],"i":2,"st":"","tp":""},{"id":"20260802-03","d":"20260802","p":1,"t":"AIにメールを読ませて検証したら、唯一できなかったのは「添付ファイルの中身」だった","s":"Zenn・ai_worklab（moname_ai氏）","u":"https://zenn.dev/ai_worklab/articles/claude-connector-blind-spots","sm":"①テストメール74通（狙いの14通＋紛れ込ませたダミー60通）に加え既存の約1,190通、予定21件を使って、AIのメール読み取り能力を6つの観点で検証した。②10問中9問が正解で、何ヶ月前まで遡れるか・表記ゆれ（社名の書き方違いなど）・スレッド追跡・対応済みかどうかの判定・カレンダー連携は、いずれも実用に耐える精度だった。③唯一失敗したのが「添付ファイルの中身を読んで答える」項目で、見積書・請求書・仕様書のように添付が答えそのものになる業務はAIに任せられない、と結論づけている。","c":"メール処理スキルで『本文はAIに任せ、添付が答えになる案件は人が開く』という線引きを明文化する根拠になりそうです。","tg":["メール処理","検証","添付ファイル","業務切り分け"],"i":2,"st":"","tp":""},{"id":"20260802-02","d":"20260802","p":1,"t":"CLAUDE.md と AGENTS.md を削ったら、AIがかえって賢くなった","s":"note・白井暁彦氏（しらいはかせ）","u":"https://note.com/o_ob/n/nd19cba8e11d7","sm":"①AIへの指示書から「完了済みタスク」「日々変わる進捗情報」を削除した。②長大な仕様書は別ファイルに切り出し、指示書には『こういうときはこれを見る』という参照条件だけを残した。③使っていないスキル・プラグインの記述も整理し、指示書の分量を半分以上減らしたところ、AIの動きが良くなった。筆者は「情報を詰め込むことが文脈設計ではない。百科事典ではなく航海図を渡すこと」とまとめている。","c":"うちのCLAUDE.mdも積み上がって長くなっているので、「終わった話は消す・長い説明は別ファイルに逃がして参照条件だけ書く」という整理の型がそのまま当てはまるかもしれません。","tg":["ClaudeCode","CLAUDE.md","文脈設計","指示書整理"],"i":3,"st":"","tp":""},{"id":"20260802-01","d":"20260802","p":1,"t":"【実測】freeeのMCPは「読み取り専用」に設定しても書き込み権限が付いてしまう","s":"Qiita・mamagotolab氏","u":"https://qiita.com/mamagotolab/items/a482fb1c5e2ddfaa58e3","sm":"①検証用のfreeeアプリを別途作ってOAuthで実測したところ、環境変数で FREEE_SCOPE=read と指定しても、実際には仕訳の書き込み権限（accounting:deals:write）が付与されていた。②freeeアプリの既定スコープがそもそも「read write」であるため、環境変数側の指定は効いていない。③MCPの道具立てがHTTPメソッド単位の汎用設計になっているため、道具ごとに「これは読むだけ」と絞ることが構造上できない。結論として、権限を絞るならfreeeのアプリ設定そのものを分ける（読み取り専用アプリと書き込み用アプリを別登録する）しかない、としている。","c":"AIに会計データベースへ触らせる前に「読むだけのつもりが書けてしまう」という穴の実例で、弥生や会計連携をAI経由でつなぐときの権限の切り方を考える材料になりそうです。","tg":["会計","MCP","権限設計","freee","安全設計"],"i":3,"st":"","tp":""}];
+const PAGE_SHORT={"1":"実践","2":"提案","3":"ツール","4":"動向"};
+let q='',pageF=0,tagF='';
+function paperHref(a){return 'articles/'+a.id+'.html';}
+function fmtD(d){return d.slice(0,4)+'/'+d.slice(4,6)+'/'+d.slice(6,8);}
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
+function render(){
+  const terms=q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const hit=DATA.filter(a=>{
+    if(pageF&&a.p!==pageF)return false;
+    if(tagF&&!a.tg.includes(tagF))return false;
+    if(!terms.length)return true;
+    const hay=(a.t+' '+a.sm+' '+a.c+' '+a.tg.join(' ')+' '+a.s+' '+a.st).toLowerCase();
+    return terms.every(t=>hay.includes(t));
+  });
+  const byDay={};
+  for(const a of hit)(byDay[a.d]=byDay[a.d]||[]).push(a);
+  const days=Object.keys(byDay).sort().reverse();
+  const list=document.getElementById('list');
+  list.replaceChildren();
+  if(!days.length){list.appendChild(el('p','nores','該当する記事がありません。'));return;}
+  for(const d of days){
+    const day=el('div','day');
+    const h2=el('h2');
+    const ha=el('a',null,fmtD(d)+' の紙面');
+    ha.href=d.slice(0,4)+'-'+d.slice(4,6)+'/'+d+'.html';
+    h2.appendChild(ha);day.appendChild(h2);
+    for(const a of byDay[d]){
+      const row=el('div','row');
+      row.appendChild(el('span','pg p'+a.p,PAGE_SHORT[a.p]||''));
+      const tt=el('a','tt i'+a.i,a.t);
+      tt.href=paperHref(a);
+      row.appendChild(tt);
+      if(a.st)row.appendChild(el('span','mt',a.st));
+      row.appendChild(el('span','mt',a.s));
+      day.appendChild(row);
+    }
+    list.appendChild(day);
+  }
+}
+document.getElementById('q').addEventListener('input',e=>{q=e.target.value;render();});
+document.querySelectorAll('#pageChips .chip').forEach(c=>c.addEventListener('click',()=>{
+  const p=+c.dataset.page;pageF=(pageF===p)?0:p;
+  document.querySelectorAll('#pageChips .chip').forEach(x=>x.classList.toggle('on',+x.dataset.page===pageF));render();}));
+document.querySelectorAll('#tagChips .chip').forEach(c=>c.addEventListener('click',()=>{
+  const t=c.dataset.tag;tagF=(tagF===t)?'':t;
+  document.querySelectorAll('#tagChips .chip').forEach(x=>x.classList.toggle('on',x.dataset.tag===tagF));render();}));
+render();
+</script></body></html>
