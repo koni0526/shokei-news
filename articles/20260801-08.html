@@ -216,6 +216,7 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 </div>
 <button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
 <div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
+<textarea id="consult-fallback" readonly style="display:none;width:100%;min-height:120px;margin-top:8px;padding:12px;font-size:13px;border:1.5px solid var(--line);border-radius:4px;font-family:inherit;"></textarea>
 <nav class="artnav">
   <div class="prev"><a href="20260801-07.html"><span>前の記事</span><b>NISA対象に「国債」検討へ　国債にかか…</b></a></div>
   <div class="home"><a href="../2026-08/20260801.html"><b>紙面へ戻る</b></a></div>
@@ -231,7 +232,13 @@ document.getElementById('consult').addEventListener('click',async function(){
     this.textContent='コピーしました。Claudeに貼って送信してください';
     this.classList.add('done');
   }catch(e){
-    this.textContent='コピーできませんでした（手動でIDをお伝えください：shokei:20260801-08）';
+    // 自動コピーできない環境＝文面を出して全選択済みにする（Ctrl+Cだけで済む）
+    const ta=document.getElementById('consult-fallback');
+    ta.value=CONSULT_TEXT;
+    ta.style.display='block';
+    ta.focus();
+    ta.select();
+    this.textContent='下の文を Ctrl+C でコピーしてください（選択済み）';
   }
 });
 </script></body></html>
