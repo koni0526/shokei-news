@@ -186,10 +186,18 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   body{background:#fff;font-size:12pt;}
   .wrap{max-width:none;padding:0;}
   article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
-  .nav,.issuenav,.artnav,.orig-btn{display:none;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
   .page-fold>summary{cursor:auto;}
   .hero{break-inside:avoid;}
 }
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
 </style></head><body><div class="wrap">
 <div class="nav"><a href="../2026-08/20260802.html">← 8/2の紙面</a><a href="../index.html">目次・検索</a></div>
 <header class="masthead sub"><h1>日刊 事業承継ウォッチ</h1><div class="date">2026年8月2日（日）</div></header>
@@ -206,10 +214,24 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <div class="a-foot"><span class="tag">分類：教育資金一括贈与・相続贈与・2割加算・令和8年度税制改正</span></div>
 </article>
 </div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
 <nav class="artnav">
   <div class="prev"><a href="20260802-01.html"><span>前の記事</span><b>事業承継、売却でも子供でもない「第3の選…</b></a></div>
   <div class="home"><a href="../2026-08/20260802.html"><b>紙面へ戻る</b></a></div>
   <div class="next"><a href="20260802-03.html"><span>次の記事</span><b>外国人への日本の相続税、平成29年度改正…</b></a></div>
 </nav>
 <div class="footer">本記事はAIによる自動要約です。税務・法務の実務判断は必ず原文・条文をご確認ください。</div>
-</div></body></html>
+</div>
+<script>
+const CONSULT_TEXT="日刊 事業承継ウォッチの記事について相談です。\n記事ID: shokei:20260802-02\nタイトル: 教育資金の一括贈与の非課税は令和8年3月31日で終了　拠出時期で相続財産への加算と2割加算の扱いが分かれる\n原文: https://gentosha-go.com/articles/-/79632\nまず記録簿（経営/参謀リサーチ/日刊事業承継ウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    this.textContent='コピーできませんでした（手動でIDをお伝えください：shokei:20260802-02）';
+  }
+});
+</script></body></html>

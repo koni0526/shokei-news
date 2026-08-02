@@ -186,10 +186,18 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   body{background:#fff;font-size:12pt;}
   .wrap{max-width:none;padding:0;}
   article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
-  .nav,.issuenav,.artnav,.orig-btn{display:none;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
   .page-fold>summary{cursor:auto;}
   .hero{break-inside:avoid;}
 }
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
 </style></head><body><div class="wrap">
 <div class="nav"><a href="../2026-08/20260801.html">← 8/1の紙面</a><a href="../index.html">目次・検索</a></div>
 <header class="masthead sub"><h1>日刊 事業承継ウォッチ</h1><div class="date">2026年8月1日（土）</div></header>
@@ -206,10 +214,24 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <div class="a-foot"><span class="tag">分類：税理士損害賠償・住宅ローン控除・所得税</span></div>
 </article>
 </div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
 <nav class="artnav">
   <div class="prev"><a href="20260801-35.html"><span>前の記事</span><b>KSK2の導入で変わる国税の事務運営</b></a></div>
   <div class="home"><a href="../2026-08/20260801.html"><b>紙面へ戻る</b></a></div>
   <div class="next"></div>
 </nav>
 <div class="footer">本記事はAIによる自動要約です。税務・法務の実務判断は必ず原文・条文をご確認ください。</div>
-</div></body></html>
+</div>
+<script>
+const CONSULT_TEXT="日刊 事業承継ウォッチの記事について相談です。\n記事ID: shokei:20260801-36\nタイトル: 認定低炭素住宅で申告せず、税理士に損害賠償責任\n原文: https://www.lotus21.co.jp/ta/2607shkg/1130_04.pdf\nまず記録簿（経営/参謀リサーチ/日刊事業承継ウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    this.textContent='コピーできませんでした（手動でIDをお伝えください：shokei:20260801-36）';
+  }
+});
+</script></body></html>

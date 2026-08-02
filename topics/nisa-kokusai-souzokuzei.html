@@ -186,10 +186,18 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   body{background:#fff;font-size:12pt;}
   .wrap{max-width:none;padding:0;}
   article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
-  .nav,.issuenav,.artnav,.orig-btn{display:none;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
   .page-fold>summary{cursor:auto;}
   .hero{break-inside:avoid;}
 }
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
 
 .tl{border-left:3px solid var(--line);margin:24px 0 24px 8px;padding-left:24px;}
 .tl-item{position:relative;margin-bottom:24px;}
