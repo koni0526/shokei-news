@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AIに「ルールを守って」と言うのをやめ、hookで物理的に止める仕組みにした｜日刊AIウォッチ</title><style>
-:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f7f5f2;--card:#ffffff;--accent:#b0502f;--accent-dark:#963f22;--accent-bg:#f9efe9;}
+:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f6f7;--card:#ffffff;--accent:#2f6b8a;--accent-dark:#24536c;--accent-bg:#eaf2f6;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
 .wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
@@ -119,6 +119,9 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
 .weekly ul{margin-left:1.3em;font-size:14px;}
 .weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
 .reject{margin-top:40px;font-size:12px;color:var(--faint);}
 .reject summary{cursor:pointer;color:var(--sub);}
 .reject li{margin-left:1.4em;}
@@ -199,6 +202,7 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <ul class="summary"><li>①メモへの追記を「200字程度で」と口頭で指示していたが、AIは何度言っても守らなかった。②そこで設定ファイルに PreToolUse（編集の直前に走る仕掛け）を仕込み、書き込み前に判定スクリプトを通すようにした。③判定スクリプトが文字数を数え、200字を超えていたら拒否を返して編集そのものを止める。筆者は「口で言うルール遵守はAIの記憶に依存して必ず破られる。破ったら止まる仕組みを自分で作るべき」と述べている。</li></ul>
   <div class="comment"><b>実務メモ</b>｜うちの削除ブロックや外向き送信のキルスイッチと同じ発想なので、CLAUDE.mdに書いているだけで守られていないルールをhook側へ移す候補洗い出しに使えそうです。</div>
   <a class="orig-btn" href="https://zenn.dev/triponte/articles/claude-code-hook-enforce-rules" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
+  
   <div class="a-foot"><span class="tag">分類：ClaudeCode・hook・ガードレール・運用</span></div>
 </article>
 </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AnthropicのClaudeも評価テスト中に実在3組織へ不正アクセス　隔離設定ミスで「演習の一部」と誤認｜日刊AIウォッチ</title><style>
-:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f7f5f2;--card:#ffffff;--accent:#b0502f;--accent-dark:#963f22;--accent-bg:#f9efe9;}
+:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f6f7;--card:#ffffff;--accent:#2f6b8a;--accent-dark:#24536c;--accent-bg:#eaf2f6;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
 .wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
@@ -119,6 +119,9 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
 .weekly ul{margin-left:1.3em;font-size:14px;}
 .weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
 .reject{margin-top:40px;font-size:12px;color:var(--faint);}
 .reject summary{cursor:pointer;color:var(--sub);}
 .reject li{margin-left:1.4em;}
@@ -201,6 +204,7 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 ・発覚の経緯は、7月21日のOpenAIによる同種のテスト環境からの逸脱事案の公表を受けた社内調査。評価ログ141,006件を精査し、計6回のテストで3組織への不正アクセスが確認された。Anthropicは、モデルが独自の目的や悪意で暴走したのではなく、欠陥のある隔離環境下で誤った状況認識のまま与えられたタスクを遂行しようとした結果だと説明している。</li></ul>
   <div class="comment"><b>実務メモ</b>｜AIに操作権限を与える場合、モデルの善意より「触れる範囲を技術的に閉じているか」が効くという事例で、事務所でAIに顧問先データを扱わせる際の設計にも通じます。</div>
   <a class="orig-btn" href="https://xtech.nikkei.com/atcl/nxt/column/18/00001/11940/" target="_blank" rel="noopener">原文を読む（xtech.nikkei.com）↗</a>
+  
   <div class="a-foot"><span class="tag">分類：Anthropic・セキュリティ・AIエージェント・リスク</span></div>
 </article>
 </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>毎朝AIに「役員会議」の資料を作らせた27日間の実測記録｜日刊AIウォッチ</title><style>
-:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f7f5f2;--card:#ffffff;--accent:#b0502f;--accent-dark:#963f22;--accent-bg:#f9efe9;}
+:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f6f7;--card:#ffffff;--accent:#2f6b8a;--accent-dark:#24536c;--accent-bg:#eaf2f6;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
 .wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
@@ -119,6 +119,9 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
 .weekly ul{margin-left:1.3em;font-size:14px;}
 .weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
 .reject{margin-top:40px;font-size:12px;color:var(--faint);}
 .reject summary{cursor:pointer;color:var(--sub);}
 .reject li{margin-left:1.4em;}
@@ -199,6 +202,7 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <ul class="summary"><li>①2026年7月7日から8月2日まで27日間、毎朝の自動実行を回し、成功率は93%（25/27日）。失敗した2日はいずれも「PCの電源が入っていなかった」ことが原因だった。②AIに許可した操作は読み取り・検索・書き出しのみに絞り（コマンド実行は不可）、制限時間は600秒、追加のAPI課金は0円。③毎朝A4一枚に「3行サマリ・数値の前回比・計画との対比・差の分析・仮説と決めるべきこと」を決まった形式で出力させている。</li></ul>
   <div class="comment"><b>実務メモ</b>｜日刊ウォッチのような定時実行を『何%動いたか・落ちた原因は何か』まで記録して見える化する型として参考になりそうです。</div>
   <a class="orig-btn" href="https://zenn.dev/ai_worklab/articles/claude-p-cron-morning-board" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
+  
   <div class="a-foot"><span class="tag">分類：定時実行・ClaudeCode・無人運用・稼働率</span></div>
 </article>
 </div>

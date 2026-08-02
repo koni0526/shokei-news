@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>会話が長くなると起きる「自動要約100%でのフリーズ」と、3つの回避策｜日刊AIウォッチ</title><style>
-:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f7f5f2;--card:#ffffff;--accent:#b0502f;--accent-dark:#963f22;--accent-bg:#f9efe9;}
+:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f6f7;--card:#ffffff;--accent:#2f6b8a;--accent-dark:#24536c;--accent-bg:#eaf2f6;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
 .wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
@@ -119,6 +119,9 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
 .weekly ul{margin-left:1.3em;font-size:14px;}
 .weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
 .reject{margin-top:40px;font-size:12px;color:var(--faint);}
 .reject summary{cursor:pointer;color:var(--sub);}
 .reject li{margin-left:1.4em;}
@@ -199,6 +202,7 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <ul class="summary"><li>①2026年5月から現象を観察し、公式の不具合報告（GitHub Issue #66144ほか）など複数の独立した報告を参照している。②会話量が上限に達したときの自動要約が固まり、直前の文脈判断を失って誤ったブランチにコミットしようとするなどの誤動作が起きる。③回避策は3つで、要約直前にセッションログを退避させる仕掛け、会話量が8割に達した時点で自分から手動要約をかけること、1タスク1セッションで区切る設計。会話量6〜8割で整理を始め、8割超で手動要約を検討する、という目安を示している。</li></ul>
   <div class="comment"><b>実務メモ</b>｜長時間セッションで固まった経験があるなら、8割を目安に自分から区切る運用ルールとして取り入れられるかもしれません。</div>
   <a class="orig-btn" href="https://zenn.dev/joemike/articles/claude-code-auto-compact-deadlock-workaround-2026" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
+  
   <div class="a-foot"><span class="tag">分類：ClaudeCode・トラブル対処・セッション管理</span></div>
 </article>
 </div>
