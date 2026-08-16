@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日刊事業承継ウォッチ 2026年8月16日（日）</title><style>
+:root{--ink:#1e2a38;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f7f5f2;--card:#ffffff;--accent:#b0502f;--accent-dark:#963f22;--accent-bg:#f9efe9;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+.wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── マストヘッド（二重罫は維持） ── */
+.masthead{border-bottom:3px double var(--ink);padding-bottom:16px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;}
+.masthead h1{font-family:"Yu Mincho","YuMincho","MS PMincho",serif;font-size:30px;letter-spacing:.12em;font-weight:700;}
+.masthead .date{color:var(--sub);font-size:13px;letter-spacing:.06em;}
+.masthead.sub h1{font-size:20px;letter-spacing:.08em;}
+.masthead.topic h1{font-size:22px;letter-spacing:.06em;}
+
+/* ── 前号／次号（注意11） ── */
+.issuenav{display:flex;align-items:center;gap:16px;font-size:13px;margin-top:8px;}
+.issuenav a{display:inline-flex;align-items:center;min-height:44px;color:var(--sub);text-decoration:none;}
+.issuenav a:hover{color:var(--accent);}
+.issuenav .next{margin-left:auto;}
+
+/* ── パンくず（注意7） ── */
+.crumb{font-size:13px;color:var(--sub);margin-top:16px;}
+
+/* ── リード（明朝・可読幅40em） ── */
+.lead{font-family:"Yu Mincho","YuMincho",serif;font-size:17px;line-height:1.85;color:var(--ink);max-width:40em;margin:16px 0 8px;}
+
+/* ── 今日の1本（重大1） ── */
+.hero{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:24px 0 20px;margin:16px 0 32px;}
+.hero .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.hero h2{font-family:"Yu Mincho","YuMincho",serif;font-size:26px;line-height:1.45;margin-bottom:12px;}
+.hero h2 a{color:var(--ink);text-decoration:none;}
+.hero h2 a:hover{color:var(--accent);}
+.hero p{font-size:16px;line-height:1.8;color:var(--sub);max-width:40em;}
+.hero .hero-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--faint);}
+
+/* ── 面見出し ── */
+.pagehead{display:flex;align-items:baseline;gap:12px;margin:40px 0 16px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.pagehead .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.pagehead h2{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.pagehead .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold{margin:40px 0 16px;}
+.page-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.page-fold>summary::-webkit-details-marker{display:none;}
+.page-fold>summary .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.page-fold>summary .nm{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.page-fold>summary .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold>summary:hover .nm{color:var(--accent);}
+
+/* ── 見出し一覧（行全体リンク＋列固定：重大2・3） ── */
+.headlines{list-style:none;margin:0 0 8px;}
+.hl-row-li{list-style:none;}
+.hl-row{display:grid;grid-template-columns:1fr 88px 152px;grid-template-areas:"title stage src";column-gap:16px;align-items:baseline;padding:12px 8px;min-height:56px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;border-radius:4px;transition:background .12s;}
+.hl-row:hover{background:#f2f5f8;}
+.hl-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+.hl-title{grid-area:title;min-width:0;line-height:1.6;font-family:"Yu Mincho","YuMincho",serif;}
+.hl-row>.badge{grid-area:stage;justify-self:start;}
+.hl-src{grid-area:src;justify-self:start;min-width:0;max-width:100%;font-size:12px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hl-row.imp3 .hl-title{font-size:18px;font-weight:700;}
+.hl-row.imp2 .hl-title{font-size:16px;font-weight:500;}
+.hl-row.imp1 .hl-title{font-size:15px;font-weight:400;color:var(--sub);}
+
+/* ── バッジ ── */
+.badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:2px;border:1px solid var(--line);color:var(--sub);background:#f4f6f8;}
+.badge.stage{background:transparent;border:1px solid var(--line);border-radius:2px;font-size:11px;line-height:1.6;padding:1px 7px;letter-spacing:.06em;font-weight:600;white-space:nowrap;color:var(--sub);}
+.badge.stage.s-giron{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-taiko{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-kokkai{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-seiritsu{color:#2c6b4f;border-color:#b2cec0;}
+.badge.stage.s-shikou{color:#b0502f;border-color:#e5c9ba;}
+.badge.new{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+.badge.imp3{background:var(--ink);color:#fff;border-color:var(--ink);}
+.badge.hl{background:#f4f0e4;border-color:#dccf9f;color:#7a6320;}
+
+/* ── 記事本体 ── */
+article{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);padding:20px 24px;margin-bottom:16px;break-inside:avoid;}
+article.imp3{border-left-color:var(--accent);}
+article.imp2{border-left-color:var(--line);}
+.a-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--faint);margin-bottom:8px;}
+h1.a-title{font-family:"Yu Mincho","YuMincho",serif;font-size:24px;line-height:1.5;margin:4px 0 14px;font-weight:700;}
+h3.a-title{font-family:"Yu Mincho",serif;font-size:18px;line-height:1.5;margin:4px 0 8px;}
+h3.a-title a{color:var(--ink);text-decoration:none;}
+h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
+.summary{list-style:none;margin:0 0 8px;max-width:40em;}
+.summary li{padding-left:1.1em;text-indent:-1.1em;color:var(--ink);font-size:15px;}
+.summary li::before{content:"▸";color:var(--accent);margin-right:.35em;}
+.comment{background:var(--accent-bg);border-left:3px solid var(--accent);padding:8px 12px;font-size:15px;margin:8px 0 8px;max-width:40em;}
+.comment b{color:var(--accent);}
+.topic-link{color:var(--accent);}
+.delta{font-size:13px;color:var(--accent);font-weight:600;margin:8px 0;}
+.backfill-note{font-size:12px;color:var(--faint);margin-top:8px;}
+.bf-label{font-size:12px;color:#7a6320;background:#f4f0e4;display:inline-block;padding:1px 8px;border-radius:2px;margin-bottom:8px;}
+.brief-list{font-size:13px;color:var(--sub);border-top:1px solid var(--rule);padding-top:8px;margin:8px 0 16px;max-width:40em;}
+.brief-list li{margin-left:1.4em;}
+.a-foot{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:12px;align-items:center;}
+.a-foot .src a{color:var(--sub);}
+.tag{color:var(--faint);}
+
+/* ── 原文ボタン（重大7） ── */
+.orig-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:16px 0 8px;background:var(--accent);color:#fff;text-decoration:none;font-size:15px;font-weight:600;border-radius:4px;}
+.orig-btn:hover{background:var(--accent-dark);}
+.orig-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── 記事の前後ナビ（重大8） ── */
+.artnav{display:grid;grid-template-columns:1fr auto 1fr;grid-template-areas:"prev home next";gap:8px;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);}
+.artnav .prev{grid-area:prev;}
+.artnav .home{grid-area:home;}
+.artnav .next{grid-area:next;}
+.artnav a{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:48px;padding:8px 16px;border:1px solid var(--line);border-radius:4px;background:var(--card);text-decoration:none;color:var(--ink);}
+.artnav a:hover{border-color:var(--accent);color:var(--accent);}
+.artnav a span{font-size:11px;color:var(--faint);letter-spacing:.06em;}
+.artnav a b{font-size:13px;font-weight:600;line-height:1.5;}
+.artnav .home a{align-items:center;justify-content:center;}
+.artnav .next a{align-items:flex-end;text-align:right;}
+
+/* ── 週刊面・ボツ・エラー・フッター ── */
+.weekly{background:#f2f4f7;border:1px solid var(--line);padding:16px 24px;margin:32px 0;}
+.weekly h2{font-family:"Yu Mincho",serif;font-size:18px;letter-spacing:.1em;border-bottom:1px solid var(--faint);padding-bottom:8px;margin-bottom:8px;}
+.weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
+.weekly ul{margin-left:1.3em;font-size:14px;}
+.weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
+.reject{margin-top:40px;font-size:12px;color:var(--faint);}
+.reject summary{cursor:pointer;color:var(--sub);}
+.reject li{margin-left:1.4em;}
+.reject a{color:var(--faint);}
+.errors{margin-top:16px;font-size:12px;color:#8a4b3a;background:#faf1ee;border:1px solid #e8cfc6;padding:8px 16px;}
+.empty{margin-top:32px;color:var(--sub);}
+.footer{margin-top:48px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--faint);}
+.nav{font-size:13px;margin-bottom:16px;}
+.nav a{color:var(--sub);text-decoration:none;margin-right:16px;}
+.nav a:hover{color:var(--accent);}
+
+/* ── モバイル（重大4） ── */
+/* ── PC（広い画面）＝新聞らしく幅を使う2段組（2026-08-02 小西さん指示：PCとスマホで変える） ── */
+@media (min-width:1024px){
+  .wrap.paper{max-width:1280px;padding:40px 56px 80px;}
+  .paper-cols{columns:2;column-gap:72px;}
+  /* 段の高さを均すため面の途中でも段をまたいでよい（行と見出しだけ分断禁止＝新聞の段組み） */
+  .paper-cols .pagehead,.paper-cols .page-fold>summary{break-inside:avoid;}
+  .paper-cols .hl-row-li{break-inside:avoid;-webkit-column-break-inside:avoid;}
+  .paper-cols section{margin-bottom:16px;}
+  .wrap.paper .masthead h1{font-size:36px;}
+  .wrap.paper .lead{font-size:19px;max-width:48em;}
+  .wrap.paper .hero{padding:32px 0 24px;margin:16px 0 40px;}
+  .wrap.paper .hero h2{font-size:34px;max-width:32em;}
+  .wrap.paper .hero p{font-size:17px;max-width:48em;}
+  /* 段組の中は「見出し全幅＋下にメタ行」の新聞式（横3列だとタイトルが窮屈になるため） */
+  .paper-cols .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:4px;column-gap:12px;padding:14px 4px;min-height:0;}
+  .paper-cols .hl-src{justify-self:start;}
+  .paper-cols .badge.stage,.paper-cols .badge.new,.paper-cols .badge.hl{justify-self:end;}
+  .hl-row.imp3 .hl-title{font-size:19px;}
+  .hl-row.imp2 .hl-title{font-size:17px;}
+  .hl-row.imp1 .hl-title{font-size:16px;}
+  .pagehead h2,.page-fold>summary .nm{font-size:22px;}
+  /* 記事ページ・トピックは可読幅を保ちつつ少し広く・文字も一回り大きく */
+  .wrap:not(.paper):not(.idx){max-width:920px;}
+  .wrap:not(.paper) .a-title{font-size:28px;}
+  .wrap:not(.paper) .summary li{font-size:17px;}
+  .wrap:not(.paper) .comment{font-size:16px;}
+  /* 目次は一覧性重視で広めに */
+  .wrap.idx{max-width:1080px;}
+}
+
+@media (max-width:680px){
+  .wrap{padding:16px 16px 48px;}
+  .masthead{gap:4px;padding-bottom:16px;}
+  .masthead h1{font-size:clamp(20px,5.4vw,30px);letter-spacing:.06em;}
+  .lead{font-size:15px;margin:12px 0 4px;}
+  .pagehead{margin:32px 0 8px;}
+  .pagehead h2{font-size:17px;}
+  .page-fold{margin:32px 0 8px;}
+  .page-fold>summary .nm{font-size:17px;}
+  .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:6px;column-gap:8px;min-height:64px;}
+  .hl-src{justify-self:start;max-width:100%;}
+  .hl-row>.badge{justify-self:end;}
+  .hero h2{font-size:21px;}
+  .summary li,.comment{font-size:15px;}
+  .artnav{grid-template-columns:1fr 1fr;grid-template-areas:"prev next" "home home";}
+  .artnav .next a{align-items:flex-end;}
+}
+
+@media print{
+  body{background:#fff;font-size:12pt;}
+  .wrap{max-width:none;padding:0;}
+  article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
+  .page-fold>summary{cursor:auto;}
+  .hero{break-inside:avoid;}
+}
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
+</style></head><body><div class="wrap paper">
+<div class="nav"><a href="../index.html">目次・検索</a></div>
+<header class="masthead"><h1>日刊 事業承継ウォッチ</h1><div class="date">2026年8月16日（日）　第10号　採用27件</div></header>
+<div class="issuenav"><a class="prev" href="../2026-08/20260809.html">← 8/9号</a></div>
+<p class="lead">8/10〜8/16のまとめ号。非上場株式の評価見直しが動いた週——読売が「月内にも見直し案の概要」と報じ、中小企業庁は親族内承継の報告書（案）を提示した。</p>
+<section class="hero">
+  <div class="eyebrow">今日の1本</div>
+  <h2><a href="../articles/20260816-01.html">非上場株式の評価、国税庁が抜本見直しへ　月内にも有識者会議で見直し案の概要</a></h2>
+  <p>自社株評価を前提に設計している案件のほぼ全部（持株会社化・株式移転・暦年／相続時精算課税での贈与・従業員持株会・配当還元価額での少数株主整理）が射程に入る。とくに「資産管理会社は純資産価額方式で」は資産管理会社を挟んでいる先に、「配当還元方式の対象株主の範囲と従業員持株会の関係も整理」は持株会を設けている先に直接当たる。株価値ドックの試算前提にも関わる論点。月内に見直し案の概要が出た時点で、前提の置き直しが要る。なお報道で見かける「64年ぶり」は、読売の原文（1964年制定以来）とは合わない数字。【AI解釈・要確認】現時点は方向性を諮問している段階で、改正内容は確定していない。</p>
+  <div class="hero-meta"><span class="badge stage s-giron">議論中</span><span>読売新聞オンライン＋国税庁 有識者会議資料</span></div>
+</section>
+
+<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>事業承継・自社株</h2><span class="cnt">8件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260816-02.html"><span class="hl-title">中小企業庁の親族内承継検討会、第6回で「報告書（案）」を提示</span><span class="hl-src">中小企業庁（第6回 中小企業の親族内承継に関する検討会 配布資料）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-03.html"><span class="hl-title">M&amp;Aトラブルの構造　仲介会社は買い手をほとんど調べず、経営者保証も外れないまま</span><span class="hl-src">ダイヤモンド・オンライン（特集『社喰い』）</span></a></li>
+<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-04.html"><span class="hl-title">甲信越の26年1〜6月M&amp;Aは79件で過去最多　うち事業承継目的が24件</span><span class="hl-src">日本経済新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-05.html"><span class="hl-title">静岡で後継者の団体「TSUGU SHIZUOKA」設立　後継ぎ同士の交流と新事業を後押し</span><span class="hl-src">日本経済新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-06.html"><span class="hl-title">業務用食品卸の西原商会、後継者難の水産珍味メーカーを全株取得</span><span class="hl-src">日本経済新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-07.html"><span class="hl-title">事例でわかる［事業承継対策］解決へのヒント　第76回「外国子会社に多額の含み益がある場合」</span><span class="badge hl">見出しのみ</span><span class="hl-src">Profession Journal（清文社）No.681</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-08.html"><span class="hl-title">実務で差がつく！相続時精算課税制度Q&amp;A　第8回「相続時精算課税適用財産の相続税での債務控除の取扱い」</span><span class="badge hl">見出しのみ</span><span class="hl-src">Profession Journal（清文社）No.681</span></a></li></ul></details></li>
+</ul></section><section><div class="pagehead"><span class="no">2面</span><h2>税制改正ウォッチ</h2><span class="cnt">8件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260816-09.html"><span class="hl-title">政府、飲食料品の消費税減税を含む『給付付き税額控除』導入の基本方針を臨時閣議で決定　9月に大綱取りまとめへ</span><span class="badge stage s-giron">議論中</span><span class="hl-src">ZEIKEN News Dig（税務研究会）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-10.html"><span class="hl-title">令和8年熊本地震　八代市など4市町を地域指定し国税の申告・納付等の期限を延長（8月12日官報公示・国税庁告示第21号／第22号）</span><span class="badge stage s-shikou">施行</span><span class="hl-src">日本税理士会連合会</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-11.html"><span class="hl-title">相続ここが変わる　暦年贈与が不便になり、不動産節税の封じ込めも</span><span class="badge stage s-seiritsu">成立</span><span class="hl-src">日本経済新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-12.html"><span class="hl-title">2026年10月から仕入税額控除の経過措置が80％→70％に縮小　発注側・受注側の備えを税理士が解説</span><span class="badge stage s-shikou">施行</span><span class="hl-src">税理士ドットコム トピックス</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-13.html"><span class="hl-title">新NISAの裏で進む『金融所得課税』強化…富裕層を狙い撃つ、令和8年度税制改正〈ミニマムタックス〉の最新ルール【税理士が解説】</span><span class="badge stage s-seiritsu">成立</span><span class="hl-src">ゴールドオンライン</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-14.html"><span class="hl-title">令和8年度税制改正　青色申告特別控除の見直し（55万円→65万円、65万円→75万円、令和9年分以後）</span><span class="badge stage s-seiritsu">成立</span><span class="hl-src">マイベストプロ（和泉俊郎）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-15.html"><span class="hl-title">国税庁告示第23号　個人番号の記載を要しない書類の指定を改正、租税特別措置法70条の7・70条の7の2関係の届出書で引用条項を拡張</span><span class="badge stage s-shikou">施行</span><span class="hl-src">国税庁</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-16.html"><span class="hl-title">令和8年度税制改正における『グループ通算制度』改正事項の解説 【第7回】</span><span class="badge stage s-seiritsu">成立</span><span class="hl-src">Profession Journal（清文社）</span></a></li>
+</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>判例・裁決</h2><span class="cnt">1件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-17.html"><span class="hl-title">節税目的の組織再編にノー　大阪地裁が「課税は適法」、みずほ銀行が助言し補助参加</span><span class="hl-src">日本経済新聞</span></a></li>
+</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">その他実務</span><span class="cnt">（7件）を開く</span></summary>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-18.html"><span class="hl-title">10人に1人が相続税を負担する時代 地価高騰で東京23区は2割超</span><span class="hl-src">日本経済新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-19.html"><span class="hl-title">相続空き家、登記手続きの期限3年 放置は過料リスク</span><span class="hl-src">日本経済新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-20.html"><span class="hl-title">路線価上昇、タワマン節税規制、『負動産』……今やるべき相続対策6選</span><span class="hl-src">日経クロストレンド</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-21.html"><span class="hl-title">建設業の倒産・廃業、5937件で「リーマン超え」 木造建築工事が最多</span><span class="hl-src">日経クロステック</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-22.html"><span class="hl-title">令和8年8月13日からの大雨に伴う災害等に対する金融上の措置について</span><span class="hl-src">金融庁</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-23.html"><span class="hl-title">国境を越えた電子商取引に係る消費税の課税に関するQ&amp;A（令和8年7月・国税庁消費税室）</span><span class="hl-src">国税庁</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260816-24.html"><span class="hl-title">－国税庁レポート2026等から読み解く－今後の税務執行・税務調査の動向 【後編】「課税の効率化・高度化と税務調査の動向」</span><span class="badge hl">見出しのみ</span><span class="hl-src">Profession Journal（清文社）</span></a></li>
+</ul></details></section><section><div class="pagehead"><span class="no">5面</span><h2>使える制度（補助金・優遇税制）</h2><span class="cnt">3件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-25.html"><span class="hl-title">デジタル化・AI導入補助金2026 4次締切（通常枠・インボイス枠・セキュリティ対策推進枠）</span><span class="hl-src">デジタル化・AI導入補助金2026事務局（中小機構）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-26.html"><span class="hl-title">令和8年度 多摩・島しょ地域資源承継支援助成金（第3次締切）</span><span class="hl-src">東京都商工会連合会 多摩・島しょ経営支援拠点</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260816-27.html"><span class="hl-title">令和8年8月13日からの大雨に伴う災害に関する被災中小企業・小規模事業者対策について</span><span class="hl-src">中小機構</span></a></li>
+</ul></section></div>
+<details class="reject"><summary>今日のボツ記事 12件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
+<li><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE9xcTFZcGlBM1JCQ3JoNzI2NGNyREgwd2VzdUNETUxhVzZpR1RlRzVCOW16YW11RUFMWUp0RmV1T0pwcDBLLTBaWjJjb0dxalZ4WnkxQU83LTNqNGZ4cnplOWVuVm5wOWJSU1RHaw?oc=5" target="_blank" rel="noopener">高市政権、消費税『遠泳なら最後は一緒』 消えた国民民主と連立構想 - 日本経済新聞</a> — 消費税がらみだが主題は政局・連立構想（一般政治）で税制改正の議論そのものではない</li><li><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE4xSHdQUzA5cDZLS2dMMGhIZU5HVE1LU3REQnJ5d0Foa0xhN0V1M2tRZEgyWXVVQjNKSFh3RVl0emZxbzZlS1VSdHQwYWRGa2NQVmQ4Zm50TWY2R0tlUGd6cXgtR1Ryc1c5WFhGZw?oc=5" target="_blank" rel="noopener">生保の半数、年金保険の運用リスクを外部移転 金融庁は監視強化 - 日本経済新聞</a> — 生保の年金保険リスク移転・金融庁の監視強化。法人保険を使う事業承継実務との接点は薄いが金融行政の変化として要確認</li><li><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBPU253V2JISGV0bGU3V1o2Wk9IVERHd0pHcUZjYVVtRHhxN3ZFcFk2X2gyUDJOY2JIdk5NS3RCY3Z5VGV1QVYzaFo3Z1p5ZVV6WVlMWWt1a1hWSGtlc3BDVnJCQ1JIQ0pycUE?oc=5" target="_blank" rel="noopener">【9/10 仙台】事業承継・第二創業期に潜む『経営理念の空中分解』を防ぐには？地域中核企業のスケールアップを阻む『ミドル層の断絶壁』打破セミナー - PR TIMES</a> — セミナー告知のため却下基準に該当するが、『経営理念の空中分解』『ミドル層の断絶壁』という論点は事業承継の第二創業期テーマとして重要</li><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTFBrTElJOVZYVlhiWTdFdEkzOXNEZ1NnSkxJbjdpd2RJek5xbzMyajhrVG9SV1FldHRRd3dmOHUwTVV1S3J6am1Wekw4dk5kc293bU1nNXFKNjBibzg3R3lIdFdLYXY2Y3E4TGZZY0MxbjRDbTlR?oc=5" target="_blank" rel="noopener">イ・ジェミョン大統領「家業承継で数百億ウォンの減免、公正ではない」 - BigGo ファイナンス</a> — 海外（韓国）の家業承継税制の減免を巡る政治論争で、日本の実務には直接関係しないが事業承継税制のテーマに触れる</li><li><a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE0zV3dtY2EwRllBY3UtYTBiRnQ4Z0kyWHFyRFMwSkZEb2lqZW5id1lvV09wRm5TMktkWkwwTWJwZURPMGhOSmZoZFJjUTNTNFVVRGJvZlFkWFpEMGtIdmJPS2lfUHhkMFVNSzl0cm84Tko2Wmxn?oc=5" target="_blank" rel="noopener">KOSPI急騰急落で個人投資家に「涙」…SK hynixは贈与税900億ウォン免除 - BigGo ファイナンス</a> — 海外（韓国）の企業創業家に関する贈与税免除の話題で日本の実務対象外だが贈与税テーマに触れる</li><li><a href="https://public-comment.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&amp;id=630300000&amp;Mode=0" target="_blank" rel="noopener">「審判便覧」改定案に対する意見募集の実施について</a> — 所管省庁がタイトルから不明。家事審判（遺産分割等）関連の可能性を否定できないため要確認のうえ見送り</li><li><a href="https://www.courts.go.jp/assets/hanrei/hanrei-pdf-96915.pdf" target="_blank" rel="noopener">令和6(ワ)29897 不当利得返還請求事件（令和8年7月2日 東京地方裁判所）</a> — 判決内容がタイトルからは不明。税務・自社株絡みの不当利得の可能性を否定できないため要確認のうえ見送り</li><li><a href="https://www.nichizeiren.or.jp/whats-new/20260814a/" target="_blank" rel="noopener">第49回「日税研究賞」及び令和８年度「日本税理士会連合会・金子宏賞」を表彰</a> — 税理士会の表彰告知で制度変更ではないため却下基準（告知・人事）に該当するが、会員向け参考情報として近傍に残す</li><li><a href="https://j-net21.smrj.go.jp/snavi/articles/189409" target="_blank" rel="noopener">補助金・助成金：「令和8年度中小企業DX推進補助金「先駆型補助金（通常枠）」の2次募集について」</a> — DX推進はIT導入補助金に近い性質だが「先駆型」で対象が限定的な可能性があり、汎用性の確認が必要</li><li><a href="https://www.zeiken.co.jp/zeimutusin/article/no3912/TA00039121801.php" target="_blank" rel="noopener">2026年8月17日 No.3912 振興基準と知財取引の適正化</a> — 下請振興法改正など税務との関連性がタイトルからは読み取れないため、税務通信の位置づけ含めて要確認</li><li>（このほか一次トリアージで却下 288件） — 上場企業の個別ニュース113件・税務と無関係48件・重複24件・告知広告17件ほか。6日分をまとめたため件数が通常の6倍あり、ボツ一覧は全量でなく重要テーマに触れたもの（上記）だけを載せている</li><li>（二次選別で不採用 61件） — 相続税の一般解説（無申告・弔慰金・配偶者軽減など税理士に既知のもの）／昨年12月の大綱決定の後追い解説6本／市区町村の個別補助金／締切済みの公募（事業承継・M&amp;A補助金15次＝7/24締切）／原文に到達できず見出し以上の事実を確認できなかったもの</li></ul></details>
+
+<div class="footer">本紙はAIによる自動収集・要約です。税務・法務の実務判断は必ず原文・条文をご確認ください。｜生成：2026-08-16 19:03:40　日刊事業承継ウォッチ（G157）</div>
+</div></body></html>
