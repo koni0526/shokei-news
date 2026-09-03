@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NVIDIA、AIモデル共有サイト「Hugging Face」を約2兆円で買収へ｜日刊AIウォッチ</title><style>
+:root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+.wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── マストヘッド（二重罫は維持） ── */
+.masthead{border-bottom:3px double var(--ink);padding-bottom:16px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;}
+.masthead h1{font-family:"Yu Mincho","YuMincho","MS PMincho",serif;font-size:30px;letter-spacing:.12em;font-weight:700;}
+.masthead .date{color:var(--sub);font-size:13px;letter-spacing:.06em;}
+.masthead.sub h1{font-size:20px;letter-spacing:.08em;}
+.masthead.topic h1{font-size:22px;letter-spacing:.06em;}
+
+/* ── 前号／次号（注意11） ── */
+.issuenav{display:flex;align-items:center;gap:16px;font-size:13px;margin-top:8px;}
+.issuenav a{display:inline-flex;align-items:center;min-height:44px;color:var(--sub);text-decoration:none;}
+.issuenav a:hover{color:var(--accent);}
+.issuenav .next{margin-left:auto;}
+
+/* ── パンくず（注意7） ── */
+.crumb{font-size:13px;color:var(--sub);margin-top:16px;}
+
+/* ── リード（明朝・可読幅40em） ── */
+.lead{font-family:"Yu Mincho","YuMincho",serif;font-size:17px;line-height:1.85;color:var(--ink);max-width:40em;margin:16px 0 8px;}
+
+/* ── 今日の1本（重大1） ── */
+.hero{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:24px 0 20px;margin:16px 0 32px;}
+.hero .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.hero h2{font-family:"Yu Mincho","YuMincho",serif;font-size:26px;line-height:1.45;margin-bottom:12px;}
+.hero h2 a{color:var(--ink);text-decoration:none;}
+.hero h2 a:hover{color:var(--accent);}
+.hero p{font-size:16px;line-height:1.8;color:var(--sub);max-width:40em;}
+.hero .hero-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--faint);}
+
+/* ── 面見出し ── */
+.pagehead{display:flex;align-items:baseline;gap:12px;margin:40px 0 16px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.pagehead .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.pagehead h2{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.pagehead .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold{margin:40px 0 16px;}
+.page-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.page-fold>summary::-webkit-details-marker{display:none;}
+.page-fold>summary .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.page-fold>summary .nm{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.page-fold>summary .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold>summary:hover .nm{color:var(--accent);}
+
+/* ── 見出し一覧（行全体リンク＋列固定：重大2・3） ── */
+.headlines{list-style:none;margin:0 0 8px;}
+.hl-row-li{list-style:none;}
+.hl-row{display:grid;grid-template-columns:1fr 88px 152px;grid-template-areas:"title stage src";column-gap:16px;align-items:baseline;padding:12px 8px;min-height:56px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;border-radius:4px;transition:background .12s;}
+.hl-row:hover{background:#f2f5f8;}
+.hl-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+.hl-title{grid-area:title;min-width:0;line-height:1.6;font-family:"Yu Mincho","YuMincho",serif;}
+.hl-row>.badge{grid-area:stage;justify-self:start;}
+.hl-src{grid-area:src;justify-self:start;min-width:0;max-width:100%;font-size:12px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hl-row.imp3 .hl-title{font-size:18px;font-weight:700;}
+.hl-row.imp2 .hl-title{font-size:16px;font-weight:500;}
+.hl-row.imp1 .hl-title{font-size:15px;font-weight:400;color:var(--sub);}
+
+/* ── バッジ ── */
+.badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:2px;border:1px solid var(--line);color:var(--sub);background:#f4f6f8;}
+.badge.stage{background:transparent;border:1px solid var(--line);border-radius:2px;font-size:11px;line-height:1.6;padding:1px 7px;letter-spacing:.06em;font-weight:600;white-space:nowrap;color:var(--sub);}
+.badge.stage.s-giron{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-taiko{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-kokkai{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-seiritsu{color:#2c6b4f;border-color:#b2cec0;}
+.badge.stage.s-shikou{color:#b0502f;border-color:#e5c9ba;}
+.badge.new{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+.badge.imp3{background:var(--ink);color:#fff;border-color:var(--ink);}
+.badge.hl{background:#f4f0e4;border-color:#dccf9f;color:#7a6320;}
+
+/* ── 記事本体 ── */
+article{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);padding:20px 24px;margin-bottom:16px;break-inside:avoid;}
+article.imp3{border-left-color:var(--accent);}
+article.imp2{border-left-color:var(--line);}
+.a-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--faint);margin-bottom:8px;}
+h1.a-title{font-family:"Yu Mincho","YuMincho",serif;font-size:24px;line-height:1.5;margin:4px 0 14px;font-weight:700;}
+h3.a-title{font-family:"Yu Mincho",serif;font-size:18px;line-height:1.5;margin:4px 0 8px;}
+h3.a-title a{color:var(--ink);text-decoration:none;}
+h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
+.summary{list-style:none;margin:0 0 8px;max-width:40em;}
+.summary li{padding-left:1.1em;text-indent:-1.1em;color:var(--ink);font-size:15px;}
+.summary li::before{content:"▸";color:var(--accent);margin-right:.35em;}
+.comment{background:var(--accent-bg);border-left:3px solid var(--accent);padding:8px 12px;font-size:15px;margin:8px 0 8px;max-width:40em;}
+.comment b{color:var(--accent);}
+.topic-link{color:var(--accent);}
+.delta{font-size:13px;color:var(--accent);font-weight:600;margin:8px 0;}
+.backfill-note{font-size:12px;color:var(--faint);margin-top:8px;}
+.bf-label{font-size:12px;color:#7a6320;background:#f4f0e4;display:inline-block;padding:1px 8px;border-radius:2px;margin-bottom:8px;}
+.brief-list{font-size:13px;color:var(--sub);border-top:1px solid var(--rule);padding-top:8px;margin:8px 0 16px;max-width:40em;}
+.brief-list li{margin-left:1.4em;}
+.a-foot{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:12px;align-items:center;}
+.a-foot .src a{color:var(--sub);}
+.tag{color:var(--faint);}
+
+/* ── 原文ボタン（重大7） ── */
+.orig-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:16px 0 8px;background:var(--accent);color:#fff;text-decoration:none;font-size:15px;font-weight:600;border-radius:4px;}
+.orig-btn:hover{background:var(--accent-dark);}
+.orig-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── 記事の前後ナビ（重大8） ── */
+.artnav{display:grid;grid-template-columns:1fr auto 1fr;grid-template-areas:"prev home next";gap:8px;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);}
+.artnav .prev{grid-area:prev;}
+.artnav .home{grid-area:home;}
+.artnav .next{grid-area:next;}
+.artnav a{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:48px;padding:8px 16px;border:1px solid var(--line);border-radius:4px;background:var(--card);text-decoration:none;color:var(--ink);}
+.artnav a:hover{border-color:var(--accent);color:var(--accent);}
+.artnav a span{font-size:11px;color:var(--faint);letter-spacing:.06em;}
+.artnav a b{font-size:13px;font-weight:600;line-height:1.5;}
+.artnav .home a{align-items:center;justify-content:center;}
+.artnav .next a{align-items:flex-end;text-align:right;}
+
+/* ── 週刊面・ボツ・エラー・フッター ── */
+.weekly{background:#f2f4f7;border:1px solid var(--line);padding:16px 24px;margin:32px 0;}
+.weekly h2{font-family:"Yu Mincho",serif;font-size:18px;letter-spacing:.1em;border-bottom:1px solid var(--faint);padding-bottom:8px;margin-bottom:8px;}
+.weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
+.weekly ul{margin-left:1.3em;font-size:14px;}
+.weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
+.reject{margin-top:40px;font-size:12px;color:var(--faint);}
+.reject summary{cursor:pointer;color:var(--sub);}
+.reject li{margin-left:1.4em;}
+.reject a{color:var(--faint);}
+.errors{margin-top:16px;font-size:12px;color:#8a4b3a;background:#faf1ee;border:1px solid #e8cfc6;padding:8px 16px;}
+.empty{margin-top:32px;color:var(--sub);}
+.footer{margin-top:48px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--faint);}
+.nav{font-size:13px;margin-bottom:16px;}
+.nav a{color:var(--sub);text-decoration:none;margin-right:16px;}
+.nav a:hover{color:var(--accent);}
+
+/* ── モバイル（重大4） ── */
+/* ── PC（広い画面）＝新聞らしく幅を使う2段組（2026-08-02 小西さん指示：PCとスマホで変える） ── */
+@media (min-width:1024px){
+  .wrap.paper{max-width:1280px;padding:40px 56px 80px;}
+  .paper-cols{columns:2;column-gap:72px;}
+  /* 段の高さを均すため面の途中でも段をまたいでよい（行と見出しだけ分断禁止＝新聞の段組み） */
+  .paper-cols .pagehead,.paper-cols .page-fold>summary{break-inside:avoid;}
+  .paper-cols .hl-row-li{break-inside:avoid;-webkit-column-break-inside:avoid;}
+  .paper-cols section{margin-bottom:16px;}
+  .wrap.paper .masthead h1{font-size:36px;}
+  .wrap.paper .lead{font-size:19px;max-width:48em;}
+  .wrap.paper .hero{padding:32px 0 24px;margin:16px 0 40px;}
+  .wrap.paper .hero h2{font-size:34px;max-width:32em;}
+  .wrap.paper .hero p{font-size:17px;max-width:48em;}
+  /* 段組の中は「見出し全幅＋下にメタ行」の新聞式（横3列だとタイトルが窮屈になるため） */
+  .paper-cols .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:4px;column-gap:12px;padding:14px 4px;min-height:0;}
+  .paper-cols .hl-src{justify-self:start;}
+  .paper-cols .badge.stage,.paper-cols .badge.new,.paper-cols .badge.hl{justify-self:end;}
+  .hl-row.imp3 .hl-title{font-size:19px;}
+  .hl-row.imp2 .hl-title{font-size:17px;}
+  .hl-row.imp1 .hl-title{font-size:16px;}
+  .pagehead h2,.page-fold>summary .nm{font-size:22px;}
+  /* 記事ページ・トピックは可読幅を保ちつつ少し広く・文字も一回り大きく */
+  .wrap:not(.paper):not(.idx){max-width:920px;}
+  .wrap:not(.paper) .a-title{font-size:28px;}
+  .wrap:not(.paper) .summary li{font-size:17px;}
+  .wrap:not(.paper) .comment{font-size:16px;}
+  /* 目次は一覧性重視で広めに */
+  .wrap.idx{max-width:1080px;}
+}
+
+@media (max-width:680px){
+  .wrap{padding:16px 16px 48px;}
+  .masthead{gap:4px;padding-bottom:16px;}
+  .masthead h1{font-size:clamp(20px,5.4vw,30px);letter-spacing:.06em;}
+  .lead{font-size:15px;margin:12px 0 4px;}
+  .pagehead{margin:32px 0 8px;}
+  .pagehead h2{font-size:17px;}
+  .page-fold{margin:32px 0 8px;}
+  .page-fold>summary .nm{font-size:17px;}
+  .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:6px;column-gap:8px;min-height:64px;}
+  .hl-src{justify-self:start;max-width:100%;}
+  .hl-row>.badge{justify-self:end;}
+  .hero h2{font-size:21px;}
+  .summary li,.comment{font-size:15px;}
+  .artnav{grid-template-columns:1fr 1fr;grid-template-areas:"prev next" "home home";}
+  .artnav .next a{align-items:flex-end;}
+}
+
+@media print{
+  body{background:#fff;font-size:12pt;}
+  .wrap{max-width:none;padding:0;}
+  article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
+  .page-fold>summary{cursor:auto;}
+  .hero{break-inside:avoid;}
+}
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
+
+.masthead{border-bottom-color:var(--accent);}
+.pagehead{border-bottom-color:var(--accent);}
+.pagehead .no,.page-fold>summary .no{background:var(--accent);}
+.hero{border-top-color:var(--accent);}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../2026-09/20260904.html">← 9/4の紙面</a><a href="../index.html">目次・検索</a></div>
+<header class="masthead sub"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月4日（金）</div></header>
+<div class="crumb">日刊AIウォッチ ＞ 9/4 ＞ 4面 動向・規制</div>
+<div style="margin-top:16px">
+<article class="imp2" id="20260904-40" title="ID:20260904-40">
+  <div class="a-meta"><span>PC Watch</span><span>2026-09-03</span><span class="badge hl">見出しのみ（詳細は誌面）</span></div>
+  <h1 class="a-title">NVIDIA、AIモデル共有サイト「Hugging Face」を約2兆円で買収へ</h1>
+  
+  <ul class="summary"><li>NVIDIAがHugging Faceを約2兆円で買収することで合意</li><li>ジェンスン・フアンCEOはオープンモデルの重要性に言及</li></ul>
+  <div class="comment"><b>実務メモ</b>｜AI基盤のインフラ企業による囲い込みが進む。オープンモデルのエコシステムへの影響を注視</div>
+  <a class="orig-btn" href="https://pc.watch.impress.co.jp/docs/news/2138142.html" target="_blank" rel="noopener">原文を読む（pc.watch.impress.co.jp）↗</a>
+  
+  <div class="a-foot"><span class="tag">分類：NVIDIA・Hugging Face・買収</span></div>
+</article>
+</div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
+<textarea id="consult-fallback" readonly style="display:none;width:100%;min-height:120px;margin-top:8px;padding:12px;font-size:13px;border:1.5px solid var(--line);border-radius:4px;font-family:inherit;"></textarea>
+<nav class="artnav">
+  <div class="prev"><a href="20260904-38.html"><span>前の記事</span><b>GitHub Copilotアプリ：複数…</b></a></div>
+  <div class="home"><a href="../2026-09/20260904.html"><b>紙面へ戻る</b></a></div>
+  <div class="next"><a href="20260904-41.html"><span>次の記事</span><b>「社長の声」悪用で被害45億円——元警視…</b></a></div>
+</nav>
+<div class="footer">本記事はAIによる自動要約です。導入・契約の判断は必ず一次情報をご確認ください。</div>
+</div>
+<script>
+const CONSULT_TEXT="日刊 AIウォッチの記事について相談です。\n記事ID: ai:20260904-40\nタイトル: NVIDIA、AIモデル共有サイト「Hugging Face」を約2兆円で買収へ\n原文: https://pc.watch.impress.co.jp/docs/news/2138142.html\nまず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    // 自動コピーできない環境＝文面を出して全選択済みにする（Ctrl+Cだけで済む）
+    const ta=document.getElementById('consult-fallback');
+    ta.value=CONSULT_TEXT;
+    ta.style.display='block';
+    ta.focus();
+    ta.select();
+    this.textContent='下の文を Ctrl+C でコピーしてください（選択済み）';
+  }
+});
+</script></body></html>
