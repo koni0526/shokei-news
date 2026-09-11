@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年9月12日（土）</title><style>
+<title>Unity公式のClaude Codeプラグイン、29のスキルでゲーム開発を支援｜日刊AIウォッチ</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -203,60 +203,47 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .pagehead{border-bottom-color:var(--accent);}
 .pagehead .no,.page-fold>summary .no{background:var(--accent);}
 .hero{border-top-color:var(--accent);}
-</style></head><body><div class="wrap paper">
-<div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月12日（土）　第31号　採用34件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-09/20260910.html">← 9/10号</a></div>
-<p class="lead">壊れていないのに壊れている——今週のClaude Code実践者は、みな同じ壁に当たっていた</p>
-<section class="hero">
-  <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20260912-01.html">スキルを増やしたら、9本が黙った</a></h2>
-  <p>うちも.claude/skills配下のスキルが数十本規模まで増えているため、同じ容量上限や連鎖切れが起きていないか一度棚卸しする価値があるかもしれません</p>
-  <div class="hero-meta"><span>Zenn（自動化）</span></div>
-</section>
-
-<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">15件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260912-02.html"><span class="hl-title">CLAUDE_CODE_SUBAGENT_MODELだけではpin済みサブエージェントのモデルを変えられない</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-03.html"><span class="hl-title">自動検査が黙って死ぬ3パターン：3つの発信を読み比べる</span><span class="hl-src">編集部（比較解説）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-04.html"><span class="hl-title">AIエージェントの失敗を228件記録したら、根本原因は3つしかなかった</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-05.html"><span class="hl-title">AIエージェントに会社の実務を回させるとき、私が引いている3本の線</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-06.html"><span class="hl-title">トークン節約のために最近やったこととその計測結果</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-07.html"><span class="hl-title">Claude Code Routinesは、なぜ毎回『初めまして』なのか ― gitリポジトリを記憶にして朝刊メールを動かした話</span><span class="hl-src">Qiita（ClaudeCode）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-08.html"><span class="hl-title">AI社員の『完了しました』を鵜呑みにしない仕組みを作った</span><span class="hl-src">note（#生成AI）</span></a></li>
-<li><details class="more-fold"><summary>参考 7件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-09.html"><span class="hl-title">朝起きたら、AIがバグを直してコミットしていた</span><span class="hl-src">Zenn（自動化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-10.html"><span class="hl-title">分析依頼を捌く手順をClaude Codeのスキルに固定した</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-11.html"><span class="hl-title">フックのLLM呼び出し分離設計：レート制限とオーバーヘッドの最適化</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-12.html"><span class="hl-title">プロジェクトの設定に書いたのに、何も起きなかった</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-13.html"><span class="hl-title">設定を消す前に、僕が決めた基準</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-14.html"><span class="hl-title">Claude CodeがBashでファイルを書き換えるようになった気がする</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-15.html"><span class="hl-title">VBAマネージャーのAIエージェント化：決まった手順はマクロ、残った判断だけAI</span><span class="hl-src">Qiita（ClaudeCode）</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">9件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-20.html"><span class="hl-title">「危険コマンド停止率、AIは89％、人間だと14％」Claude Codeが自動モードをデフォルトにした理由</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-21.html"><span class="hl-title">ChatGPT Work、質問するだけで社内データ分析・ダッシュボードも作る「Data agent」</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-22.html"><span class="hl-title">「DeepSeek-V4.1-Flash」が登場、複数テストでClaude Opus 5やGPT-5.6 Solを超える性能のオープンモデル</span><span class="hl-src">GIGAZINE</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-23.html"><span class="hl-title">Windows用「Gemini」アプリ提供開始 画面上に重ねて作業を中断せず利用可能に</span><span class="hl-src">ITmedia NEWS</span></a></li>
-<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-24.html"><span class="hl-title">Sakana AI、一部GPT-6 Astra・Fable 5.1超えうたうFugu最新版</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-25.html"><span class="hl-title">kintone AI正式版で変わる中小企業の業務フロー</span><span class="hl-src">Qiita（業務効率化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-26.html"><span class="hl-title">ChatGPT、最上位プランの新規受付を一時停止 GPT-6 Astra需要対応のため</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-27.html"><span class="hl-title">OpenAI Agents API登場：Codexと同じハーネスでAIエージェントを構築可能に</span><span class="hl-src">GIGAZINE</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-28.html"><span class="hl-title">Unity公式のClaude Codeプラグイン、29のスキルでゲーム開発を支援</span><span class="hl-src">窓の杜</span></a></li></ul></details></li>
-</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（10件）を開く</span></summary>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260912-30.html"><span class="hl-title">本物そっくり『AI生成レシート』が経費精算の脅威に マネフォ「自力で見破るのは難しい」</span><span class="hl-src">ITmedia NEWS</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-31.html"><span class="hl-title">Anthropic、Claudeの悪用事例を公表。兵器開発・生物兵器研究・自律型サイバー攻撃を阻止</span><span class="hl-src">ITmedia NEWS</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-32.html"><span class="hl-title">中国AI「Kimi」、利用者の入力を無断でClaudeに転送していた疑い</span><span class="hl-src">CNET Japan</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-33.html"><span class="hl-title">主要AIサービスが相次いで障害。企業は代替手段の確保を</span><span class="hl-src">Forbes JAPAN</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260912-34.html"><span class="hl-title">「AI利用料は90％下落、でも支出増」の怪――ジェボンズのパラドックス</span><span class="hl-src">ITmedia ビジネス</span></a></li>
-<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-35.html"><span class="hl-title">NEC、AIだけで構成する部署を新設 AI同士で1on1・ストレスチェックも実施</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-36.html"><span class="hl-title">「AIに任せる」はどこまで？ 最終判断まで容認する20代、慎重になる50代</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-37.html"><span class="hl-title">AIエージェント同士が縄張り争い 矛盾した指示によるリスク判明</span><span class="badge hl">見出しのみ</span><span class="hl-src">日経クロステック（IT）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-38.html"><span class="hl-title">業務の30％をAIエージェントがこなすIT運用部門、なぜ「パワポ文書」を禁止したのか？</span><span class="hl-src">ITmedia エンタープライズ</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260912-39.html"><span class="hl-title">日立、熟練者の知見をAIで形式知化 設計ルール違反も自動検出</span><span class="hl-src">ITmedia MONOist</span></a></li></ul></details></li>
-</ul></details></section></div>
-<details class="reject"><summary>今日のボツ記事 18件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
-<li><a href="https://zenn.dev/ojisan_ai_lab/articles/unity-claude-plugin-breakout-20260911" target="_blank" rel="noopener">Unity公式のClaude Codeプラグインで2Dブロック崩し（Zenn）</a> — ゲーム開発の技術記事</li><li><a href="https://qiita.com/ynakayama/items/b310680b2f14443ab95c" target="_blank" rel="noopener">VMware上のDebianにClaude Code環境構築</a> — Linux環境構築（読者はWindows）</li><li><a href="https://zenn.dev/koshoshi/articles/609309957766e9" target="_blank" rel="noopener">なぜLLMにDSLを書かせるのか</a> — 数理最適化の内部アーキテクチャ論</li><li>note（#AI活用）の24件 — 個人日記・EC/輸出・FX・音楽生成・初心者コピペ集・ポエム系等</li><li>Google News重複記事（約40件） — 同一ニュースの複数メディア報道を統合。Claude悪用10件→1本、Data agent5件→1本、Pro停止4件→1本等</li><li>PR TIMES配信4件 — プレスリリース</li><li>地域限定自治体AI導入3件（佐賀・京都・草加） — 地域限定</li><li>大企業向けSIerソリューション5件（リコー・IIJ・ソフトバンク等） — 大企業向け</li><li><a href="https://developers.openai.com/showcase/games" target="_blank" rel="noopener">Games | OpenAI Developers</a> — ゲーム開発系</li><li><a href="https://gigazine.net/news/20260911-yue2-music-generation-ai/" target="_blank" rel="noopener">音楽生成AI「YuE2」</a> — エンタメAI</li><li><a href="https://markezine.jp/news/detail/77595" target="_blank" rel="noopener">電通グループ「AIJES」</a> — 広告業界特化のモデル提唱</li><li><a href="https://www.itmedia.co.jp/business/articles/2609/11/news020.html" target="_blank" rel="noopener">好業績なのに上場廃止 ネットワンはSCSK</a> — 上場企業の個別再編ニュース</li><li><a href="https://www.itmedia.co.jp/aiplus/article/2609/11/2000001402/" target="_blank" rel="noopener">フィジカルAI向けデータ収集工場</a> — フィジカルAI関連</li><li>ChatGPTを見て病院に来た患者（韓国） — 韓国の一般ニュース</li><li>ChatGPT Images 2.5紹介（9/8-9/9） — 古い記事</li><li>ChatGPT Business料金解説 — 古い記事</li><li><a href="https://nealle-dev.hatenablog.com/entry/2026/09/11/171745" target="_blank" rel="noopener">Product Leaders AI 2026参加レポ</a> — カンファレンス感想記事</li><li>Copilot Studioセミナー — セミナー告知</li></ul></details>
-
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-09-12 07:10:30　日刊AIウォッチ（G159）</div>
-</div></body></html>
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../2026-09/20260912.html">← 9/12の紙面</a><a href="../index.html">目次・検索</a></div>
+<header class="masthead sub"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月12日（土）</div></header>
+<div class="crumb">日刊AIウォッチ ＞ 9/12 ＞ 3面 ツール・機能アップデート</div>
+<div style="margin-top:16px">
+<article class="imp1" id="20260912-28" title="ID:20260912-28">
+  <div class="a-meta"><span>窓の杜</span><span>2026-09-11</span></div>
+  <h1 class="a-title">Unity公式のClaude Codeプラグイン、29のスキルでゲーム開発を支援</h1>
+  
+  <ul class="summary"><li>Unity社が公式のClaude Codeプラグインを発表。Unity CLIとMCPサーバーを1回のインストールで導入でき29のスキルを提供</li><li>各スキルはUnity社自身が作成・セキュリティレビュー済みで、エンジンのアップデートに合わせて更新される</li><li>スキルなしでAIに丸投げするより会話のやり取りが少なく誤りも減りトークン消費も抑えられるという設計思想</li></ul>
+  <div class="comment"><b>実務メモ</b>｜ゲーム開発向けだが、大手がClaude Codeの公式プラグインを出し始めた動きとして注目。スキル設計の考え方は業種を問わず通じる</div>
+  <a class="orig-btn" href="https://forest.watch.impress.co.jp/docs/news/2140240.html" target="_blank" rel="noopener">原文を読む（forest.watch.impress.co.jp）↗</a>
+  
+  <div class="a-foot"><span class="tag">分類：Claude Code・Unity・プラグイン</span></div>
+</article>
+</div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
+<textarea id="consult-fallback" readonly style="display:none;width:100%;min-height:120px;margin-top:8px;padding:12px;font-size:13px;border:1.5px solid var(--line);border-radius:4px;font-family:inherit;"></textarea>
+<nav class="artnav">
+  <div class="prev"><a href="20260912-27.html"><span>前の記事</span><b>OpenAI Agents API登場：…</b></a></div>
+  <div class="home"><a href="../2026-09/20260912.html"><b>紙面へ戻る</b></a></div>
+  <div class="next"><a href="20260912-30.html"><span>次の記事</span><b>本物そっくり『AI生成レシート』が経費精…</b></a></div>
+</nav>
+<div class="footer">本記事はAIによる自動要約です。導入・契約の判断は必ず一次情報をご確認ください。</div>
+</div>
+<script>
+const CONSULT_TEXT="日刊 AIウォッチの記事について相談です。\n記事ID: ai:20260912-28\nタイトル: Unity公式のClaude Codeプラグイン、29のスキルでゲーム開発を支援\n原文: https://forest.watch.impress.co.jp/docs/news/2140240.html\nまず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    // 自動コピーできない環境＝文面を出して全選択済みにする（Ctrl+Cだけで済む）
+    const ta=document.getElementById('consult-fallback');
+    ta.value=CONSULT_TEXT;
+    ta.style.display='block';
+    ta.focus();
+    ta.select();
+    this.textContent='下の文を Ctrl+C でコピーしてください（選択済み）';
+  }
+});
+</script></body></html>
