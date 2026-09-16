@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年9月17日（木）</title><style>
+<title>Anthropic、ClaudeのチャットとCoworkを統合しDocs／Slidesも追加｜日刊AIウォッチ</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -203,52 +203,47 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .pagehead{border-bottom-color:var(--accent);}
 .pagehead .no,.page-fold>summary .no{background:var(--accent);}
 .hero{border-top-color:var(--accent);}
-</style></head><body><div class="wrap paper">
-<div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月17日（木）　第35号　採用26件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-09/20260915.html">← 9/15号</a></div>
-<p class="lead">Claude統合大型更新の一方で、フックが動いていない・権限に穴がある・例文が混入するという運用の急所が3本並んだ日</p>
-<section class="hero">
-  <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20260917-01.html">Claude Codeのフックは、静かに死ぬ — 117本を数えたら12本が呼ばれていなかった</a></h2>
-  <p>うちのhitl_guard・security_reminder_hookなど安全装置はフック前提で組まれている。『設定されているから動いている』という思い込みが同じ形で起きていないか、監査手法（呼び出し経路の棚卸し）が参考になりそう</p>
-  <div class="hero-meta"><span>Zenn</span></div>
-</section>
-
-<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">10件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-02.html"><span class="hl-title">AIに約束させない：権限設計の実践2本を読み比べる</span><span class="hl-src">編集部（比較解説）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-03.html"><span class="hl-title">Claude Codeに『指示書』を設計する — 6リポジトリを3人で回すCLAUDE.md設計</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-04.html"><span class="hl-title">エージェントの『失敗』283件を分類したら、本当の失敗は3分の1しかなかった</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-05.html"><span class="hl-title">AIの改善ループで、審査コメントの架空の例文が本文に混入した話</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-06.html"><span class="hl-title">Claude Codeで開発期間を2.5か月から1か月に縮めた『ハーネス』の設計手法</span><span class="hl-src">SmartHR Tech Blog</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-07.html"><span class="hl-title">AIに営業プロセスを一周させた（5）提案書23枚を型から組み上げる</span><span class="hl-src">Zenn</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-08.html"><span class="hl-title">AIに『テストを書かせる』のをやめた — QAプロセスごと渡して金銭系の大型施策を通した話</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-09.html"><span class="hl-title">AIエージェントの自己検査をやめてランナーで独立に検証する方法</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-10.html"><span class="hl-title">手書きの運行記録を自動化したら、総務に使うなと言われた話</span><span class="hl-src">Zenn</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">9件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260917-11.html"><span class="hl-title">Anthropic、ClaudeのチャットとCoworkを統合しDocs／Slidesも追加</span><span class="hl-src">TechCrunch</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-12.html"><span class="hl-title">GPT-5.5、10月14日に全プランで提供終了へ</span><span class="hl-src">リアルサウンド</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-13.html"><span class="hl-title">ChatGPT共同開発者がLLMとは異なる方法で処理するAIモデル『Jev』を開発</span><span class="hl-src">GIGAZINE</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-14.html"><span class="hl-title">freee、AIエージェントとAgent Hubの正式提供を開始</span><span class="hl-src">freee（プレスリリース）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-15.html"><span class="hl-title">Google、会話を止めずに裏でタスクを実行する音声モデル『Gemini 3.8 Live』公開</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-16.html"><span class="hl-title">Anthropic、財務アドバイザー向けAI『Claude for Financial Advisors』を発表</span><span class="hl-src">Yahoo!ニュース（ビジネス＋IT）</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-17.html"><span class="hl-title">Devin、仮想macOS環境を提供開始 — 実機なしでiOSアプリの開発・テスト・公開まで完結</span><span class="hl-src">Publickey</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-18.html"><span class="hl-title">OpenAI、ChatGPT内に『スポンサーエージェント』広告をテスト導入</span><span class="hl-src">Unite.AI</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-19.html"><span class="hl-title">GitHub Copilot、モデル自動選択『Auto』に3つのティアを追加</span><span class="hl-src">gihyo.jp</span></a></li></ul></details></li>
-</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（7件）を開く</span></summary>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260917-20.html"><span class="hl-title">個人情報保護法がAI向けに変わった点 — 第三者提供の緩和と罰則強化</span><span class="hl-src">note</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-21.html"><span class="hl-title">OpenAI、AI安全性でAnthropic・Google DeepMindと協議中</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-22.html"><span class="hl-title">『監視されていないときのAIは、もう評価できない』 OpenAI現役研究者が個人声明</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-23.html"><span class="hl-title">『人はAIより重要』『電源オフに抵抗しない』 Microsoft、AIの行動規範の案を公表</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260917-24.html"><span class="hl-title">中国AI・Kimiに聞いたら答えていたのはClaude — Anthropicが約30万件の入力転送を報告</span><span class="hl-src">Yahoo!ニュース（CNET Japan）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-25.html"><span class="hl-title">『APIキーは.envに』はもはや通用しない AIエージェントの内通者化をどう防ぐ？</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260917-26.html"><span class="hl-title">ChatGPTの『回答』を操る影響工作が始まった — AI版SEO『AEO』の脅威</span><span class="badge hl">見出しのみ</span><span class="hl-src">ニューズウィーク日本版</span></a></li>
-</ul></details></section></div>
-<details class="reject"><summary>今日のボツ記事 18件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
-<li><a href="https://zenn.dev/techcode/articles/0d805fffeeb1a2" target="_blank" rel="noopener">C# で PDF を PDF/A に変換する方法</a> — エンジニア向け実装詳細。うちの環境（Windows・非エンジニア）に再現性なし</li><li><a href="https://zenn.dev/hiro_f35/articles/0dfae59258a501" target="_blank" rel="noopener">コマンドプロンプトの有効な活用方法</a> — 初心者向け基礎知識。AI・自動化との関連が薄い</li><li><a href="https://note.com/rakudeji_note/n/nef1c513db412" target="_blank" rel="noopener">ChatGPTに『出力形式』を指定する方法！</a> — 初心者向け入門記事</li><li><a href="https://note.com/yumeyamaryuuya/n/n220a5ae9b8af" target="_blank" rel="noopener">AIは全部追わなくていい。3万3760円を学びに使い…</a> — 個人の雑記。実務知見なし</li><li><a href="https://note.com/dadion123/n/n66a213778188" target="_blank" rel="noopener">AI画像で毎回『誰これ？』を減らす</a> — 個人クリエイター向け。業務との関連なし</li><li><a href="https://ainow.ai/2026/09/16/278365/" target="_blank" rel="noopener">AIエージェント副業の案件6選と単価相場！</a> — PR・広告的コンテンツ</li><li><a href="https://www.itmedia.co.jp/news/article/2609/16/2000001527/" target="_blank" rel="noopener">マンガ原稿をクラウドに上げただけでGoogleアカウントBAN</a> — AI・業務自動化と無関係</li><li>ChatGPTを使って28時間不眠トレーニング計画を立てていた — スポーツニュース。AI・業務と無関係</li><li><a href="https://zenn.dev/container_cms/articles/516ce16594661b" target="_blank" rel="noopener">複数案件のローカル開発環境をDocker一枚岩にせず…</a> — Docker構成のエンジニア向け詳細</li><li><a href="https://zenn.dev/my_vision/articles/c602a080fc4a91" target="_blank" rel="noopener">shadcn/lint で AI エージェントにデザインシステムのルールを守らせる</a> — フロントエンド開発向け</li><li><a href="https://zenn.dev/stepeee/articles/2ca4a20ea55f86" target="_blank" rel="noopener">【今がチャンス】世界向けサービスはブルーオーシャン</a> — プロモーション的な煽り記事</li><li><a href="https://zenn.dev/appare/articles/claude-code-101-01-what-is-claude-code" target="_blank" rel="noopener">Claude Code 101を日本語で#1</a> — 入門記事。既知の内容</li><li><a href="https://velumesh.jp/blog/blog-2026-09-16.html" target="_blank" rel="noopener">Tailscaleやめたいの7つの技術的指摘を再検証</a> — VPNの比較記事。AI・業務と無関係</li><li><a href="https://www.itmedia.co.jp/aiplus/article/2609/16/2000001552/" target="_blank" rel="noopener">北海道、データセンター事業者向けの要請</a> — インフラ政策。直接の実務影響なし</li><li><a href="https://www.itmedia.co.jp/news/article/2609/16/2000001540/" target="_blank" rel="noopener">MetaのザッカーバーグCEO、AI協調減速論に言及</a> — 大手動向だがOpenAI/Anthropic/Google協議記事と重複する文脈</li><li>税理士法人で税理士資格を持たない正社員の平均年収ランキング — 人事・採用情報。AI・実務と無関係</li><li>弁護士ドットコム LegalBrain MCP（同一ニュース複数ソース統合） — 法務AI。事業承継・税理士業務に直接関連しないサービス告知</li><li>生成AI活用を『雑務』から『成果を生む業務』へ！書籍発売 — 書籍宣伝</li></ul></details>
-
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-09-17 06:51:12　日刊AIウォッチ（G159）</div>
-</div></body></html>
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../2026-09/20260917.html">← 9/17の紙面</a><a href="../index.html">目次・検索</a></div>
+<header class="masthead sub"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月17日（木）</div></header>
+<div class="crumb">日刊AIウォッチ ＞ 9/17 ＞ 3面 ツール・機能アップデート</div>
+<div style="margin-top:16px">
+<article class="imp3" id="20260917-11" title="ID:20260917-11">
+  <div class="a-meta"><span>TechCrunch</span><span>2026-09-16</span><span class="badge imp3">最重要</span></div>
+  <h1 class="a-title">Anthropic、ClaudeのチャットとCoworkを統合しDocs／Slidesも追加</h1>
+  
+  <ul class="summary"><li>ClaudeのチャットとCoworkが1つの画面に統合され、日常会話から大型タスクまでシームレスに移行可能に</li><li>新機能Claude Docs／Claude Slidesがベータ追加。チャット内で文書・スライドを作成しPowerPoint／PDFでダウンロード可能</li><li>Pro／Maxプランから順次展開（Web・デスクトップ・モバイル）、Team／Freeは今後対応</li></ul>
+  <div class="comment"><b>実務メモ</b>｜日常的にClaudeを使う場面で、簡単な資料・スライドまでチャット内で完結できる可能性がある。打合せ資料のたたき台作成の選択肢が広がる</div>
+  <a class="orig-btn" href="https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/" target="_blank" rel="noopener">原文を読む（techcrunch.com）↗</a>
+  
+  <div class="a-foot"><span class="tag">分類：Anthropic・Claude・新機能</span></div>
+</article>
+</div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
+<textarea id="consult-fallback" readonly style="display:none;width:100%;min-height:120px;margin-top:8px;padding:12px;font-size:13px;border:1.5px solid var(--line);border-radius:4px;font-family:inherit;"></textarea>
+<nav class="artnav">
+  <div class="prev"><a href="20260917-10.html"><span>前の記事</span><b>手書きの運行記録を自動化したら、総務に使…</b></a></div>
+  <div class="home"><a href="../2026-09/20260917.html"><b>紙面へ戻る</b></a></div>
+  <div class="next"><a href="20260917-12.html"><span>次の記事</span><b>GPT-5.5、10月14日に全プランで…</b></a></div>
+</nav>
+<div class="footer">本記事はAIによる自動要約です。導入・契約の判断は必ず一次情報をご確認ください。</div>
+</div>
+<script>
+const CONSULT_TEXT="日刊 AIウォッチの記事について相談です。\n記事ID: ai:20260917-11\nタイトル: Anthropic、ClaudeのチャットとCoworkを統合しDocs／Slidesも追加\n原文: https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/\nまず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    // 自動コピーできない環境＝文面を出して全選択済みにする（Ctrl+Cだけで済む）
+    const ta=document.getElementById('consult-fallback');
+    ta.value=CONSULT_TEXT;
+    ta.style.display='block';
+    ta.focus();
+    ta.select();
+    this.textContent='下の文を Ctrl+C でコピーしてください（選択済み）';
+  }
+});
+</script></body></html>
