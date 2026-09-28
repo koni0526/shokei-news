@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年9月29日（火）</title><style>
+<title>Claude Code公式コース『Claude Code in action』完走レポート｜日刊AIウォッチ</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -203,60 +203,47 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .pagehead{border-bottom-color:var(--accent);}
 .pagehead .no,.page-fold>summary .no{background:var(--accent);}
 .hero{border-top-color:var(--accent);}
-</style></head><body><div class="wrap paper">
-<div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月29日（火）　第47号　採用34件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-09/20260928.html">← 9/28号</a></div>
-<p class="lead">AIに任せる線引きと、任せた先で起きること――実測が詰まった月曜号</p>
-<section class="hero">
-  <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20260929-01.html">要約から記事を書いたら、原文と10か所ずれていた――LLMの報告は証拠にならない</a></h2>
-  <p>『要約から書くとずれる』『0件は無いことの証明にならない』は、うちの『ツール結果を捏造しない』ルールと重なる指摘。報告文を実測文字列のまま貼る運用は検討の余地あり</p>
-  <div class="hero-meta"><span>Zenn</span></div>
-</section>
-
-<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">18件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260929-02.html"><span class="hl-title">税理士向け「AI株価算定ツール」がリリース、freee連携で非上場株評価を自動化・無料プランあり</span><span class="hl-src">PR TIMES（Autech）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-03.html"><span class="hl-title">『1行の指示』と『完了条件つき』をclaude -pに20回流して比べた実測結果</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-04.html"><span class="hl-title">Claude Codeのフックで破壊操作を止める：2つの実装を読み比べる</span><span class="hl-src">編集部（比較解説）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-05.html"><span class="hl-title">AIに任せていい工程の線引き――3条件と、手を残す2か所</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-06.html"><span class="hl-title">Claude Code公式コース『Claude Code in action』完走レポート</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-07.html"><span class="hl-title">Claude Codeを10本並列で動かし、1人で2万ページの資格サイトを2か月運営した記録</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-08.html"><span class="hl-title">週10時間の削減は、工程の移行順で決まる</span><span class="hl-src">Zenn</span></a></li>
-<li><details class="more-fold"><summary>参考 10件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-09.html"><span class="hl-title">Claude Codeの役割を10個に分けたら、人数の記載が2か所でずれた</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-10.html"><span class="hl-title">介護事業所の提供票送信をAIに任せたら、5件中1件で止まった</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-11.html"><span class="hl-title">AIツールの出力が変わったときに効く『評価ログ』の作り方</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-12.html"><span class="hl-title">非エンジニアの医療事務職が、AIでWPFの業務ツールを作れるようになるまで</span><span class="hl-src">note</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-13.html"><span class="hl-title">AIが変換した記事に記号が8個そのまま残って公開されていた</span><span class="hl-src">note</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-14.html"><span class="hl-title">Claude Code作者、AIコードの『ブラックボックス』を否定し使い分けを強調</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-15.html"><span class="hl-title">ChatGPT回答5,460件を分析、『HPはあるのにAIにおすすめされない』構造が判明</span><span class="hl-src">PR TIMES（Mayui）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-16.html"><span class="hl-title">セブンセンス税理士法人×AI自動記帳『tofu』、記帳削減で生まれた時間をクライアント対話に</span><span class="hl-src">PR TIMES（Tofu）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-17.html"><span class="hl-title">『効果ゼロ』は測り方が間違っていたから出ていた</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-18.html"><span class="hl-title">日曜日に勝手に動き出したAI――止めていた定期処理の追いつき実行</span><span class="hl-src">Zenn</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">10件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-19.html"><span class="hl-title">税務AIツール『Basis』、GPT-6 Astraで税務ワークブック作成が2倍速に</span><span class="hl-src">OpenAI</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-20.html"><span class="hl-title">Claude Codeに『MCPツールフック』と設定監査コマンド『/doctor prompt-audit』が追加</span><span class="hl-src">Qiita</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-21.html"><span class="hl-title">Claude Sonnet 5.5発表、価格据え置きで処理速度30%以上向上</span><span class="badge hl">見出しのみ</span><span class="hl-src">Anthropic</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-22.html"><span class="hl-title">Claude Codeに『もうひと踏ん張り』機能、5時間制限到達後もキリのいい所まで継続</span><span class="badge hl">見出しのみ</span><span class="hl-src">Anthropic</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-23.html"><span class="hl-title">マイクロソフト『Copilot』刷新、Home/Code/Autopilotの3構成・主要機能は従量課金制に</span><span class="badge hl">見出しのみ</span><span class="hl-src">Microsoft</span></a></li>
-<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-24.html"><span class="hl-title">『Claude Marketplace』公開、2千超の連携ツール・AI製品を集約</span><span class="badge hl">見出しのみ</span><span class="hl-src">Anthropic</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-25.html"><span class="hl-title">GitHub CopilotにGPT-6 Sol/Luna対応、コードレビュー個人設定も全プランに拡大</span><span class="badge hl">見出しのみ</span><span class="hl-src">GitHub</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-26.html"><span class="hl-title">AWSがAIエージェント自作フレームワーク『Strands』をOSS公開</span><span class="hl-src">Publickey</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-27.html"><span class="hl-title">無料PDF編集ソフト『PDF MARIN』、国会図書館のAI-OCRで縦書き認識を強化</span><span class="hl-src">Impress Watch</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-28.html"><span class="hl-title">Adobe、GeminiとClaudeを統合しPhotoshop・Acrobat等を対話から操作可能に</span><span class="hl-src">ITmedia</span></a></li></ul></details></li>
-</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（6件）を開く</span></summary>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20260929-29.html"><span class="hl-title">サム・アルトマン氏、国連で『制御できないAIは訓練すべきでない』と演説――2日後に最先端モデルの訓練停止も公表</span><span class="hl-src">CNET Japan</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-30.html"><span class="hl-title">『AI認知負債』――AIに頼るほど人の判断力が失われる構造</span><span class="hl-src">arclampブログ</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20260929-31.html"><span class="hl-title">トランプ大統領と習主席、AIを『超知能（SI）』と呼ぶことで合意し対話枠組みを新設</span><span class="hl-src">ITmedia</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-32.html"><span class="hl-title">Claudeが103秒で実ファイル4万8000個を誤削除、AIエージェントの安全境界に警鐘</span><span class="badge hl">見出しのみ</span><span class="hl-src">報道</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-33.html"><span class="hl-title">GitHubのAIセキュリティエージェントでAndroidアプリの脆弱性24件を発見</span><span class="hl-src">GitHub Blog</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20260929-34.html"><span class="hl-title">フロリダ州、OpenAIのモデル開発停止と未成年者のChatGPT利用禁止を求める裁判所命令を申請</span><span class="badge hl">見出しのみ</span><span class="hl-src">報道</span></a></li></ul></details></li>
-</ul></details></section></div>
-<details class="reject"><summary>今日のボツ記事 12件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
-<li><a href="https://github.com/docker/skills" target="_blank" rel="noopener">Docker skills for AI coding agents</a> — Dockerコンテナ開発特化。当事務所のNode/Excel/HTML中心の環境との重なり薄い</li><li><a href="https://note.com/safe_magpie7463/n/n0a2162efb4b5" target="_blank" rel="noopener">AIで経理マニュアルを作ってみた</a> — 具体性の薄い個人の感想文</li><li><a href="https://atmarkit.itmedia.co.jp/ait/articles/2609/28/news027.html" target="_blank" rel="noopener">AIエージェントに頼るだけでは失敗する（ITR分析）</a> — SIer・大企業向けAI導入プロセスの話</li><li>note #AI活用タグの個人日記・感想文系（約20件） — 具体的な仕組み・手順のない感想文・日記レベル</li><li>Google News重複記事群（Copilot刷新・Claude Sonnet 5.5など、同一ニュースの別メディア転載、約50件） — 同一ニュースの重複。最も一次に近いソースを採用済み</li><li>PR TIMES・プレスリリース転載群（AI研修・導入支援サービスの宣伝、約30件） — 広告・セミナー告知・サービス宣伝</li><li>大企業向けDX事例群（損保ジャパンGemini展開・日立FDE・安川電機AIロボット等） — 大規模組織向けの話で1人事務所での再現性なし</li><li>外国語記事群（Vietnam.vn等） — 日本語以外の記事</li><li>ゲーム開発・エンタメ系（サイゼリヤ間違い探し・ソリティア旅ゲーム・プリズムシューティング等） — 業務に関係のない個人開発</li><li>ひろゆき氏・芸能人のAIコメント系 — 実務上の意味なし</li><li>AIキャラチャット依存・AIの髪型など個人利用系 — 業務に関係なし</li><li>ChatGPTの開発者は大学の蔵書をどう活用 — ベトナム語メディア・実務と無関係</li></ul></details>
-
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-09-29 07:00:51　日刊AIウォッチ（G159）</div>
-</div></body></html>
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../2026-09/20260929.html">← 9/29の紙面</a><a href="../index.html">目次・検索</a></div>
+<header class="masthead sub"><h1>日刊 AIウォッチ</h1><div class="date">2026年9月29日（火）</div></header>
+<div class="crumb">日刊AIウォッチ ＞ 9/29 ＞ 1面 実践・ノウハウ</div>
+<div style="margin-top:16px">
+<article class="imp2" id="20260929-06" title="ID:20260929-06">
+  <div class="a-meta"><span>Zenn</span><span>2026-09-28</span></div>
+  <h1 class="a-title">Claude Code公式コース『Claude Code in action』完走レポート</h1>
+  
+  <ul class="summary"><li>長時間セッション管理にPlanモード・/compact・チェックポイント・/goal・ループ・worktreeを紹介</li><li>指示体系をCLAUDE.md（慣習）・スキル（手順）・フック（強制ルール）の3層に整理し、権限モードの使い分けも解説</li><li>『見ていなかった分だけ検証する』原則のもと、無人実行はJSON結果と終了コードで検証するとしている</li></ul>
+  <div class="comment"><b>実務メモ</b>｜CLAUDE.md・スキル・フックの3層構成や無人実行の検証方法など、うちの運用と照らし合わせて抜けている使い方がないか確認する材料に</div>
+  <a class="orig-btn" href="https://zenn.dev/appare/articles/claude-code-in-action-course-japanese" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
+  
+  <div class="a-foot"><span class="tag">分類：Claude Code・使い方</span></div>
+</article>
+</div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
+<textarea id="consult-fallback" readonly style="display:none;width:100%;min-height:120px;margin-top:8px;padding:12px;font-size:13px;border:1.5px solid var(--line);border-radius:4px;font-family:inherit;"></textarea>
+<nav class="artnav">
+  <div class="prev"><a href="20260929-05.html"><span>前の記事</span><b>AIに任せていい工程の線引き――3条件と…</b></a></div>
+  <div class="home"><a href="../2026-09/20260929.html"><b>紙面へ戻る</b></a></div>
+  <div class="next"><a href="20260929-07.html"><span>次の記事</span><b>Claude Codeを10本並列で動か…</b></a></div>
+</nav>
+<div class="footer">本記事はAIによる自動要約です。導入・契約の判断は必ず一次情報をご確認ください。</div>
+</div>
+<script>
+const CONSULT_TEXT="日刊 AIウォッチの記事について相談です。\n記事ID: ai:20260929-06\nタイトル: Claude Code公式コース『Claude Code in action』完走レポート\n原文: https://zenn.dev/appare/articles/claude-code-in-action-course-japanese\nまず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    // 自動コピーできない環境＝文面を出して全選択済みにする（Ctrl+Cだけで済む）
+    const ta=document.getElementById('consult-fallback');
+    ta.value=CONSULT_TEXT;
+    ta.style.display='block';
+    ta.focus();
+    ta.select();
+    this.textContent='下の文を Ctrl+C でコピーしてください（選択済み）';
+  }
+});
+</script></body></html>
