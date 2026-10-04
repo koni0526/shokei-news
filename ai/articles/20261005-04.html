@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年10月5日（月）</title><style>
+<title>Claude Codeを複数セッション並行で回すと「止まる」5つの理由と、止めない運用（承認待ち・自動拒否ループ・ログイン切れ・送信の取りこぼし・再起動）｜日刊AIウォッチ</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -203,42 +203,47 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .pagehead{border-bottom-color:var(--accent);}
 .pagehead .no,.page-fold>summary .no{background:var(--accent);}
 .hero{border-top-color:var(--accent);}
-</style></head><body><div class="wrap paper">
-<div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月5日（月）　第53号　採用14件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-10/20261004.html">← 10/4号</a></div>
-<p class="lead">「成功と返したのに失敗していた」「指示文でなく出口の検証で止める」実測が並んだ日。2面の提案は、既報と重なるものしかなく、今日はゼロ。</p>
-
-<section class="weekly">
-  <h2>週刊面｜先週の振り返り（2026年9月28日（月）〜）</h2>
-  <h4>先週の最重要</h4><ul><li><a href="../articles/20261003-01.html">無人実行が「静かに止まる」理由：3つの発信を読み比べる（権限／確認画面／成果物の不在）</a>（編集部（比較解説））</li><li><a href="../articles/20261002-01.html">claude -p を無人で毎朝走らせる落とし穴：3つの発信を読み比べる</a>（編集部（比較解説））</li><li><a href="../articles/20261001-10.html">OpenAI DevDay 2026：GPT-6.1 Sol、常駐エージェント『dots』、ChatGPT Space、Ultrafast</a>（ITmedia）</li><li><a href="../articles/20261001-01.html">AIエージェントを無人で動かしたら、最後の1行（push直前）で全部止まった話</a>（Zenn）</li><li><a href="../articles/20260930-17.html">GPT-6.1 Sol登場――一部Astra並み性能をコスト5分の1で提供</a>（ITmedia）</li></ul>
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../2026-10/20261005.html">← 10/5の紙面</a><a href="../index.html">目次・検索</a></div>
+<header class="masthead sub"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月5日（月）</div></header>
+<div class="crumb">日刊AIウォッチ ＞ 10/5 ＞ 1面 実践・ノウハウ</div>
+<div style="margin-top:16px">
+<article class="imp1" id="20261005-04" title="ID:20261005-04">
+  <div class="a-meta"><span>Zenn</span><span>2026-10-04</span></div>
+  <h1 class="a-title">Claude Codeを複数セッション並行で回すと「止まる」5つの理由と、止めない運用（承認待ち・自動拒否ループ・ログイン切れ・送信の取りこぼし・再起動）</h1>
   
-  <h4>先週の掲載：154件</h4>
-</section>
-<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">7件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261005-01.html"><span class="hl-title">Claude Codeで YouTubeショートを全自動で回して4か月：「成功」を返したのに失敗していた3か所（サムネ33本未設定・音声0.8秒欠落・同題材の毎日公開）</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261005-02.html"><span class="hl-title">AIに記事生成を任せたらQiita CIが14回連続で停止：SKILL.mdを直しても直らず、「出口に決定論の検証ゲート」で解決</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261005-03.html"><span class="hl-title">Claude Codeの許可設定：allowの書き方と、実機で効かなかった3つ（フルパス・日本語フォルダ名・&amp;&amp;や;でつないだ命令）</span><span class="hl-src">note</span></a></li>
-<li><details class="more-fold"><summary>参考 4件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-04.html"><span class="hl-title">Claude Codeを複数セッション並行で回すと「止まる」5つの理由と、止めない運用（承認待ち・自動拒否ループ・ログイン切れ・送信の取りこぼし・再起動）</span><span class="hl-src">Zenn</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-05.html"><span class="hl-title">二重実行を防ぐリトライ設計：2本の発信を読み比べる（AIに同じ操作を頼み直す前に／n8nのWebhookが二重起動する原因）</span><span class="hl-src">編集部（比較解説）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-06.html"><span class="hl-title">AIに比較表を頼むと空欄をそれらしく埋めてくる：「記載なし」を残させるプロンプト3本（コピペ用・出力例つき）</span><span class="badge hl">見出しのみ</span><span class="hl-src">note</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-07.html"><span class="hl-title">Claude Codeを毎時起動して、クオンツ研究を仮説から本番投入まで無人で回している仕組み</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">4件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261005-08.html"><span class="hl-title">Claude Codeに「Mods」追加：画面も処理も書き換えるプラグイン（各社報道とフック解説を読み比べる）</span><span class="hl-src">編集部（比較解説）</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-09.html"><span class="hl-title">個人向けGeminiのモデル選択が厳格化：10月9日から無料ユーザーは「Flash-Lite」のみ、AI PlusはFlashまで、AI Pro以上で全3モデル</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-10.html"><span class="hl-title">ChatGPTの利用枠を外部アプリでも使える「Sign in with ChatGPT」発表／Google AntigravityにClaude Opus 5.5追加（有料プランでも上限が早く、旧モデルは11月2日で終了）</span><span class="badge hl">見出しのみ</span><span class="hl-src">Real Sound・shiritomo（Google News経由）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-11.html"><span class="hl-title">Apple、macOSに「フルディスクアクセス」の新しい制御機能を導入へ：AIエージェントのリスク対策／LibreOfficeの脆弱性7件のうち5件はClaudeが発見</span><span class="badge hl">見出しのみ</span><span class="hl-src">こぼねみ・窓の杜</span></a></li></ul></details></li>
-</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（3件）を開く</span></summary>
-<ul class="headlines">
-
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-12.html"><span class="hl-title">OpenAIの安全性報告書を統括した従業員が退社し「文化は壊れている」と寄稿</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-13.html"><span class="hl-title">税理士向けAI株価算定ツール（Autech）が登場：非上場株式評価の効率化をうたう</span><span class="badge hl">見出しのみ</span><span class="hl-src">ニュースメディアVOIX（Google News経由）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261005-14.html"><span class="hl-title">Anthropic、エンジニア1万人を育てる「Frontier Academy」に1億ドル／AIで差し押さえ調査選定の時間を9割削減した練馬区の税務変革</span><span class="badge hl">見出しのみ</span><span class="hl-src">日経クロステック・ほか</span></a></li></ul></details></li>
-</ul></details></section></div>
-<details class="reject"><summary>今日のボツ記事 4件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
-<li><a href="https://zenn.dev/tomsolog/articles/20261003-claude-code-hooks-automation" target="_blank" rel="noopener">Zenn・Qiita・noteのCLI・hooks入門／サブエージェント組織ガイド／コスト計算／eval／ROS2権限設計／iOSアプリ売上公開／Blender動画／プロンプト丁寧語実験ほか（約25本）</a> — 入門的な内容、他業種の話、または再現性が薄い</li><li><a href="https://note.com/lion_fukugyou/n/nebd838d47007" target="_blank" rel="noopener">投資・食事・ポイ活・自己紹介・小説などnote #AI活用の無関係記事（約15本）</a> — 業務と無関係</li><li><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE0yUU9QcUx1eXhlNHlMSDBiYjdONjhiUnNhclh1UkNmMDBCQkk" target="_blank" rel="noopener">PR TIMES・研修・登壇告知（KingdomEntertainment／がばいAI／エージェンテック／SEVENRICH／セブンセンスほか）</a> — PR・イベント告知</li><li><a href="https://www.publickey1.jp/blog/26/supabase1sqlitetursoaidb.html" target="_blank" rel="noopener">OpenAI安全担当退職の重複（はてブ・Gigazine）／Gemini制限の重複（はてブ）／State of Devs 2026／Supabase×Turso買収／Anthropic上場解説／ChatGPTの訪問数ほか</a> — 重複の統合、または大手動向・統計で本体に入れる必然性が薄い</li></ul></details>
-
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-05 06:33:42　日刊AIウォッチ（G159）</div>
-</div></body></html>
+  <ul class="summary"><li>止まり方は、承認待ち、時間切れ拒否の再実行ループ、CLIのログイン切れ、Enterが効かない入力状態、再起動によるプロセス消失の5種類。5〜10セッションの並行で頻発し、確認ダイアログの既定の有効期限は約5分</li><li>一番効くのは「どの止まり方かを見えるようにすること」。読み取りは許可・書き込みと削除は確認、と許可で線を引く</li><li>状態は画面でなくログファイル（jsonl）で判定し、通知で承認待ちをすぐ検出する</li></ul>
+  <div class="comment"><b>実務メモ</b>｜うちの無人ジョブの認証切れ・権限停止の見張りと同じ問題意識。止まり方を種類で分けて見る発想が、健康診断の出し方の参考になる</div>
+  <a class="orig-btn" href="https://zenn.dev/robo_agent_dev/articles/claude-code-parallel-sessions" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
+  
+  <div class="a-foot"><span class="tag">分類：並行セッション・無人運用・見える化・Claude Code</span></div>
+</article>
+</div>
+<button type="button" class="consult-btn" id="consult">この記事をAIに相談（クリックでコピー）</button>
+<div class="consult-hint">押すと相談用の文がコピーされます。Claude（Claude Code）に貼って、続けて相談内容を書くだけ。</div>
+<textarea id="consult-fallback" readonly style="display:none;width:100%;min-height:120px;margin-top:8px;padding:12px;font-size:13px;border:1.5px solid var(--line);border-radius:4px;font-family:inherit;"></textarea>
+<nav class="artnav">
+  <div class="prev"><a href="20261005-03.html"><span>前の記事</span><b>Claude Codeの許可設定：all…</b></a></div>
+  <div class="home"><a href="../2026-10/20261005.html"><b>紙面へ戻る</b></a></div>
+  <div class="next"><a href="20261005-05.html"><span>次の記事</span><b>二重実行を防ぐリトライ設計：2本の発信を…</b></a></div>
+</nav>
+<div class="footer">本記事はAIによる自動要約です。導入・契約の判断は必ず一次情報をご確認ください。</div>
+</div>
+<script>
+const CONSULT_TEXT="日刊 AIウォッチの記事について相談です。\n記事ID: ai:20261005-04\nタイトル: Claude Codeを複数セッション並行で回すと「止まる」5つの理由と、止めない運用（承認待ち・自動拒否ループ・ログイン切れ・送信の取りこぼし・再起動）\n原文: https://zenn.dev/robo_agent_dev/articles/claude-code-parallel-sessions\nまず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。\n相談内容：";
+document.getElementById('consult').addEventListener('click',async function(){
+  try{
+    await navigator.clipboard.writeText(CONSULT_TEXT);
+    this.textContent='コピーしました。Claudeに貼って送信してください';
+    this.classList.add('done');
+  }catch(e){
+    // 自動コピーできない環境＝文面を出して全選択済みにする（Ctrl+Cだけで済む）
+    const ta=document.getElementById('consult-fallback');
+    ta.value=CONSULT_TEXT;
+    ta.style.display='block';
+    ta.focus();
+    ta.select();
+    this.textContent='下の文を Ctrl+C でコピーしてください（選択済み）';
+  }
+});
+</script></body></html>
