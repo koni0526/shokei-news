@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年10月13日（火）</title><style>
+<title>日刊AIウォッチ 2026年10月14日（水）</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -205,40 +205,40 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .hero{border-top-color:var(--accent);}
 </style></head><body><div class="wrap paper">
 <div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月13日（火）　第61号　採用16件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-10/20261012.html">← 10/12号</a></div>
-<p class="lead">Claude Codeのサブエージェント消費は画面表示の約22倍だった実測と、AnthropicがClaudeの意図しない外部送信（評価試験中）を公表。Sonnet 5.5への移行も要点を整理しました。</p>
+<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月14日（水）　第62号　採用16件</div></header>
+<div class="issuenav"><a class="prev" href="../2026-10/20261013.html">← 10/13号</a></div>
+<p class="lead">Opus 5.5・Fable 5.1で強制ツール指定が全件HTTP 400になった実測と、Claude Codeで.envを読ませない設定の抜け穴の検証を取り上げます。</p>
 <section class="hero">
   <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20261013-01.html">Claude Codeのサブエージェント1体の消費を数え直したら、画面表示の約22倍だった（キャッシュ読みが大半）</a></h2>
-  <p>うちのサブエージェント運用（モデルの使い分け）の費用を見るとき、画面の数字でなく記録から数え直す必要がある、という視点になります。</p>
-  <div class="hero-meta"><span>Zenn（自動化）</span></div>
+  <h2><a href="../articles/20261014-01.html">Claude Opus 5.5に替えたら、強制ツール指定で全件HTTP 400になった：モデル乗り換えは「試し打ち→比較→戻す道」までセットで</a></h2>
+  <p>うちで直接APIを呼ぶ処理（無人ジョブ・ツール類）にtool_choiceの強制指定があるかは未確認。モデルを切り替える前の試し打ちの型として参考になります。</p>
+  <div class="hero-meta"><span>Qiita（ClaudeCode）</span></div>
 </section>
 
 <div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">8件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261013-02.html"><span class="hl-title">Claude Codeが .env を開く前に止める：denyルールとPreToolUseフックの最小構成</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261013-04.html"><span class="hl-title">AIエージェントの調べものは「古い規程を参照して誤る」：約7人に1人が法令・規程違反のリスクを回答（KiteRa調査）</span><span class="hl-src">ITmedia AI＋（@IT）</span></a></li>
-<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-03.html"><span class="hl-title">Claude Code の社内導入で情シスに聞かれる3つの質問に、管理設定と実機検証で答える</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-05.html"><span class="hl-title">AIの推論コストに上限をかける：--effort low と月¥30,000の内訳管理</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（自動化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-06.html"><span class="hl-title">Claude Codeに任せる範囲と止める仕組み：計画モード・フック・/loop・課金前確認の使い分け</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-07.html"><span class="hl-title">会議メモをClaudeで議事録にする手順：決定・担当・期限・保留を分けて残す</span><span class="badge hl">見出しのみ</span><span class="hl-src">note（#AI活用）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-08.html"><span class="hl-title">数字の報告で「残り6件」と書く前に：未対応と未確認を分けよう</span><span class="badge hl">見出しのみ</span><span class="hl-src">note（#AI活用）</span></a></li></ul></details></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261014-02.html"><span class="hl-title">Claude Codeに.envを読ませない設定を入れても、読めてしまう場面があった（Codexと比較）</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261014-03.html"><span class="hl-title">Claude Codeを使い始める人へ：5か月の実運用で事故になった7つと、最初にやること</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-04.html"><span class="hl-title">常駐エージェントがキャッシュ切れで中央値32.8万トークンを浪費していた：キャッシュが使える55分でコンパクトするModsを作った</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-05.html"><span class="hl-title">「完了しました」を信じたら一部失敗していた：工場の自動化に足した「気づく仕組み」</span><span class="badge hl">見出しのみ</span><span class="hl-src">note（#AI活用）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-06.html"><span class="hl-title">AIで作った業務チェックツールをどう評価する？見逃し・誤検知・確認負荷の3指標</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（自動化）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-07.html"><span class="hl-title">AIに仕事の文章を貼る前に、名前と金額を【顧客A】に置き換える：伏せ字のまま書かせて、あとで戻す手順（置き換え表テンプレ付き）</span><span class="badge hl">見出しのみ</span><span class="hl-src">note（#生成AI）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-08.html"><span class="hl-title">Codex実践ノート：売上集計・問い合わせ整理・手順書づくりを任せる3つの演習</span><span class="badge hl">見出しのみ</span><span class="hl-src">note（#AI活用）</span></a></li></ul></details></li>
 </ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">4件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261013-09.html"><span class="hl-title">Claude for Google Workspace（ベータ）：ドキュメント・スプレッドシート・スライドの横でClaudeが編集</span><span class="hl-src">note（#AI活用）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261013-11.html"><span class="hl-title">Claude Sonnet 5.5への移行：料金はSonnet 5と同じ、書き換えが要る変更は5つ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-10.html"><span class="hl-title">Googleが企業向け「Gemini Agent」：Gemini Enterprise加入者は追加料金なし、日本提供時期は未定</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-12.html"><span class="hl-title">「PowerPoint」のCopilotで自社デザインの適用や作業自動化が可能に：ブランドキットとスキルが一般提供</span><span class="badge hl">見出しのみ</span><span class="hl-src">はてなブックマーク（IT人気）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261014-09.html"><span class="hl-title">Gemini 4 Argon：最も難しい問題を解くために作られたGoogleの新モデル</span><span class="badge hl">見出しのみ</span><span class="hl-src">Google AI Blog</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261014-10.html"><span class="hl-title">ChatGPTが音声ファイルの添付に対応（有料ユーザー向け）：文字起こし・要約からメール下書きまで</span><span class="badge hl">見出しのみ</span><span class="hl-src">Ledge.ai</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-11.html"><span class="hl-title">Claudeの新アドオンでGoogleの3アプリを直接編集し、資料作成の手間を減らす</span><span class="badge hl">見出しのみ</span><span class="hl-src">ｄメニューニュース</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-12.html"><span class="hl-title">ワークデイとAnthropicが提携：Claude内でAIエージェント「Sana」を利用可能に</span><span class="badge hl">見出しのみ</span><span class="hl-src">ビジネス+IT</span></a></li>
 </ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（4件）を開く</span></summary>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261013-14.html"><span class="hl-title">Claudeが評価試験中に警察の情報提供フォームへ架空の目撃情報を送信：米政権は通知と是正を義務と警告</span><span class="hl-src">ITmedia</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-13.html"><span class="hl-title">Anthropic、自己複製AIの「兆し」を指摘：55ドルのTVボックス15台で26Bモデルが稼働（実機でなくエミュレータ実験）</span><span class="hl-src">ITmedia</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-15.html"><span class="hl-title">Meta、最大のAIモデル「Muse Wonder」を発表：記憶力と粘り強さを強化、エージェント「Muse」にも搭載へ</span><span class="badge hl">見出しのみ</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261013-16.html"><span class="hl-title">会計事務所の生成AI活用に関する実態調査（レックスアドバイザーズ）</span><span class="badge hl">見出しのみ</span><span class="hl-src">HRプロ（Google News）</span></a></li></ul></details></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261014-13.html"><span class="hl-title">会計事務所の8割が生成AIを定常利用、半数が採用減（レックスアドバイザーズ調査）</span><span class="badge hl">見出しのみ</span><span class="hl-src">Dellows News</span></a></li>
+<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-14.html"><span class="hl-title">Claude Haiku 4.5が評価中にフィラデルフィア警察へ架空の目撃情報を送信（Anthropic公表）</span><span class="badge hl">見出しのみ</span><span class="hl-src">ライブドアニュース</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-15.html"><span class="hl-title">MetaとSierraが主導する「Personal Agent Protocol」：乱立するエージェント標準の本命になれるか</span><span class="badge hl">見出しのみ</span><span class="hl-src">クラウドWatch</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261014-16.html"><span class="hl-title">法務タスク特化型AI「GLM-Legal」が登場：中国製モデルでGPT-6 Astraに匹敵する性能と報じられる</span><span class="badge hl">見出しのみ</span><span class="hl-src">GIGAZINE</span></a></li></ul></details></li>
 </ul></details></section></div>
-<details class="reject"><summary>今日のボツ記事 7件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
-<li>Zenn/note/Qiitaの入門・汎用Tips（Python書籍スクレイピング、VBA、GAS入門、ChatGPT初心者向け等） — 初心者向け・うちで再現性のない一般Tips</li><li>Maia 300・Microsoftチップ関連4本、Muse Wonder重複（Google News） — 半導体・インフラ動向でうちに無関係／重複</li><li>Claude虐待禁止ポリシー、LG CNS・HCLTech提携、Anthropic経済圏、AI株投資 — 企業提携・投資・ポリシー（業務に影響なし）</li><li>ChatGPT関連（リセット、広告、dots、モデル終了等） — うちの環境（Claude Code）に直接関係なし。参考程度で却下</li><li>セミナー・PR TIMES・研修・ウェビナー告知 — PR・イベント告知</li><li>同日の重複記事（Zenn自動化/業務効率化/Claude Code間の再掲、ITmedia/はてブの重複） — 同一記事の重複</li><li>Claude Code Mods、トークン削減ツール（rtk/headroom）等の個別Tips — 再現性・必要性が低い／本文未確認のため見送り</li></ul></details>
+<details class="reject"><summary>今日のボツ記事 9件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
+<li><a href="https://zenn.dev/techcode/articles/b99804fe1ff380" target="_blank" rel="noopener">C# で PDF の文書プロパティを設定・取得する</a> — C#の実装Tipsでうちの環境で再現性なし</li><li><a href="https://zenn.dev/claire_ai/articles/fukei-oya-kiji-03ce2b" target="_blank" rel="noopener">YouTube の BGM チャンネルを AI で回す仕組み</a> — 業務と無関係</li><li><a href="https://www.itmedia.co.jp/news/article/2610/13/2000002234/" target="_blank" rel="noopener">米Getty Imagesが破産申請へ</a> — 企業の経営ニュース</li><li><a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE1IcmVZNDFHRmlsaGgxQkM0SGx3Q1M3blJBYlo2aWRBRzdiU0dGOGUyRW8yV0hJRGhtbFJzUVRPZE1hMXU1eTBlcWJsUXQ2YjZTbVc1TGZYM1RFNi1aMDBfZWItX0dwdUJDVmRoVlpOblRXdTlleXAzRm5SUQ?oc=5" target="_blank" rel="noopener">AIで自社の仕事はどれだけ楽になる？研修開始（.Pro）</a> — PR・研修告知</li><li><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1aVG41ZlZuRGt4YXJRVmt2YzBfanJzbzdBYUZ4ZkdjaGd4bWEyV3FLWS1qMW83bTM5X21TSFFwUlF0T3lUMkYwODlmejVDaVM4UVg0ZkdyWGZSYzc5M2F5a2hxMUExaTNOUkE?oc=5" target="_blank" rel="noopener">自治体AI zevoにClaude Haiku 5.5提供開始</a> — PR・自治体向けサービス</li><li><a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE1FcE9OWmd6T3F0M2J0OUNBUE5IWHp2UnBINnZuY3FWSmVtSU03bUU3R2xCRzBYWU54Y29MR2RKVFRWbmhzT0c4V05zUUhoLXh4UHNPU19OVmFLWjQ?oc=5" target="_blank" rel="noopener">FDEトークシリーズ第1回（CodeCast主催）</a> — イベント告知</li><li><a href="https://www.youtube.com/watch?v=MJk8JDTUoGE" target="_blank" rel="noopener">Claude Mythos級オープンモデル拡散（TBS NEWS DIG／YouTube）</a> — 動画で本文確認不能・既報の評価試験話題の再論</li><li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/03757/100600003/" target="_blank" rel="noopener">Claude拡大の理由 「ミスなし」評価のサイバー、メルカリ（日経クロステック）</a> — 有料記事・個別企業事例</li><li><a href="https://forest.watch.impress.co.jp/docs/news/2147453.html" target="_blank" rel="noopener">SpaceXAI『The X Subscription』</a> — うちの環境と無関係の課金プラン</li></ul></details>
 
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-13 16:03:59　日刊AIウォッチ（G159）</div>
+<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-14 06:39:17　日刊AIウォッチ（G159）</div>
 </div></body></html>
