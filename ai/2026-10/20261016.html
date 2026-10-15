@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日刊AIウォッチ 2026年10月16日（金）</title><style>
+:root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+.wrap{max-width:860px;margin:0 auto;padding:32px 32px 64px;}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── マストヘッド（二重罫は維持） ── */
+.masthead{border-bottom:3px double var(--ink);padding-bottom:16px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;}
+.masthead h1{font-family:"Yu Mincho","YuMincho","MS PMincho",serif;font-size:30px;letter-spacing:.12em;font-weight:700;}
+.masthead .date{color:var(--sub);font-size:13px;letter-spacing:.06em;}
+.masthead.sub h1{font-size:20px;letter-spacing:.08em;}
+.masthead.topic h1{font-size:22px;letter-spacing:.06em;}
+
+/* ── 前号／次号（注意11） ── */
+.issuenav{display:flex;align-items:center;gap:16px;font-size:13px;margin-top:8px;}
+.issuenav a{display:inline-flex;align-items:center;min-height:44px;color:var(--sub);text-decoration:none;}
+.issuenav a:hover{color:var(--accent);}
+.issuenav .next{margin-left:auto;}
+
+/* ── パンくず（注意7） ── */
+.crumb{font-size:13px;color:var(--sub);margin-top:16px;}
+
+/* ── リード（明朝・可読幅40em） ── */
+.lead{font-family:"Yu Mincho","YuMincho",serif;font-size:17px;line-height:1.85;color:var(--ink);max-width:40em;margin:16px 0 8px;}
+
+/* ── 今日の1本（重大1） ── */
+.hero{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:24px 0 20px;margin:16px 0 32px;}
+.hero .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700;margin-bottom:8px;}
+.hero h2{font-family:"Yu Mincho","YuMincho",serif;font-size:26px;line-height:1.45;margin-bottom:12px;}
+.hero h2 a{color:var(--ink);text-decoration:none;}
+.hero h2 a:hover{color:var(--accent);}
+.hero p{font-size:16px;line-height:1.8;color:var(--sub);max-width:40em;}
+.hero .hero-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:12px;color:var(--faint);}
+
+/* ── 面見出し ── */
+.pagehead{display:flex;align-items:baseline;gap:12px;margin:40px 0 16px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.pagehead .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.pagehead h2{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.pagehead .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold{margin:40px 0 16px;}
+.page-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px;}
+.page-fold>summary::-webkit-details-marker{display:none;}
+.page-fold>summary .no{font-family:"Yu Mincho",serif;font-size:15px;font-weight:700;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.15em;}
+.page-fold>summary .nm{font-family:"Yu Mincho",serif;font-size:20px;letter-spacing:.1em;}
+.page-fold>summary .cnt{color:var(--faint);font-size:12px;margin-left:auto;}
+.page-fold>summary:hover .nm{color:var(--accent);}
+
+/* ── 見出し一覧（行全体リンク＋列固定：重大2・3） ── */
+.headlines{list-style:none;margin:0 0 8px;}
+.hl-row-li{list-style:none;}
+.hl-row{display:grid;grid-template-columns:1fr 88px 152px;grid-template-areas:"title stage src";column-gap:16px;align-items:baseline;padding:12px 8px;min-height:56px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;border-radius:4px;transition:background .12s;}
+.hl-row:hover{background:#f2f5f8;}
+.hl-row:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+.hl-title{grid-area:title;min-width:0;line-height:1.6;font-family:"Yu Mincho","YuMincho",serif;}
+.hl-row>.badge{grid-area:stage;justify-self:start;}
+.hl-src{grid-area:src;justify-self:start;min-width:0;max-width:100%;font-size:12px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hl-row.imp3 .hl-title{font-size:18px;font-weight:700;}
+.hl-row.imp2 .hl-title{font-size:16px;font-weight:500;}
+.hl-row.imp1 .hl-title{font-size:15px;font-weight:400;color:var(--sub);}
+
+/* ── バッジ ── */
+.badge{display:inline-block;font-size:11px;padding:1px 8px;border-radius:2px;border:1px solid var(--line);color:var(--sub);background:#f4f6f8;}
+.badge.stage{background:transparent;border:1px solid var(--line);border-radius:2px;font-size:11px;line-height:1.6;padding:1px 7px;letter-spacing:.06em;font-weight:600;white-space:nowrap;color:var(--sub);}
+.badge.stage.s-giron{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-taiko{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-kokkai{color:#8a6a20;border-color:#d9c99c;}
+.badge.stage.s-seiritsu{color:#2c6b4f;border-color:#b2cec0;}
+.badge.stage.s-shikou{color:#b0502f;border-color:#e5c9ba;}
+.badge.new{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+.badge.imp3{background:var(--ink);color:#fff;border-color:var(--ink);}
+.badge.hl{background:#f4f0e4;border-color:#dccf9f;color:#7a6320;}
+
+/* ── 記事本体 ── */
+article{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);padding:20px 24px;margin-bottom:16px;break-inside:avoid;}
+article.imp3{border-left-color:var(--accent);}
+article.imp2{border-left-color:var(--line);}
+.a-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--faint);margin-bottom:8px;}
+h1.a-title{font-family:"Yu Mincho","YuMincho",serif;font-size:24px;line-height:1.5;margin:4px 0 14px;font-weight:700;}
+h3.a-title{font-family:"Yu Mincho",serif;font-size:18px;line-height:1.5;margin:4px 0 8px;}
+h3.a-title a{color:var(--ink);text-decoration:none;}
+h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
+.summary{list-style:none;margin:0 0 8px;max-width:40em;}
+.summary li{padding-left:1.1em;text-indent:-1.1em;color:var(--ink);font-size:15px;}
+.summary li::before{content:"▸";color:var(--accent);margin-right:.35em;}
+.comment{background:var(--accent-bg);border-left:3px solid var(--accent);padding:8px 12px;font-size:15px;margin:8px 0 8px;max-width:40em;}
+.comment b{color:var(--accent);}
+.topic-link{color:var(--accent);}
+.delta{font-size:13px;color:var(--accent);font-weight:600;margin:8px 0;}
+.backfill-note{font-size:12px;color:var(--faint);margin-top:8px;}
+.bf-label{font-size:12px;color:#7a6320;background:#f4f0e4;display:inline-block;padding:1px 8px;border-radius:2px;margin-bottom:8px;}
+.brief-list{font-size:13px;color:var(--sub);border-top:1px solid var(--rule);padding-top:8px;margin:8px 0 16px;max-width:40em;}
+.brief-list li{margin-left:1.4em;}
+.a-foot{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:12px;align-items:center;}
+.a-foot .src a{color:var(--sub);}
+.tag{color:var(--faint);}
+
+/* ── 原文ボタン（重大7） ── */
+.orig-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:16px 0 8px;background:var(--accent);color:#fff;text-decoration:none;font-size:15px;font-weight:600;border-radius:4px;}
+.orig-btn:hover{background:var(--accent-dark);}
+.orig-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ── 記事の前後ナビ（重大8） ── */
+.artnav{display:grid;grid-template-columns:1fr auto 1fr;grid-template-areas:"prev home next";gap:8px;margin-top:40px;padding-top:16px;border-top:1px solid var(--line);}
+.artnav .prev{grid-area:prev;}
+.artnav .home{grid-area:home;}
+.artnav .next{grid-area:next;}
+.artnav a{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:48px;padding:8px 16px;border:1px solid var(--line);border-radius:4px;background:var(--card);text-decoration:none;color:var(--ink);}
+.artnav a:hover{border-color:var(--accent);color:var(--accent);}
+.artnav a span{font-size:11px;color:var(--faint);letter-spacing:.06em;}
+.artnav a b{font-size:13px;font-weight:600;line-height:1.5;}
+.artnav .home a{align-items:center;justify-content:center;}
+.artnav .next a{align-items:flex-end;text-align:right;}
+
+/* ── 週刊面・ボツ・エラー・フッター ── */
+.weekly{background:#f2f4f7;border:1px solid var(--line);padding:16px 24px;margin:32px 0;}
+.weekly h2{font-family:"Yu Mincho",serif;font-size:18px;letter-spacing:.1em;border-bottom:1px solid var(--faint);padding-bottom:8px;margin-bottom:8px;}
+.weekly h4{font-size:14px;margin:16px 0 4px;color:var(--sub);}
+.weekly ul{margin-left:1.3em;font-size:14px;}
+.weekly a{color:var(--ink);}
+.more-fold{list-style:none;}
+.more-fold>summary{cursor:pointer;color:var(--sub);font-size:13px;padding:10px 8px;min-height:44px;display:flex;align-items:center;}
+.more-fold>summary:hover{color:var(--accent);}
+.reject{margin-top:40px;font-size:12px;color:var(--faint);}
+.reject summary{cursor:pointer;color:var(--sub);}
+.reject li{margin-left:1.4em;}
+.reject a{color:var(--faint);}
+.errors{margin-top:16px;font-size:12px;color:#8a4b3a;background:#faf1ee;border:1px solid #e8cfc6;padding:8px 16px;}
+.empty{margin-top:32px;color:var(--sub);}
+.footer{margin-top:48px;border-top:1px solid var(--line);padding-top:12px;font-size:12px;color:var(--faint);}
+.nav{font-size:13px;margin-bottom:16px;}
+.nav a{color:var(--sub);text-decoration:none;margin-right:16px;}
+.nav a:hover{color:var(--accent);}
+
+/* ── モバイル（重大4） ── */
+/* ── PC（広い画面）＝新聞らしく幅を使う2段組（2026-08-02 小西さん指示：PCとスマホで変える） ── */
+@media (min-width:1024px){
+  .wrap.paper{max-width:1280px;padding:40px 56px 80px;}
+  .paper-cols{columns:2;column-gap:72px;}
+  /* 段の高さを均すため面の途中でも段をまたいでよい（行と見出しだけ分断禁止＝新聞の段組み） */
+  .paper-cols .pagehead,.paper-cols .page-fold>summary{break-inside:avoid;}
+  .paper-cols .hl-row-li{break-inside:avoid;-webkit-column-break-inside:avoid;}
+  .paper-cols section{margin-bottom:16px;}
+  .wrap.paper .masthead h1{font-size:36px;}
+  .wrap.paper .lead{font-size:19px;max-width:48em;}
+  .wrap.paper .hero{padding:32px 0 24px;margin:16px 0 40px;}
+  .wrap.paper .hero h2{font-size:34px;max-width:32em;}
+  .wrap.paper .hero p{font-size:17px;max-width:48em;}
+  /* 段組の中は「見出し全幅＋下にメタ行」の新聞式（横3列だとタイトルが窮屈になるため） */
+  .paper-cols .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:4px;column-gap:12px;padding:14px 4px;min-height:0;}
+  .paper-cols .hl-src{justify-self:start;}
+  .paper-cols .badge.stage,.paper-cols .badge.new,.paper-cols .badge.hl{justify-self:end;}
+  .hl-row.imp3 .hl-title{font-size:19px;}
+  .hl-row.imp2 .hl-title{font-size:17px;}
+  .hl-row.imp1 .hl-title{font-size:16px;}
+  .pagehead h2,.page-fold>summary .nm{font-size:22px;}
+  /* 記事ページ・トピックは可読幅を保ちつつ少し広く・文字も一回り大きく */
+  .wrap:not(.paper):not(.idx){max-width:920px;}
+  .wrap:not(.paper) .a-title{font-size:28px;}
+  .wrap:not(.paper) .summary li{font-size:17px;}
+  .wrap:not(.paper) .comment{font-size:16px;}
+  /* 目次は一覧性重視で広めに */
+  .wrap.idx{max-width:1080px;}
+}
+
+@media (max-width:680px){
+  .wrap{padding:16px 16px 48px;}
+  .masthead{gap:4px;padding-bottom:16px;}
+  .masthead h1{font-size:clamp(20px,5.4vw,30px);letter-spacing:.06em;}
+  .lead{font-size:15px;margin:12px 0 4px;}
+  .pagehead{margin:32px 0 8px;}
+  .pagehead h2{font-size:17px;}
+  .page-fold{margin:32px 0 8px;}
+  .page-fold>summary .nm{font-size:17px;}
+  .hl-row{grid-template-columns:1fr auto;grid-template-areas:"title title" "src stage";row-gap:6px;column-gap:8px;min-height:64px;}
+  .hl-src{justify-self:start;max-width:100%;}
+  .hl-row>.badge{justify-self:end;}
+  .hero h2{font-size:21px;}
+  .summary li,.comment{font-size:15px;}
+  .artnav{grid-template-columns:1fr 1fr;grid-template-areas:"prev next" "home home";}
+  .artnav .next a{align-items:flex-end;}
+}
+
+@media print{
+  body{background:#fff;font-size:12pt;}
+  .wrap{max-width:none;padding:0;}
+  article{border:none;border-left:3px solid var(--line);padding:8px 12px;}
+  .nav,.issuenav,.artnav,.orig-btn,.consult-btn{display:none;}
+  .page-fold>summary{cursor:auto;}
+  .hero{break-inside:avoid;}
+}
+
+/* ── AIに相談ボタン（記事ページ・2026-08-02 小西さん指示） ── */
+.consult-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;margin:8px 8px 8px 0;
+  background:#fff;color:var(--accent);border:1.5px solid var(--accent);text-decoration:none;
+  font-size:15px;font-weight:600;border-radius:4px;cursor:pointer;font-family:inherit;}
+.consult-btn:hover{background:var(--accent-bg);}
+.consult-btn.done{background:var(--accent);color:#fff;}
+.consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
+
+.masthead{border-bottom-color:var(--accent);}
+.pagehead{border-bottom-color:var(--accent);}
+.pagehead .no,.page-fold>summary .no{background:var(--accent);}
+.hero{border-top-color:var(--accent);}
+</style></head><body><div class="wrap paper">
+<div class="nav"><a href="../index.html">目次・検索</a></div>
+<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月16日（金）　第63号　採用22件</div></header>
+<div class="issuenav"><a class="prev" href="../2026-10/20261014.html">← 10/14号</a></div>
+<p class="lead">無人実行のClaude Codeが週次リミットで16回続けて失敗した記録と、claude -p で permissions.allow が無視される条件を取り上げます。Gemini 4 Argonの一般提供とWindowsのMXC正式リリースも出ています。</p>
+<section class="hero">
+  <div class="eyebrow">今日の1本</div>
+  <h2><a href="../articles/20261016-01.html">無人起動のClaude Codeが、週次リミットで16回連続失敗した記録（代役を用意しても動かなかった）</a></h2>
+  <p>うちの定時ジョブ（ニュース紙面・夜間処理）も週の上限に当たると止まります。止まったときに紙面が出ていないことに気づける仕組み（実在確認・健康診断）が効くかの確認材料になります。</p>
+  <div class="hero-meta"><span>Zenn（Claude Code）</span></div>
+</section>
+
+<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">12件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-02.html"><span class="hl-title">claude -p で permissions.allow が効かない：「not been trusted」警告の原因と実測</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-03.html"><span class="hl-title">Claude Code を夜間に無人実行させたら1週間で3回止まった：コスト設計で変えた4つのこと</span><span class="hl-src">Zenn（自動化）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-04.html"><span class="hl-title">Claude Modsで業務ルールをAIに埋め込む：指示書では守られなかった3つの規則を「仕組み」にした話</span><span class="hl-src">Zenn（自動化）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-05.html"><span class="hl-title">「次に成功したら自動で閉じる」記録が、二日たっても閉じなかった理由</span><span class="hl-src">Zenn（自動化）</span></a></li>
+<li><details class="more-fold"><summary>参考 7件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-06.html"><span class="hl-title">決算書を出したあと銀行から届く「ご質問」への回答を、前期の回答＋今回の質問＋2期分の決算書でAIに下書きしてもらう</span><span class="hl-src">note（#AI活用）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-07.html"><span class="hl-title">なぜ Skill は使ってもらえないのか</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-08.html"><span class="hl-title">AIの自動化は音もなく止まる：通知は25回出ていたのに、11日間だれも気づかなかった</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（自動化）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-09.html"><span class="hl-title">Claude Codeの自動コンパクト、何で・どこで・いつ効かせるか（/autocompact・autoCompactWindow・idle）</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-10.html"><span class="hl-title">Claude CodeのBashツールで、grepはugrepに、lsはrtk lsに黙ってすり替わっていた</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-11.html"><span class="hl-title">AI エージェントに PC を預けるときの3つの柵：秘密を読ませない・名前で止めない・消す範囲を囲う</span><span class="badge hl">見出しのみ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-12.html"><span class="hl-title">CLAUDE.mdが長くなったら？Skillsに切り出す3ステップ（SKILL.mdテンプレ付き）</span><span class="badge hl">見出しのみ</span><span class="hl-src">note（#AI活用）</span></a></li></ul></details></li>
+</ul></section><section><div class="pagehead"><span class="no">2面</span><h2>うちへの提案</h2><span class="cnt">1件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-13.html"><span class="hl-title">無人処理（claude -p）の標準エラーに出る「not been trusted」警告を、定時処理の見張りに加える</span><span class="hl-src">Zenn（Claude Code）より</span></a></li>
+</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">5件</span></div>
+<ul class="headlines">
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-14.html"><span class="hl-title">Google「Gemini 4 Argon」が一般提供開始：使えるプランと価格</span><span class="hl-src">ITmedia AI＋</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261016-15.html"><span class="hl-title">Windows上でAIエージェントを隔離する「Microsoft Execution Containers」（MXC）が正式リリース</span><span class="hl-src">Publickey</span></a></li>
+<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-16.html"><span class="hl-title">Claude Codeデスクトップ版が入れ子セッションと保存環境を発表</span><span class="badge hl">見出しのみ</span><span class="hl-src">Pasquale Pillitteri</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-17.html"><span class="hl-title">Microsoft、「Office in Copilot」を発表：Word、Excel、PowerPointがCopilotアプリに統合</span><span class="badge hl">見出しのみ</span><span class="hl-src">窓の杜</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-18.html"><span class="hl-title">米マイクロソフト、法務AI「Copilot for legal」を提供開始：契約審査など20超のスキル</span><span class="badge hl">見出しのみ</span><span class="hl-src">ビジネス+IT</span></a></li></ul></details></li>
+</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（4件）を開く</span></summary>
+<ul class="headlines">
+
+<li><details class="more-fold"><summary>参考 4件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-19.html"><span class="hl-title">相次ぐAI関連のサイバー攻撃：Anthropic共同創業者の発言と「AI企業が基本を無視している」との指摘を読み比べる</span><span class="badge hl">見出しのみ</span><span class="hl-src">編集部（比較解説）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-20.html"><span class="hl-title">税理士向けAI・業務基盤「TaxSys」、サービス開始1年で導入300事務所を突破</span><span class="badge hl">見出しのみ</span><span class="hl-src">朝日新聞</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-21.html"><span class="hl-title">デジタルハリウッド大学、生成AI「Claude」を全学導入：国内初、回数を気にせず使い放題に</span><span class="badge hl">見出しのみ</span><span class="hl-src">ITmedia AI＋</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261016-22.html"><span class="hl-title">ChatGPTの安全性を巡り米8州がOpenAIを提訴、AI開発の停止まで要求</span><span class="badge hl">見出しのみ</span><span class="hl-src">XenoSpectrum</span></a></li></ul></details></li>
+</ul></details></section></div>
+<details class="reject"><summary>今日のボツ記事 16件（試運転中のみ全件表示：捨てすぎチェック用）</summary><ul>
+<li><a href="https://zenn.dev/techcode/articles/a65da06083bd84" target="_blank" rel="noopener">C#で複数のPDFを結合する方法／C# で PDF のバージョンを変更する方法</a> — C#の実装Tipsでうちの環境で再現性なし</li><li><a href="https://zenn.dev/claire_ai/articles/fukei-oya-iriguchi" target="_blank" rel="noopener">YouTube関連の自動化記事（急に伸びた動画・ショート60秒・寝ている間に回す・シェルスクリプトで対話動画）</a> — 業務と無関係（動画チャンネル運用）</li><li><a href="https://zenn.dev/takumahayami/articles/eigyou-ai-shoudan-furikaeri-1mai" target="_blank" rel="noopener">商談の振り返り・見積書たたき台・EC商品ページなど営業・EC向けAI活用3〜4本</a> — 営業・EC業務向けでうちの業務に当たらない</li><li><a href="https://zenn.dev/yukihayama/articles/n8n-retry-limit-error-bypass" target="_blank" rel="noopener">n8nのリトライ・Webhook／Notionのリレーション2重登録</a> — n8n・Notion特有の実装でうちの環境（Claude Code・Windows）と異なる</li><li><a href="https://zenn.dev/acerola_jp/books/claude-code-team-guardrails" target="_blank" rel="noopener">Claude Code チーム導入のガードレール（管理設定・サンドボックス・監査ログ）</a> — チーム導入向けで1人事務所に当たらない</li><li><a href="https://zenn.dev/kam_labz/articles/ebbing-rn-to-swift-rewrite" target="_blank" rel="noopener">個人開発の復習アプリをReact NativeからSwiftに書き直した話</a> — アプリ開発の話でうちの環境で再現性なし</li><li><a href="https://note.com/modern_rose9135/n/n6ff1cbe045e8" target="_blank" rel="noopener">note（#AI活用）の雑記・体験談（ソフトクリーム・Apple Music・旅行・定年・40代入門ほか）</a> — 業務と無関係</li><li><a href="https://qiita.com/koji-yamauchi/items/c38c435db25a5a5129e7" target="_blank" rel="noopener">Qiita：人形劇アニメ・Pythonの抽選・Excel VBA色分け・Codex条件表</a> — うちの業務に当たらない実装・趣味</li><li><a href="https://openai.com/index/amp-beyond-coding" target="_blank" rel="noopener">OpenAI News：事例紹介（Amp・SentinelOne・Block・Third Moment）ほか</a> — 大規模組織向け事例でうちの環境で再現性なし</li><li><a href="https://azure.microsoft.com/en-us/blog/deep-dive-into-azure-maia-300-architecture/" target="_blank" rel="noopener">Microsoft Source・Azure Maia 300・データセンター電力・木造データセンター</a> — インフラの話でうちの業務と無関係</li><li><a href="https://www.itmedia.co.jp/news/article/2610/14/2000002238/" target="_blank" rel="noopener">Character.ai破産申請／OpenAI従業員逮捕／デンマーク流出／YouTube Musicラベル</a> — 企業の個別ニュース</li><li><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9IQUhhQXVuWGlzMno" target="_blank" rel="noopener">PR TIMES系のAIサービス発表・研修・ウェビナー・助成金研修（レブコム、SCSK CELF、クロスウイング、AX企業認定ほか）</a> — PR・イベント告知</li><li><a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1j" target="_blank" rel="noopener">ChatGPT広告・株式投資・AI彼女・音声コーチ系のGoogle News記事</a> — 業務と無関係・広告市場の話</li><li><a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9WWGhwZXQzVmxrQnFLR0tBN3Z2WUoyXzBWcm50TWRaQXg4R05GLTNJ" target="_blank" rel="noopener">Claude Haiku 5.5提供開始（エクサベース）／immedio MCP対応／MagicPod MCP</a> — PR・個別企業のサービス発表</li><li><a href="https://news.google.com/rss/articles/CBMilgF" target="_blank" rel="noopener">Windows 11 KB5127648・Visual Studio Copilot脆弱性・GitHub Copilot週次まとめ</a> — 開発者向けでうちの環境と関係が薄い</li><li><a href="https://ainow.ai/2026/10/14/278439/" target="_blank" rel="noopener">Grok Bot／AINOWのAIエージェント自作入門2本</a> — 初心者向け入門で新しい情報なし</li></ul></details>
+
+<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-16 06:36:12　日刊AIウォッチ（G159）</div>
+</div></body></html>
