@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年10月23日（金）</title><style>
+<title>日刊AIウォッチ 2026年10月24日（土）</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -205,40 +205,39 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .hero{border-top-color:var(--accent);}
 </style></head><body><div class="wrap paper">
 <div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月23日（金）　第69号　採用15件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-10/20261022.html">← 10/22号</a></div>
-<p class="lead">無人の claude -p で許可の確認が黙って流れていないかを数える仕組み（v2.1.307 の safety_event）と、Bash 経由で書き込みゲートを抜けた事例が出ています。Anthropic の常時稼働エージェント「Claude Duet」と、Agent Skills 標準の寄付も。2面は、うちの hitl_guard に同じ穴がないかを試す提案を1本。</p>
+<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月24日（土）　第70号　採用16件</div></header>
+<div class="issuenav"><a class="prev" href="../2026-10/20261023.html">← 10/23号</a></div>
+<p class="lead">Claude Code の安全ガード（hooks）の誤ブロックを5件直した記録と、Windows で AI スクリプトを動かして踏んだ10の罠の2本が今日の中心です。毎朝の無人 claude -p を5週間回した記録、PowerPoint の折り返し自動修正、Claude Code の MCP Tasks（長い処理を任せる機能）も。2面「うちへの提案」は、うちの実物と突き合わせて新規と言えるものがなく、今日はゼロです。</p>
 <section class="hero">
   <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20261023-01.html">無人の claude -p が黙って弾かれた操作を数える：v2.1.307 の safety_event を OTel で受ける</a></h2>
-  <p>うちの無人 claude -p（毎朝の紙面編集・定時処理）で、許可の確認が黙って流れていないかを見る手段にあたります。未決着の提案 20261020-17（許可の拒否記録を拾う仕組み）の材料です。うちの版が 2.1.307 以上かは未確認。</p>
-  <div class="hero-meta"><span>Zenn・norman6464</span></div>
+  <h2><a href="../articles/20261024-01.html">誤って止めるガードは、無いより悪い：Claude Code の hooks で誤ブロック5件を直した記録</a></h2>
+  <p>うちの hitl_guard の確認画面・誤検知の話（未決着の提案 20260830-30・20260826-18・20261023-15）と同じ論点です。「止めるケースと通すケースを対でテストする」「ガードの設定が抜けて動いていないことに気づけない」は、うちの試験にも当てはまるかを見る材料になります。</p>
+  <div class="hero-meta"><span>Zenn・waiteu</span></div>
 </section>
 
 <div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">9件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20261023-02.html"><span class="hl-title">Bash の ln・touch・rsync は書き込みゲートを素通りした：Edit|Write だけに掛けた門番の穴</span><span class="hl-src">Zenn・starken</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20261023-03.html"><span class="hl-title">AIに記事29本を書かせたら、もっともらしい間違いが24か所：別のAI2人が作業記録と照合して見つけた</span><span class="hl-src">Zenn・claire_ai</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-04.html"><span class="hl-title">7時の知らせは15回届き、写しの保存は14回失敗していた：軽い失敗を記録ファイルにだけ書く落とし穴</span><span class="hl-src">note・agentia_kyoka</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-05.html"><span class="hl-title">AIの確認ボタン、多すぎても少なすぎても危ない：戻せるか・外に出るか・秘密か・お金かで承認を決める</span><span class="hl-src">note・noralab717</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-06.html"><span class="hl-title">同じ不具合が5回再発：公開を止める門番を足しても、画像を作る工程が無ければ止まるだけだった</span><span class="hl-src">Zenn・hoshiorange</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261023-07.html"><span class="hl-title">AIレビューの指摘は、どこで直すのを止めるか：本番の経路に届くかで決める</span><span class="hl-src">Zenn・miyakona</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261023-08.html"><span class="hl-title">Claude Code の Write で CRLF が LF に変わり、git diff が全行になる（Windows・2.1.303）</span><span class="hl-src">Zenn・tamao825</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261023-09.html"><span class="hl-title">2026-10-16 の公式ドキュメント更新：スキルのバックグラウンド実行と 2.1.301 の修正（一次資料は未確認）</span><span class="hl-src">Qiita・akihidem</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">2面</span><h2>うちへの提案</h2><span class="cnt">1件</span></div>
+<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20261024-02.html"><span class="hl-title">Windows で AI 向けスクリプトを動かして踏んだ10の罠：改行入りの引数が1行目で切れる、終了コード0のまま何も動かない</span><span class="hl-src">Zenn・twinharness</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-03.html"><span class="hl-title">Claude Code を毎朝3時に走らせて5週間：10月に止まった・壊れた理由（OAuth 切れは対策なしのまま）</span><span class="hl-src">Zenn・mappy55</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-04.html"><span class="hl-title">承認待ちで7週間止まっても「進める作業なし」で正常終了：Claude Code の routine とローカル定期実行で動かし直した話</span><span class="hl-src">Qiita・berrylove</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-05.html"><span class="hl-title">機械の検品を「出典あり」で通った語が、別の記事の見出しにあった：語の存在だけを見る照合の穴</span><span class="hl-src">Zenn・ciel_lab</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-06.html"><span class="hl-title">PowerPoint の日本語「泣き別れ」を、PowerPoint 自身に改行位置を聞いて自動で直す</span><span class="hl-src">Zenn・haihan19955</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-07.html"><span class="hl-title">Claude Haiku はどこで Opus に負けるのか：163回測って見えた「報告にないケース1つ」の差</span><span class="hl-src">Qiita・yunany90</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-08.html"><span class="hl-title">AI に「前回の続き」を任せたら、何をするはずだったかが毎回消えていた：引き継ぎメモの「次にやること」が必ず空になる作り</span><span class="hl-src">Zenn・claire_ai</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-09.html"><span class="hl-title">AI の権限を小さくするほど復旧が簡単になる：読んで確定してから、最小単位で書き、別の読み取りで検証する</span><span class="hl-src">Zenn・neoru</span></a></li>
+</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">5件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-15.html"><span class="hl-title">hitl_guard の書込動詞の一覧に ln・touch・rsync・install・dd を足せるか、実際に試して確かめる</span><span class="hl-src">Zenn・starken より</span></a></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">2件</span></div>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-10.html"><span class="hl-title">Claude Code に MCP Tasks：長い処理を連携先に任せ、途中の質問にも答えられる（公開ベータ・v2.1.304 以降）</span><span class="hl-src">note・mementkana</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261024-11.html"><span class="hl-title">弥生が会計事務所向け「弥生の記帳代行AI」のオープンβ版を提供（見出しのみ確認）</span><span class="badge hl">見出しのみ</span><span class="hl-src">インプレス（Google News 経由）</span></a></li>
+<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-12.html"><span class="hl-title">Claude Enterprise でチャットと Cowork が統合：設定を変えていない組織は11月16日に自動で有効化</span><span class="hl-src">note・mementkana</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-13.html"><span class="hl-title">Claude Cowork が仕様変更：動作方式をクラウド型だけに（日経クロステック・有料記事のリードのみ）</span><span class="badge hl">見出しのみ</span><span class="hl-src">日経クロステック</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-14.html"><span class="hl-title">Codex の利用上限の不具合、約4万アカウントで契約プランと適用上限が食い違っていたと判明（見出しのみ）</span><span class="badge hl">見出しのみ</span><span class="hl-src">shiritomo（Google News 経由）</span></a></li></ul></details></li>
+</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（2件）を開く</span></summary>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-10.html"><span class="hl-title">Anthropic、常時稼働エージェント「Claude Duet」を発表：Opus 5.5 ベース、Pro/Max 向けリサーチプレビュー（待機リスト制）</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-11.html"><span class="hl-title">Anthropic、Agent Skills の標準を Agentic AI Foundation に寄付：70超の基盤が対応、100万件のスキルが公開済み</span><span class="hl-src">Anthropic News</span></a></li>
-</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（3件）を開く</span></summary>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261023-12.html"><span class="hl-title">中国政府系集団が AI 攻撃ツール「ARTEX」で数百の組織を標的に：ConnectWise 連携アプリ経由で Microsoft 365 に侵入（Microsoft 確認）</span><span class="hl-src">Microsoft Security Blog</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261023-13.html"><span class="hl-title">Anthropic、Claude で 25 の OSS から 493 件の問題を発見：OpenSSH の認証前コードを約5分の1削減</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261023-14.html"><span class="hl-title">「士業」のAI活用でルール整備：政府、デジタル改革原則を策定へ（時事通信の報道・見出しのみ）</span><span class="badge hl">見出しのみ</span><span class="hl-src">時事ドットコム（Google News 経由）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-15.html"><span class="hl-title">パナソニック HD、利用禁止の生成 AI に従業員らの情報を送出：33万人分（日本経済新聞の見出し）</span><span class="badge hl">見出しのみ</span><span class="hl-src">日本経済新聞（はてなブックマーク経由）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261024-16.html"><span class="hl-title">「エージェント向け1Password」発表：AIにパスワードを渡さずアクセス権限を付与でき、ChatGPT にも対応へ（見出しのみ）</span><span class="badge hl">見出しのみ</span><span class="hl-src">ITmedia AI＋</span></a></li>
 </ul></details></section></div>
 
 
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-23 06:37:37　日刊AIウォッチ（G159）</div>
+<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-24 06:37:49　日刊AIウォッチ（G159）</div>
 </div></body></html>
