@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年10月26日（月）</title><style>
+<title>日刊AIウォッチ 2026年10月27日（火）</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -205,43 +205,36 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .hero{border-top-color:var(--accent);}
 </style></head><body><div class="wrap paper">
 <div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月26日（月）　第72号　採用15件</div></header>
-<div class="issuenav"><a class="prev" href="../2026-10/20261025.html">← 10/25号</a></div>
-<p class="lead">支援先の決算書をAIに読ませる前に、ローカルで匿名化する試作の報告が今日の中心です。無人実行の「成功に見える失敗」を扱う記事が、今日も2本あります。Anthropic は常時稼働のエージェント Claude Duet を米国の Pro・Max 向けに発表しました。2面「うちへの提案」は、うちの実物と突き合わせて新規と言えるものがなく、今日はゼロです（関連する未決着の提案は各記事のコメントに記載）。</p>
+<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月27日（火）　第73号　採用13件</div></header>
+<div class="issuenav"><a class="prev" href="../2026-10/20261026.html">← 10/26号</a></div>
+<p class="lead">今日の1面は、CLAUDE.md の記述が古いとき Sonnet が古い方に従いやすい、という168回の実測です。うちの無人処理に関わる Claude Code の仕様更新（10/20）も3面に載せました。2面「うちへの提案」は、権限モードの明示が未決着の提案と重なるため、今日はゼロです（3面の記事のコメントに記載）。Anthropic の IPO 申請（S-1）は4面にあります。</p>
 <section class="hero">
   <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20261026-01.html">支援先の決算書をAIに読ませたい：ローカルのAIで匿名化する試作（固有情報18件をすべて置換）</a></h2>
-  <p>うちで決算書を外のAIに渡すときの匿名化の前工程に近い話で、「規則の網＋人の最終確認」の分け方は参考になります。未決着の提案 20260817-23（AIに渡す前の匿名化チェックリスト）・20260806-46（個人情報チェックの機械化）の裏づけ材料です。ただし試作で架空データのみの検証です。</p>
-  <div class="hero-meta"><span>note・jazzy_ixia272</span></div>
+  <h2><a href="../articles/20261027-01.html">CLAUDE.md が古いとき、Sonnet は「古い決まり」に従った：1行足すと 0 回になる実測（168回）</a></h2>
+  <p>うちは会話のメインを Sonnet 5.5 で動かしており、CLAUDE.md には日付つきの決まりが多く、旧ナレッジの退避先など「実物と食い違いうる記述」があります。Sonnet が古い記述を優先しやすいという実測は、決まりの鮮度管理に関わる材料です（うちでの再現は未確認）。</p>
+  <div class="hero-meta"><span>Zenn・kakushigoto</span></div>
 </section>
-<section class="weekly">
-  <h2>週刊面｜先週の振り返り（2026年10月19日（月）〜）</h2>
-  <h4>先週の最重要</h4><ul><li><a href="../articles/20261025-01.html">無人 claude -p が12秒で空振りした朝：記事0本でも push まで進み、外から見ると成功に見えた</a>（Zenn・norman6464）</li><li><a href="../articles/20261024-02.html">Windows で AI 向けスクリプトを動かして踏んだ10の罠：改行入りの引数が1行目で切れる、終了コード0のまま何も動かない</a>（Zenn・twinharness）</li><li><a href="../articles/20261024-01.html">誤って止めるガードは、無いより悪い：Claude Code の hooks で誤ブロック5件を直した記録</a>（Zenn・waiteu）</li><li><a href="../articles/20261023-03.html">AIに記事29本を書かせたら、もっともらしい間違いが24か所：別のAI2人が作業記録と照合して見つけた</a>（Zenn・claire_ai）</li><li><a href="../articles/20261023-02.html">Bash の ln・touch・rsync は書き込みゲートを素通りした：Edit|Write だけに掛けた門番の穴</a>（Zenn・starken）</li></ul>
-  
-  <h4>先週の掲載：93件</h4>
-</section>
-<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">12件</span></div>
+
+<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">6件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-02.html"><span class="hl-title">無人 claude -p を Scheduled Tasks に全部は移さない：push 先と秘密はローカルに残す</span><span class="hl-src">Zenn・norman6464</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-03.html"><span class="hl-title">AI同士の受け渡しが3日間1件も届かなかった：指示の抜けと、Slackが足す書式の二重の詰まり</span><span class="hl-src">Zenn・ai_shihan</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-04.html"><span class="hl-title">別のAIにレビューさせる決まりを Claude Code が忘れるので、終了時に1回だけ止めるフックを作った</span><span class="hl-src">Zenn・twinharness</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-05.html"><span class="hl-title">Claude Code に「最後の1手」を押させない：4つの線のうち、仕組みで止めていたのは1つだけだった</span><span class="hl-src">Zenn・pepe_3_go</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-06.html"><span class="hl-title">Claude Code の skill が「選ばれるのに読まれない」理由：発火を2段階に分けて測った</span><span class="hl-src">Zenn・lilpacy</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-07.html"><span class="hl-title">Claude Code の自動モードで、MCP の作成・削除が承認なしで通った：書き込みだけ毎回確認にする設定</span><span class="hl-src">Zenn・outsidernotes</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-08.html"><span class="hl-title">トークン代9割減？ プロンプトキャッシュの仕組みと効果の実測：保持時間が過ぎるとコスト11倍</span><span class="hl-src">Qiita・songchong</span></a></li>
-<li><details class="more-fold"><summary>参考 4件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261026-09.html"><span class="hl-title">Claude Code の Bash は既定2分で打ち切られる：BASH_DEFAULT_TIMEOUT_MS で延ばす</span><span class="hl-src">Zenn・aicoding_guide</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261026-10.html"><span class="hl-title">「先週の宿題、宙に浮いてるかも」：前回の議事録と今回のメモをAIで突き合わせる型</span><span class="hl-src">note・like_salvia8350</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261026-11.html"><span class="hl-title">DevelopersIO 2026 TOKYO「ガチで放置できる Claude Code 実行環境の作り方」登壇レポート</span><span class="hl-src">DevelopersIO</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261026-12.html"><span class="hl-title">「もうプロンプトは書かない」Claude Code 生みの親が明かす“ループエンジニアリング”</span><span class="hl-src">ITmedia</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">1件</span></div>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-02.html"><span class="hl-title">AIの「通れます」は確かめやすい道を通る：確認を「人の動作の言葉」で書き、確かめていない範囲を報告させる</span><span class="hl-src">Zenn・sbkm</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-03.html"><span class="hl-title">「推測が要るか」でSkillを分解して利用枠を約半減：定型はHaiku、推論はSonnet、重い確認は最後の手段に</span><span class="hl-src">Zenn・yuuyass</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-04.html"><span class="hl-title">議事録を「縮める」のでなく、会議に出ていない人に関係する所だけ「選んで抜き出す」型（引用つき）</span><span class="hl-src">note・like_salvia8350</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-05.html"><span class="hl-title">Claude Code フックを本番で動かす：タイムアウトしても既定では通る。守るフックは失敗時にブロックを明示</span><span class="hl-src">Qiita・akihidem</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261027-06.html"><span class="hl-title">AIバッチ処理の結果が足りないとき、再送する前にIDで突き合わせる：未確認と失敗は別</span><span class="hl-src">note・juicy_coyote7472</span></a></li>
+</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">3件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261026-13.html"><span class="hl-title">Anthropic が常時稼働のエージェント「Claude Duet」を発表（米国の Pro・Max 向け・順番待ち）</span><span class="hl-src">iPhone in Canada ほか（ITmedia 週末まとめでも紹介）</span></a></li>
-</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（2件）を開く</span></summary>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-07.html"><span class="hl-title">2026-10-20 のドキュメント更新：claude -p の既定が Manual に、フックの失敗時挙動の明文化、フォークモードが非対話でも既定オン</span><span class="hl-src">Qiita・akihidem（公式ドキュメントの要約）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-08.html"><span class="hl-title">Claude のアプリが auto モード既定に（Pro・Max・Team）：広い許可ルールは無視され、「14% 対 89%」は承認画面での危険コマンド検出率</span><span class="hl-src">Zenn・persimmoq</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261027-09.html"><span class="hl-title">OpenAI が「GPT-6.1 Terra」を発表（OpenAI News の見出し）</span><span class="badge hl">見出しのみ</span><span class="hl-src">OpenAI News</span></a></li>
+</ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（4件）を開く</span></summary>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261026-14.html"><span class="hl-title">「Claude Mythos 5」、危害の兆候を顧みず実在の開発者を標的に：AnthropicとAISIが分析結果を公開</span><span class="badge hl">見出しのみ</span><span class="hl-src">ITmedia（Google News経由）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261026-15.html"><span class="hl-title">「士業」AI活用でルール整備：政府、デジタル改革原則策定へ</span><span class="badge hl">見出しのみ</span><span class="hl-src">Infoseek（共同通信系・Google News経由）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261027-10.html"><span class="hl-title">Anthropic が米SECにIPOの登録届出書（Form S-1）を提出：ナスダック上場予定・銘柄コード「ANT」</span><span class="hl-src">Anthropic News</span></a></li>
+<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261027-11.html"><span class="hl-title">Claude が許可なく米ジョージア州の有権者データにアクセスしたと報道（有料閲覧制限を回避）</span><span class="badge hl">見出しのみ</span><span class="hl-src">AFPBB ほか（Reuters・Axios など複数報道）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261027-12.html"><span class="hl-title">OpenAI、フロンティアモデルの学習中はインターネットに接続させない方針：学習中のAIが隔離環境を抜け出した件も公表</span><span class="badge hl">見出しのみ</span><span class="hl-src">ITmedia</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261027-13.html"><span class="hl-title">Google、プライバシーポリシーに「Gmail」「Googleフォト」のデータを広告に使う例外を追加（回避方法の解説あり）</span><span class="badge hl">見出しのみ</span><span class="hl-src">ITmedia</span></a></li></ul></details></li>
 </ul></details></section></div>
 
 
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-26 06:37:45　日刊AIウォッチ（G159）</div>
+<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-27 06:37:23　日刊AIウォッチ（G159）</div>
 </div></body></html>
