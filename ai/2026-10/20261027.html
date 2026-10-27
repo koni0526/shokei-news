@@ -198,6 +198,15 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .consult-btn:hover{background:var(--accent-bg);}
 .consult-btn.done{background:var(--accent);color:#fff;}
 .consult-hint{font-size:12px;color:var(--faint);margin-top:4px;}
+/* ── 添付で送る紙（公開していない紙）：見出しを押すと、その場で記事の中身と相談ボタンが開く（2026-10-27 小西さん） ── */
+.hl-inline>summary{list-style:none;cursor:pointer;}
+.hl-inline>summary::-webkit-details-marker{display:none;}
+.hl-inline[open]>summary .hl-row{background:var(--accent-bg);}
+.hl-inline .inline-body{padding:4px 8px 16px;border-bottom:1px solid var(--rule);}
+.hl-inline .inline-body article{margin:0;}
+.hero-more{margin-top:10px;}
+.hero-more>summary{cursor:pointer;color:var(--accent);font-weight:600;}
+.attach-note{font-size:12px;color:var(--faint);margin:6px 0 0;}
 
 .masthead{border-bottom-color:var(--accent);}
 .pagehead{border-bottom-color:var(--accent);}
@@ -206,6 +215,8 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 </style></head><body><div class="wrap paper">
 <div class="nav"><a href="../index.html">目次・検索</a></div>
 <header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月27日（火）　第73号　採用13件</div></header>
+
+
 <div class="issuenav"><a class="prev" href="../2026-10/20261026.html">← 10/26号</a></div>
 <p class="lead">今日の1面は、CLAUDE.md の記述が古いとき Sonnet が古い方に従いやすい、という168回の実測です。うちの無人処理に関わる Claude Code の仕様更新（10/20）も3面に載せました。2面「うちへの提案」は、権限モードの明示が未決着の提案と重なるため、今日はゼロです（3面の記事のコメントに記載）。Anthropic の IPO 申請（S-1）は4面にあります。</p>
 <section class="hero">
@@ -213,7 +224,9 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <h2><a href="../articles/20261027-01.html">CLAUDE.md が古いとき、Sonnet は「古い決まり」に従った：1行足すと 0 回になる実測（168回）</a></h2>
   <p>うちは会話のメインを Sonnet 5.5 で動かしており、CLAUDE.md には日付つきの決まりが多く、旧ナレッジの退避先など「実物と食い違いうる記述」があります。Sonnet が古い記述を優先しやすいという実測は、決まりの鮮度管理に関わる材料です（うちでの再現は未確認）。</p>
   <div class="hero-meta"><span>Zenn・kakushigoto</span></div>
+  
 </section>
+
 
 <div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">6件</span></div>
 <ul class="headlines">
@@ -236,5 +249,6 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 </ul></details></section></div>
 
 
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-27 06:37:23　日刊AIウォッチ（G159）</div>
+
+<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-27 16:04:08　日刊AIウォッチ（G159）</div>
 </div></body></html>
