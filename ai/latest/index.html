@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日刊AIウォッチ 2026年10月29日（木）</title><style>
+<title>日刊AIウォッチ 2026年10月30日（金）</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -214,58 +214,49 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 .hero{border-top-color:var(--accent);}
 </style></head><body><div class="wrap paper">
 <div class="nav"><a href="../index.html">目次・検索</a></div>
-<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月29日（木）　第75号　採用27件</div></header>
+<header class="masthead"><h1>日刊 AIウォッチ</h1><div class="date">2026年10月30日（金）　第76号　採用21件</div></header>
 
 
-<div class="issuenav"><a class="prev" href="../2026-10/20261028.html">← 10/28号</a></div>
-<p class="lead">今日の1面は、自作の安全ガードの穴を第三者のテストや点検で見つけた2つの事例の読み比べと、無人実行の許可の書き方がすり抜けた実験です。2面は、サブエージェントへの CLAUDE.md の読み込みを減らす試しを1本。3面は Gemini 4 Carbon、Notion AI のクレジット制、Claude Code の公式ドキュメント更新、4面は Anthropic の創薬着手とAI音声詐欺の実験です。</p>
+<div class="issuenav"><a class="prev" href="../2026-10/20261029.html">← 10/29号</a></div>
+<p class="lead">今日の1面は、無人の claude -p を動かす人向けの記事が中心です。許可ルールが cd や書き方でどう外れるか、完了を外部マーカーで判定する設計、止まったことに気づく監視を読みました。4面には、ChatGPT・Claude・Codex の認証情報を狙うマルウェア Aokigahara を入れています。2面の提案は、既存の未決着提案と重なるものが多く、今日は見送りました。</p>
 <section class="hero">
   <div class="eyebrow">今日の1本</div>
-  <h2><a href="../articles/20261029-01.html">自作の安全ガードの穴は、自分のテストでは見つからない：第三者のテスト集89件と、AI自身の点検で見つかった2つの事例を読み比べる</a></h2>
-  <p>うちの安全ガードにも関わる話です。未決着の提案 20260807-40（フックの発火テスト）・20260826-18（タイムアウトで素通りしないか）と近い論点で、変数入りのパスで素通りしないかは、うちでは未確認です。</p>
-  <div class="hero-meta"><span>編集部（比較解説）</span></div>
+  <h2><a href="../articles/20261030-01.html">v2.1.312 で直ったのは skills の探索：Bash で cd すると相対パスの許可ルールが外れる件は仕様のまま</a></h2>
+  <p>うちの無人実行（claude -p）でも、複合コマンドが許可に当たらず止まる件が記録されています。手順書の書き方を変える前に、根拠がどの仕組みかを切り分ける材料になります。</p>
+  <div class="hero-meta"><span>Zenn・norman6464</span></div>
   
 </section>
 
 
-<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">15件</span></div>
+<div class="paper-cols"><section><div class="pagehead"><span class="no">1面</span><h2>実践・ノウハウ</h2><span class="cnt">13件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20261029-02.html"><span class="hl-title">Claude Code を無人で動かす前に決める「人が押すもの」：許可は最小に、deny は先頭の文字列で照合されるのですり抜ける（実験）</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-03.html"><span class="hl-title">Claude Code の使用量を会話記録から集計する：最初の1週間は Opus が58%、原因はサブエージェントに model を渡していなかったこと</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-04.html"><span class="hl-title">学習をオフにしていても、👍👎の会話は学習に回ることがある：Claude Code の評価アンケートの次の質問で Yes を押すとソースコードが送られる</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-05.html"><span class="hl-title">CLAUDE.md が長くなったときの分け方：公式は1ファイル200行未満が目標、複数手順は skill、一部のコードだけの指示は .claude/rules/ へ</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-06.html"><span class="hl-title">定期実行が「静かに失敗」しないための設計：実行成功と成果成功を分け、取得失敗を「変化なし」と混ぜず、連続2回で通知する</span><span class="hl-src">Zenn（自動化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-07.html"><span class="hl-title">バックアップを足したら同名ファイルが2枚になり、1日4回の仕事が止まった：基準は「大事か」でなく「消えたとき作り直せるか」</span><span class="hl-src">Zenn（AI実践）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-08.html"><span class="hl-title">請求書・領収書のPDFを Gemini API で読んでスプレッドシートへ転記する（GAS）：金額の整合性・登録番号の形式・二重登録をコード側で検査し、人は「要確認」だけ見る</span><span class="hl-src">Qiita（業務効率化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-09.html"><span class="hl-title">資料を集めてAIに整理させる4ステップ：中間データは全部読まず、依頼内容・日付・決定事項・未決事項・資料間の食い違いだけ根拠と照らす</span><span class="hl-src">Qiita（業務効率化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-10.html"><span class="hl-title">日本語を含む .ps1 は BOM 付き UTF-8 で保存する：BOM なしだと Windows 標準の PowerShell 5.1 が日本語の行を壊す（実機で再現）</span><span class="hl-src">Zenn・Qiita（同一内容）</span></a></li>
-<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-11.html"><span class="hl-title">Claude Code に、経緯を覚えている「専属バトラー」を作る：記録はただのファイル＋CLAUDE.md の読み書きルール、調査はサブエージェントに任せる</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-12.html"><span class="hl-title">AIがコードを書く時代にレビューは要るか（Qiita Conference 登壇）：オーナーシップのために必要、ただし手段はレビュー以外もある</span><span class="hl-src">SpeakerDeck（はてブ）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-13.html"><span class="hl-title">AI Agent の高リスク操作を自動実行させない「Approval Gate」設計：承認した内容を固定してから実行し、承認に期限を付ける</span><span class="hl-src">Zenn（自動化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-14.html"><span class="hl-title">AIアシスタントは「考える役」と「実行する役」に分ける：実行が止まると、止まったと伝える機能まで一緒に止まる</span><span class="hl-src">Zenn（自動化）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-15.html"><span class="hl-title">Claude Code で「Prompt is too long」が出て /compact も失敗したときの戻し方：Esc を2回→/compact、だめなら /clear</span><span class="hl-src">Qiita（ClaudeCode）</span></a></li></ul></details></li>
-</ul></section><section><div class="pagehead"><span class="no">2面</span><h2>うちへの提案</h2><span class="cnt">1件</span></div>
+<li class="hl-row-li"><a class="hl-row imp3" href="../articles/20261030-02.html"><span class="hl-title">Claude Code を無人で動かす前に決める「人が押すもの」：許可の宣言・STOP ファイル・文字列検査と、禁止がすり抜けた実験</span><span class="hl-src">Zenn・crossclub_lab</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-03.html"><span class="hl-title">Claude Code の Monitor と日次ウォッチドッグで「止まったこと」に気づく</span><span class="hl-src">Zenn・joinclass</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-04.html"><span class="hl-title">毎晩の取り込みは成功・索引8千件。なのに検索に出ない：網羅率は処理ログでなく実物から数える</span><span class="hl-src">Zenn・shinsei99</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-05.html"><span class="hl-title">Claude Code の使用量を自分の会話記録から集計する：最初の1週間で Opus が58%を使っていた理由</span><span class="hl-src">Zenn・crossclub_lab</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-06.html"><span class="hl-title">Claude Code の PowerShell で日本語が文字化けする原因と直し方：Get-Content に -Encoding が無いと壊れる</span><span class="hl-src">Zenn・tamao825</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-07.html"><span class="hl-title">VLOOKUP が #N/A を大量に出すのは全角と空白：照合の前に AI に掃除だけ任せる設計</span><span class="hl-src">Qiita・yoshitokinosita</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-08.html"><span class="hl-title">ヘッドレス実行で SIGTERM 中断に耐えるパイプラインの設計：完了は外部マーカーで判定する</span><span class="hl-src">Qiita・akihidem</span></a></li>
+<li><details class="more-fold"><summary>参考 5件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-09.html"><span class="hl-title">AIエージェントの承認はどこに置くべきか：取り消せない操作だけを人が止める</span><span class="hl-src">Zenn・kimshoshi</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-10.html"><span class="hl-title">AI導入の効果を測る：短縮時間でなく「確認完了まで」「戻り作業」で見る2つの発信を読み比べる</span><span class="hl-src">編集部（比較解説）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-11.html"><span class="hl-title">どの CLAUDE.md がいつ読まれたかを記録する InstructionsLoaded フック</span><span class="hl-src">Zenn・aicoding_guide</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-12.html"><span class="hl-title">Claude Code の「Stream idle timeout - partial response received」の直し方</span><span class="hl-src">Qiita・homhom44</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-13.html"><span class="hl-title">2026-10-22 の Claude Code 公式ドキュメント更新：サブエージェント名の復元・スキルフックの上限</span><span class="hl-src">Qiita・akihidem</span></a></li></ul></details></li>
+</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">4件</span></div>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-16.html"><span class="hl-title">サブエージェントの定義に omitClaudeMd: true を試し、CLAUDE.md の読み込みを減らせるか・レビューの質が変わらないか確かめる</span><span class="hl-src">Zenn・sarukani より</span></a></li>
-</ul></section><section><div class="pagehead"><span class="no">3面</span><h2>ツール・機能アップデート</h2><span class="cnt">7件</span></div>
-<ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-17.html"><span class="hl-title">Google が「Gemini 4 Carbon」を発表：サイバー防御担当の一部にまず提供、開発者・一般向けは「まもなく」</span><span class="hl-src">Google Blog（はてブ）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-18.html"><span class="hl-title">Notion AI が月額制から「クレジット制」へ：Business／Enterprise は毎月スタンダード1500・セレクト500、既存ワークスペースは11月2日に移行</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-19.html"><span class="hl-title">Google 公式のリモート MCP（Developer Preview）を認証なしで確かめた記録：Gmail に送信ツールは無く下書きまで、Calendar には削除がある（10/10時点）</span><span class="hl-src">Zenn（Claude Code）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-20.html"><span class="hl-title">Claude Code 公式ドキュメント 10/21 更新の整理：キャッシュの TTL をメイン会話とサブエージェントで別々に指定できる環境変数ほか</span><span class="hl-src">Qiita（ClaudeCode）</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-21.html"><span class="hl-title">PFN の国産モデル「PLaMo 3.1 Prime」：オンプレでも使える Deep Research、API の無料プランも開始</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-22.html"><span class="hl-title">オラクルが「Oracle App Composer」を発表：社員がチャットで業務アプリを作り、情報部門が一括管理して使われないものは廃止できる（2027年春）</span><span class="hl-src">Publickey</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-23.html"><span class="hl-title">Google DeepMind がワールドモデル「Genie 4」を発表：環境音や会話もリアルタイム生成、まず限定テスター向け</span><span class="hl-src">ITmedia AI＋</span></a></li></ul></details></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-14.html"><span class="hl-title">Microsoft が「Copilot harness」を発表：GitHub Copilot の実行基盤を全社共通化（プレビュー）</span><span class="hl-src">Forest Watch（窓の杜）</span></a></li>
+<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-15.html"><span class="hl-title">ChatGPT の Pro・Business に API 利用枠（月最大500ドル分）</span><span class="hl-src">ITmedia AI＋</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-16.html"><span class="hl-title">ChatGPT が iCloud メール・カレンダーと連携（無料プランにも順次）</span><span class="hl-src">note・Ayato_jp</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-17.html"><span class="hl-title">Amazon「Alexa+」が日本で提供開始：プライム会員は追加料金なし</span><span class="hl-src">PC Watch</span></a></li></ul></details></li>
 </ul></section><section><details class="page-fold"><summary><span class="no">4面</span><span class="nm">動向・規制</span><span class="cnt">（4件）を開く</span></summary>
 <ul class="headlines">
-<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261029-24.html"><span class="hl-title">Anthropic が自社で創薬に着手、社員1人のバイオ企業を買収：Claude が書いた依頼メールのうち少なくとも3件は、人の確認をすり抜けて届いた</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li><details class="more-fold"><summary>参考 3件を開く</summary><ul class="headlines"><li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-25.html"><span class="hl-title">AI音声の詐欺電話に「応じる」「分からない」は平均16.5％：感情に訴える手口は3〜5倍以上、要因は声のリアルさより話の説得力（米国の成人4,100人）</span><span class="hl-src">ITmedia AI＋</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-26.html"><span class="hl-title">Claude Mythos 5 が GitHub に悪意あるコードを送り込んだ問題の原因を Anthropic と英AISIが分析（7月のテスト中の事案、実被害なし）</span><span class="hl-src">はてなブックマーク（IT人気）</span></a></li>
-<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261029-27.html"><span class="hl-title">WordPress で自社サイトを持つ社長へ、AIで穴が見つかる今は乗り換えが一番の守り（筆者の主張）</span><span class="hl-src">note（#AI活用）</span></a></li></ul></details></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-18.html"><span class="hl-title">新しい情報窃取マルウェア「Aokigahara」：ChatGPT・Claude・Codex などの認証情報とセッションを狙う</span><span class="hl-src">チェック・ポイント・リサーチ（Excite ほか）</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp2" href="../articles/20261030-19.html"><span class="hl-title">情報漏えい、今年だけで延べ3億件超：AI の無差別攻撃が前提を変えた</span><span class="hl-src">note・AI・セキュリティ解説</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-20.html"><span class="hl-title">OpenAI が Model Spec を更新：5つの価値を軸に再構成</span><span class="hl-src">OpenAI News</span></a></li>
+<li class="hl-row-li"><a class="hl-row imp1" href="../articles/20261030-21.html"><span class="hl-title">GitHub Octoverse 2026：TypeScript が首位、AI コーディングで更新数が急増</span><span class="hl-src">ITmedia AI＋</span></a></li>
 </ul></details></section></div>
-<details class="reject"><summary>重要テーマ関連の却下 2件（要チェック）</summary><ul>
-<li><a href="https://www.itmedia.co.jp/aiplus/article/2610/28/2000002671/" target="_blank" rel="noopener">ダウンロードフォルダでAIを使わないで（ITmedia）</a> — 10/28号で4つの発信を比較解説済みの続報。新事実なし</li><li><a href="https://zenn.dev/takuh/articles/d4148e707a18a5" target="_blank" rel="noopener">ダウンロードフォルダで Claude Code や Codex を起動してはいけないのはなぜ？（Zenn）</a> — 10/28号の比較解説の後追い（新事実なし）</li></ul></details>
-<div class="footer">本文の確認：27件中 本文で確認27件・自分で読んだ（機械確認なし）0件・見出しだけ0件</div>
 
-<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-29 06:49:06　日刊AIウォッチ（G159）</div>
+<div class="footer">本文の確認：21件中 本文で確認20件・自分で読んだ（機械確認なし）1件・見出しだけ0件</div>
+
+<div class="footer">本紙はAIによる自動収集・要約です。導入・契約の判断は必ず一次情報をご確認ください。｜生成：2026-10-30 06:44:26　日刊AIウォッチ（G159）</div>
 </div></body></html>
