@@ -222,7 +222,7 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
   <h1 class="a-title">AIが最も間違える領域は『バイト』だ ― 固定長・文字コード処理のガードレール設計</h1>
   
   <ul class="summary"><li>AIはUTF-8・可変長・文字単位の現代的なコード環境で学習しているため、SJIS・固定長・バイト単位の基幹システム処理で体系的に誤る</li><li>半角英数字のみのテストでは動作するが、2バイト文字が混じると桁が全ずれする構造的バグが本番で初めて発覚するパターンが最大の危険</li><li>「桁定義はバイト単位」等の個別指示より「仕様が不明なら実装を止める」という推測補完の禁止が本質的なガードレール。桁境界に2バイト文字を置いたテストデータを実装前に用意するのが唯一の有効な検出手段</li></ul>
-  <div class="comment"><b>実務メモ</b>｜弥生インポートCSV（Shift-JIS+CRLF）やザシティ関連の固定長データを作るとき、まさに刺さりそうな論点。テスト作成時に桁境界へ2バイト文字を仕込む、という具体案はそのまま使えそう。</div>
+  <div class="comment"><b>実務メモ</b>｜弥生インポートCSV（Shift-JIS+CRLF）や○○関連の固定長データを作るとき、まさに刺さりそうな論点。テスト作成時に桁境界へ2バイト文字を仕込む、という具体案はそのまま使えそう。</div>
   <a class="orig-btn" href="https://zenn.dev/tejunya/articles/a015_byte-boundary" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
   
   <div class="a-foot"><span class="tag">分類：文字コード・固定長・データ変換</span></div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>弥生インポート・ザシティCSVに2バイト文字境界テストを追加する｜日刊AIウォッチ</title><style>
+<title>弥生インポート・○○CSVに2バイト文字境界テストを追加する｜日刊AIウォッチ</title><style>
 :root{--ink:#173229;--sub:#5b6b7c;--faint:#667283;--line:#dfe5ec;--rule:#eef1f5;--bg:#f4f7f5;--card:#ffffff;--accent:#1f7a5c;--accent-dark:#175e47;--accent-bg:#e7f3ee;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:"Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
@@ -219,19 +219,19 @@ h3.a-title a:hover{color:var(--accent);text-decoration:underline;}
 <div style="margin-top:16px">
 <article class="imp2" id="20260809-26" title="ID:20260809-26">
   <div class="a-meta"><span>Zenn（Claude Code）より</span><span>2026-08-08</span></div>
-  <h1 class="a-title">弥生インポート・ザシティCSVに2バイト文字境界テストを追加する</h1>
+  <h1 class="a-title">弥生インポート・○○CSVに2バイト文字境界テストを追加する</h1>
   
-  <ul class="summary"><li>AIはUTF-8で学習しており、Shift-JIS・固定長・バイト単位の処理で体系的に誤る。半角英数だけのテストでは通るが、2バイト文字が混じると桁がずれるサイレントバグが本番で初めて発覚するパターンが最大の危険</li><li>当社の弥生インポートCSV（Shift-JIS+CRLF）やザシティ倉庫台計算など、文字コード変換を伴う生成物が該当する</li><li>対策：桁境界に2バイト文字（「㈱」「①」「（」など）を置いたテストケースを各スキルのゴールデンデータに追加する</li></ul>
+  <ul class="summary"><li>AIはUTF-8で学習しており、Shift-JIS・固定長・バイト単位の処理で体系的に誤る。半角英数だけのテストでは通るが、2バイト文字が混じると桁がずれるサイレントバグが本番で初めて発覚するパターンが最大の危険</li><li>当社の弥生インポートCSV（Shift-JIS+CRLF）や○○倉庫台計算など、文字コード変換を伴う生成物が該当する</li><li>対策：桁境界に2バイト文字（「㈱」「①」「（」など）を置いたテストケースを各スキルのゴールデンデータに追加する</li></ul>
   <div class="comment"><b>実務メモ</b>｜次の一歩：弥生インポートスキルのテストデータに全角会社名・全角数字を含むケースを1件追加して既存処理が安全か確認する（所要15分）</div>
   <a class="orig-btn" href="https://zenn.dev/tejunya/articles/a015_byte-boundary" target="_blank" rel="noopener">原文を読む（zenn.dev）↗</a>
   
-  <div class="a-foot"><span class="tag">分類：弥生インポート・ザシティ・テスト品質・文字コード</span></div>
+  <div class="a-foot"><span class="tag">分類：弥生インポート・○○・テスト品質・文字コード</span></div>
   
 </article>
 </div>
 <button type="button" class="consult-btn" data-consult="日刊 AIウォッチの記事について相談です。
 記事ID: ai:20260809-26
-タイトル: 弥生インポート・ザシティCSVに2バイト文字境界テストを追加する
+タイトル: 弥生インポート・○○CSVに2バイト文字境界テストを追加する
 原文: https://zenn.dev/tejunya/articles/a015_byte-boundary
 まず記録簿（経営/参謀リサーチ/日刊AIウォッチ/archive/articles.json）でこの記事IDの要約・実務メモを読んでから相談に乗ってください。
 相談内容：">この記事をAIに相談（クリックでコピー）</button>
